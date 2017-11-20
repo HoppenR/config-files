@@ -1,0 +1,13 @@
+URxvt.geometry:                   120x36
+URxvt.keysym.Shift-Up:            command:\033]720;1\007
+URxvt.keysym.Shift-Down:          command:\033]721;1\007
+URxvt.background:             [80]#272B35
+URxvt.foreground:                 #F5F7FA
+URxvt.cursorColor:                SteelBlue1
+URxvt.font:                       xft:liberation mono:size=10
+URxvt.depth:                      32
+URxvt.fading:                     15
+URxvt.scrollBar:                  false
+URxvt.mouseWheelScrollPage:       false
+URxvt.cursorBlink:                true
+URxvt.saveLines:                  5000

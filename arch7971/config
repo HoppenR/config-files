@@ -1,0 +1,249 @@
+# Set directional keys
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+# Font for window titles
+font xft:liberation mono 9
+
+# New window shape and size
+new_window pixel 2
+new_float normal
+
+# Hide edge borders
+hide_edge_borders smart
+
+# Start a terminal
+bindsym Mod1+Return exec "terminal"
+
+# Kill focused window
+bindsym Mod1+Shift+q kill
+
+# Start program launcher
+set $dmenuconfig -i -fn 'Liberation Mono:size=10' -nb '#272B35' -nf '#F5F7FA' -sf '#F5F7FA' -sb '#5675B9' -p '»'
+bindsym Mod1+q exec --no-startup-id "dmenu_run $dmenuconfig"
+
+# Change focus
+bindsym Mod1+$left  focus left
+bindsym Mod1+$down  focus down
+bindsym Mod1+$up    focus up
+bindsym Mod1+$right focus right
+
+# Move focused window
+bindsym Mod1+Shift+$left  move left
+bindsym Mod1+Shift+$down  move down
+bindsym Mod1+Shift+$up    move up
+bindsym Mod1+Shift+$right move right
+
+# Split orientation
+bindsym Mod1+c split h
+bindsym Mod1+v split v
+
+# Toggle fullscreen mode for the focused container
+bindsym Mod1+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym Mod1+s layout stacking
+bindsym Mod1+w layout tabbed
+bindsym Mod1+e layout toggle split
+
+# Toggle tiling / floating
+bindsym Mod1+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym Mod1+space focus mode_toggle
+
+# Focus the parent / child container
+bindsym Mod1+a focus parent
+bindsym Mod1+z focus child
+
+# Toggle sticky
+bindsym Mod1+Shift+s sticky toggle
+
+# Workspace names
+set $ws1 "1:www "
+set $ws2 "2:>__ "
+set $ws3 "3:Game"
+set $ws4 "4:Img "
+set $ws5 "5:♪"
+
+# Switch to workspace
+bindsym Mod1+1 workspace $ws1
+bindsym Mod1+2 workspace $ws2
+bindsym Mod1+3 workspace $ws3
+bindsym Mod1+4 workspace $ws4
+bindsym Mod1+5 workspace $ws5
+
+# Move to workspace with focused container
+bindsym Mod1+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym Mod1+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym Mod1+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym Mod1+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym Mod1+Shift+5 move container to workspace $ws5; workspace $ws5
+
+# Reload / Restart / Exit
+bindsym Mod1+Shift+c reload
+bindsym Mod1+Shift+r restart
+bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Resize window
+bindsym Mod1+r mode "resize"
+mode "resize" {
+	bindsym $left        resize shrink width  10 px or 26 ppt
+	bindsym $down        resize grow   height 10 px or 26 ppt
+	bindsym $up          resize shrink height 10 px or 26 ppt
+	bindsym $right       resize grow   width  10 px or 26 ppt
+	bindsym Shift+$left  resize shrink width  10 px or 32 ppt
+	bindsym Shift+$down  resize grow   height 10 px or 32 ppt
+	bindsym Shift+$up    resize shrink height 10 px or 32 ppt
+	bindsym Shift+$right resize grow   width  10 px or 32 ppt
+	# exit resize mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# Set shut down, restart, and locking features
+bindsym Mod1+0 mode "$mode_system"
+set $mode_system (s)uspend, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+	bindsym s exec --no-startup-id "i3lock -i $pic; systemctl suspend"; mode "default"
+	bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
+	bindsym Shift+s exec --no-startup-id "systemctl poweroff"; mode "default"
+	# exit system mode
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+# Start i3bar to display a workspace bar
+bar {
+	status_command i3status
+	separator_symbol " | "
+	position bottom
+	bindsym button4 nop
+	bindsym button5 nop
+	font pango:monospace 9
+	strip_workspace_numbers yes
+	colors {
+		background #272B35
+		statusline #F5F7FA
+		separator  #36393F
+		#class              border  backgr. text
+		focused_workspace  #5D80CC #5675B9 #F5F7FA
+		active_workspace   #5D80CC #5675B9 #F5F7FA
+		inactive_workspace #36393F #272B35 #A7A7A8
+		urgent_workspace   #D00000 #D00000 #F5F7FA
+		binding_mode       #272B35 #272B35 #F5F7FA
+	}
+}
+
+## Theme colors
+# class                  border  backg.  text    indic.  child_border
+client.focused          #5D80CC #5675B9 #F5F7FA #59C9FF #5D80CC
+client.focused_inactive #5675B9 #272B35 #F5F7FA #36393F #20242B
+client.unfocused        #272B35 #272B35 #A7A7A8 #36393F #20242B
+client.urgent           #D00000 #D00000 #F5F7FA #D00000 #D00000
+client.placeholder      #000000 #0C0C0C #F5F7FA #000000 #0C0C0C
+# background
+client.background       #272B35
+
+# Open applications on specific workspaces
+assign [class="Firefox"]               $ws1
+assign [class="Steam"]                 $ws3
+assign [class="libreoffice.*|Soffice"] $ws3
+assign [class="Epdfview"]              $ws3
+assign [class="Gimp"]                  $ws4
+assign [class="Viewnior"]              $ws4
+assign [class="Vlc"]                   $ws5
+for_window [class="$bgames"] move container to workspace $ws3; workspace $ws3; move position 0 0; exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
+for_window [class="$games"] move container to workspace $ws3; workspace $ws3; exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
+
+# Automatically focus some applications
+set $autofocus "Vlc|libreoffice.*$|Steam"
+for_window [class=$autofocus] focus
+for_window [urgent="latest"] focus
+
+# Window attributes
+for_window [class="Nitrogen"]                                    floating enable
+for_window [class="URxvt"]                                       border pixel 0
+
+# Open specific applications in floating mode
+for_window [class="Galculator"]                   floating enable border pixel 1
+for_window [class="Pavucontrol"]                  floating enable
+for_window [class="qt5ct"]                        floating enable sticky enable border normal
+
+# Autostart applications
+exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id "compton -b"
+
+# Keybinds {
+	# Lock screen
+	bindsym Mod1+Shift+x exec --no-startup-id "i3lock -i $pic"
+	# Application hotkeys
+	bindsym Mod4+Shift+d exec "killall 'dunst'; notify-send 'restart dunst'"
+	bindsym Mod4+e       exec "terminal -e 'ranger'"
+	bindsym Mod4+m       exec "vlc"
+	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
+	bindsym Mod4+w       exec "firefox"
+	# Audio controls
+	bindsym Mod1+m       exec "pavucontrol"
+	bindsym Mod4+b       exec --no-startup-id "playerctl previous"
+	bindsym Mod4+n       exec --no-startup-id "playerctl next"
+	bindsym Mod4+p       exec --no-startup-id "playerctl play-pause"
+	bindsym XF86AudioPlay        $play
+	bindsym XF86AudioPrev        $prev
+	bindsym XF86AudioNext        $next
+	bindsym XF86AudioMute        $mute
+	bindsym XF86AudioRaiseVolume $Svolumeup
+	bindsym XF86AudioLowerVolume $Svolumedown
+	# Audio controls extra
+	bindsym Control+F1 $mute
+	bindsym Control+F3 $volumeup
+	bindsym Control+F2 $volumedown
+	# Screenshot
+	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
+# }
+
+# Screen dimming / locking (19min)
+exec --no-startup-id "xautolock -time 19 -locker 'i3lock -i $pic'"
+exec --no-startup-id "xset s 1200 1200"
+exec --no-startup-id "xset dpms 1200 1200 1200"
+
+# Mouse / Keyboard
+floating_modifier Mod1
+focus_follows_mouse no
+exec --no-startup-id "xset m 0"
+exec --no-startup-id "xset r rate 200 25"
+
+# Variables
+set $pic /home/christoffer/Pictures/backgrounds/lockscreen.png
+set $games payday2_release|darkest.bin.x86_64|killingfloor-bin|hl2_linux|Transistor.bin.x86_64
+set $bgames dota2
+set $play         exec --no-startup-id "playerctl play-pause"
+set $prev         exec --no-startup-id "playerctl previous"
+set $next         exec --no-startup-id "playerctl next"
+set $mute         exec --no-startup-id "pactl set-sink-mute 1 toggle"
+set $volumeup     exec --no-startup-id "pactl set-sink-volume 1 +5%"
+set $volumedown   exec --no-startup-id "pactl set-sink-volume 1 -5%"
+set $Svolumeup    exec --no-startup-id "pactl set-sink-volume 1 +2%"
+set $Svolumedown  exec --no-startup-id "pactl set-sink-volume 1 -2%"
+# Enter a minimalistic mode to release most keybindings, mode indicated by Scroll Lock LED
+bindsym Scroll_Lock exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
+mode "minimal" {
+	bindsym Mod1+1 workspace $ws1
+	bindsym Mod1+2 workspace $ws2
+	bindsym Mod1+3 workspace $ws3
+	bindsym Mod1+4 workspace $ws4
+	bindsym Mod1+5 workspace $ws5
+	bindsym Mod1+$left  focus left
+	bindsym Mod1+$right focus right
+	bindsym XF86AudioPlay        $play
+	bindsym XF86AudioPrev        $prev
+	bindsym XF86AudioNext        $next
+	bindsym XF86AudioMute        $mute
+	bindsym XF86AudioRaiseVolume $Svolumeup
+	bindsym XF86AudioLowerVolume $Svolumedown
+	# Exit "minimal" mode
+	bindsym Scroll_Lock exec --no-startup-id "xset -led named 'Scroll Lock'"; mode "default"
+}

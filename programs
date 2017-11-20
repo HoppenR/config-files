@@ -1,0 +1,63 @@
+# arch7971
+#
+# Last updated 20 Nov 2017
+[base]
+[base-devel]
+arc-gtk-theme
+arc-icon-theme (opt for arc-gtk-theme)
+bash-completion (opt for bash)
+compton
+dmenu
+dunst
+epdfview
+exo
+firefox
+galculator
+gimp
+git
+gnome-themes-standard (opt for arc-gtk-theme)
+gtk-engine-murrine (opt for arc-gtk-theme)
+htop
+i3-wm
+i3lock
+i3status
+imagemagick
+imlib2 (opt for w3m)
+intel-ucode
+jq
+libreoffice-fresh
+lightdm
+lightdm-gtk-greeter (opt for lightdm)
+nitrogen
+nodejs
+npm (opt for nodejs)
+odt2txt
+openssh
+pavucontrol
+playerctl
+polkit-gnome
+pulseaudio
+pulseaudio-alsa (opt for pulseaudio)
+qt4 (opt for vlc)
+ranger
+rsync
+rxvt-unicode
+screenfetch
+steam
+unzip
+viewnior
+vim
+vlc
+w3m (opt for ranger)
+xautolock
+xdg-user-dirs
+xf86-video-amdgpu
+xorg-server
+xorg-xev
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xset
+xsel
+xterm
+yaourt
