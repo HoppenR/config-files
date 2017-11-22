@@ -151,7 +151,7 @@
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
     frame_width = 1
-    frame_color = "#3876A5"
+    frame_color = "#5D80CC"
 
 [shortcuts]
 
