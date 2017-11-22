@@ -2,6 +2,7 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /************ Fixes Color of Input/Entry Boxes within Web-Pages **************/
+button,
 input,
 textarea {
   border-width: 1px !important;
@@ -10,7 +11,6 @@ textarea {
   color: #333333;
 }
 
-button,
 input[type="reset"],
 input[type="button"],
 input[type="submit"],
@@ -22,6 +22,7 @@ select {
   background-color: #272B35;
   color: #F5F7FA !important;
 }
+
 
 /*
 input[type="radio"],
