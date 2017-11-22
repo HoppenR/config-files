@@ -10,6 +10,12 @@ textarea {
   color: #333333;
 }
 
+button,
+input[type="reset"],
+input[type="button"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"],
 select {
   border-width: 1px !important;
   border-radius: 2px;
@@ -30,19 +36,6 @@ color: ThreeDFace ! important;
 background-color: white;
 -moz-appearance: none !important;
 }
-*/
-button,
-input[type="reset"],
-input[type="button"],
-input[type="submit"],
-input[type="radio"],
-input[type="checkbox"] {
-  border-width: 1px !important;
-  border-radius: 2px;
-  background-color: #eeeeee;
-  color: #333333;
-}
-/*
 body {
 background-color: white;
 color: #333333;
