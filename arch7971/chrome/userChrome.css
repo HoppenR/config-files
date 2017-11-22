@@ -2,6 +2,11 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /**************************** Tab Container ***************************/
+/* Remove the space before the first tab in tab toolbar */
+.tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox {
+  padding-inline-start: 2px !important;
+}
+
 #TabsToolbar {
   -moz-appearance: none !important;
   box-shadow: inset 0 -5px rgba(0,0,0,0.02),
