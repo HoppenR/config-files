@@ -127,11 +127,11 @@ bar {
 	colors {
 		background #272B35
 		statusline #F5F7FA
-		separator  #36393F
+		separator  #5A5C63
 		#class              border  backgr. text
 		focused_workspace  #5D80CC #5675B9 #F5F7FA
 		active_workspace   #5D80CC #5675B9 #F5F7FA
-		inactive_workspace #36393F #272B35 #A7A7A8
+		inactive_workspace #272B35 #272B35 #A7A7A8
 		urgent_workspace   #D00000 #D00000 #F5F7FA
 		binding_mode       #272B35 #272B35 #F5F7FA
 	}
@@ -140,8 +140,8 @@ bar {
 ## Theme colors
 # class                  border  backg.  text    indic.  child_border
 client.focused          #5D80CC #5675B9 #F5F7FA #59C9FF #5D80CC
-client.focused_inactive #5675B9 #272B35 #F5F7FA #36393F #20242B
-client.unfocused        #272B35 #272B35 #A7A7A8 #36393F #20242B
+client.focused_inactive #5675B9 #272B35 #F5F7FA #5A5C63 #20242B
+client.unfocused        #272B35 #272B35 #A7A7A8 #5A5C63 #20242B
 client.urgent           #D00000 #D00000 #F5F7FA #D00000 #D00000
 client.placeholder      #000000 #0C0C0C #F5F7FA #000000 #0C0C0C
 # background
