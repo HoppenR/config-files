@@ -42,7 +42,7 @@ update_ps1() {
 	then
 		# check if we are ahead of remote repository and color git indicator
 		# green if up to date, red if ahead
-		if [[ -z "$(git log --exit-code origin/master..HEAD 2>/dev/null)" ]]
+		if [[ -z $(git log origin/master..HEAD 2>/dev/null) ]]
 		then
 			local git_status="\[\033[1;38;5;10m\](git)\[\033[0m\]"
 		else
