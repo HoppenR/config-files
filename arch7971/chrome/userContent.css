@@ -130,12 +130,10 @@ margin: 8px;
     margin: -1px !important;
   }
 
-  /* TITLES
-  #newtab-intro-what,
-  .newtab-sponsored,
+  /* TITLES */
   .newtab-title {
-    color: #B9BAB9 !important;
-  } */
+    border-top: 0px !important;
+  }
 
   .newtab-site:hover .newtab-title {
     background-color: #272B35 !important;
