@@ -18,20 +18,46 @@ then
 	fi
 fi
 
-# Set colorful $PS1
+# Set PS variables for use by 'update_ps1'
 if [[ ${EUID} == 0 ]]
 then
-	PS1="\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] "
+	PS_START="\[\033[01;31m\][\h \[\033[01;36m\]\W\[\033[01;31m\]]\[\033[0m\]"
+	PS_SYMBOL="#"
 else
-	PS1="[\u@\h \[\033[38;5;81m\]\W\[\033[0m\]]\\$ "
+	PS_START="[\u@\h \[\033[38;5;81m\]\W\[\033[0m\]]"
+	PS_SYMBOL="$"
 fi
+
+update_ps1() {
+	# get the last command's exit status and color symbol
+	# blue if exit code was 0, red if not
+	if [[ $? -eq 0 ]]
+	then
+		local symbol="\[\033[1;38;5;81m\]$PS_SYMBOL\[\033[0m\]"
+	else
+		local symbol="\[\033[1;38;5;09m\]$PS_SYMBOL\[\033[0m\]"
+	fi
+	# check if we are inside a git repository
+	if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == true ]]
+	then
+		# check if we are ahead of remote repository and color git indicator
+		# green if up to date, red if ahead
+		if [[ -z "$(git log --exit-code origin/master..HEAD 2>/dev/null)" ]]
+		then
+			local git_status="\[\033[1;38;5;10m\](git)\[\033[0m\]"
+		else
+			local git_status="\[\033[1;38;5;09m\](git)\[\033[0m\]"
+		fi
+	fi
+	PS1="$PS_START$git_status$symbol "
+}
 
 # Alias tools to add colors
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 
-# Set the X Window title
-PROMPT_COMMAND='printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+# Call 'update_ps1' and set the X Window title after every command
+PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 ## Variables
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
