@@ -28,8 +28,8 @@ else
 	PS_SYMBOL="$"
 fi
 
-update_ps1() {
-	# get the last command's exit status and color symbol
+function update_ps1 {
+	# get the last command's exit status, then color symbol
 	# blue if exit code was 0, red if not
 	if [[ $? -eq 0 ]]
 	then
@@ -40,7 +40,7 @@ update_ps1() {
 	# check if we are inside a git repository
 	if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == true ]]
 	then
-		# check if we are ahead of remote repository and color git indicator
+		# check if we are ahead of remote repository, then color git indicator
 		# green if up to date, red if ahead
 		if [[ -z $(git log origin/master..HEAD 2>/dev/null) ]]
 		then
