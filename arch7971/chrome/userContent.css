@@ -4,6 +4,7 @@
 /************ Fixes Color of Input/Entry Boxes within Web-Pages **************/
 button,
 input,
+code,
 textarea {
   border-width: 1px !important;
   border-radius: 2px;
