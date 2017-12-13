@@ -2,7 +2,6 @@
 @namespace xul "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 
 /************ Fixes Color of Input/Entry Boxes within Web-Pages **************/
-button,
 input,
 code,
 textarea {
