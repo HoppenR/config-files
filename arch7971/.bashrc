@@ -68,4 +68,7 @@ alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
 
+## Commands
+tabs -4
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
