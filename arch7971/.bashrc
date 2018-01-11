@@ -67,8 +67,12 @@ alias cp="cp -i" # Ask for confirmation before overwrite
 alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
+alias ä="streamchecker.sh -s && exit || overrustlechecker.sh -s; exit"
 
 ## Commands
 tabs -4
+
+## PATH
+PATH="/home/christoffer/shellscripts/:$PATH"
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
