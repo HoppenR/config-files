@@ -15,3 +15,4 @@ TAB:menu-complete
 "\C-a":beginning-of-line
 "\C-e":end-of-line
 "\C-l":clear-screen
+"§":shell-expand-line
