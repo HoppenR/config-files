@@ -45,6 +45,8 @@ let g:netrw_banner = 0
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 "set directory browser to tree style listing
 let g:netrw_liststyle = 3
+"update the current working directory in netrw
+let g:netrw_keepdir= 0
 "insert mode cursor color
 let &t_SI = "\<Esc>]12;2\007"
 "replace mode cursor color
@@ -74,6 +76,10 @@ nnoremap <C-n> :tabnew<CR>
 nnoremap <C-t> :Texplore<CR>
 "copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
+"grep files in the current directory
+nnoremap <C-f> :vimgrep //./**<left><left><left><left><left>
+"open quickfix window
+nnoremap <silent> <C-b> :copen<CR>
 
 " AUTOCOMMANDS
 augroup Directory_browser
