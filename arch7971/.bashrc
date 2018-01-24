@@ -67,7 +67,8 @@ alias cp="cp -i" # Ask for confirmation before overwrite
 alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
-alias s="streamchecker.sh -s && exit || overrustlechecker.sh -s; exit"
+alias s="streamchecker.sh -s; exit"
+alias o="overrustlechecker.sh -s; exit"
 
 ## Commands
 tabs -4
