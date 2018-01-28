@@ -52,6 +52,14 @@ function update_ps1 {
 	PS1="$PS_START$git_status$symbol "
 }
 
+function s {
+	streamchecker.sh -s"$1" && exit
+}
+
+function o {
+	overrustlechecker.sh -s"$1" && exit
+}
+
 # Alias tools to add colors
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
@@ -67,8 +75,6 @@ alias cp="cp -i" # Ask for confirmation before overwrite
 alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
-alias s="streamchecker.sh -s; exit"
-alias o="overrustlechecker.sh -s; exit"
 
 ## Commands
 tabs -4
