@@ -185,6 +185,7 @@ exec --no-startup-id "compton -b"
 	bindsym Mod4+e       exec "terminal -e 'ranger'"
 	bindsym Mod4+m       exec "vlc"
 	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
+	bindsym Mod4+s       exec "shellscripts/steamrun.sh"
 	bindsym Mod4+w       exec "firefox"
 	# Audio controls
 	bindsym Mod1+m       exec "pavucontrol"
