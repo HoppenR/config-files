@@ -155,8 +155,8 @@ assign [class="Epdfview"]              $ws3
 assign [class="Gimp"]                  $ws4
 assign [class="Viewnior"]              $ws4
 assign [class="Vlc"]                   $ws5
-for_window [class="$bgames"] move container to workspace $ws3; workspace $ws3; move position 0 0; exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
-for_window [class="$games"] move container to workspace $ws3; workspace $ws3; exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
+for_window [class="$games"] move container to workspace $ws3; workspace $ws3
+for_window [class="dota2"]  move container to workspace $ws3; workspace $ws3; move position 0 0
 
 # Automatically focus some applications
 set $autofocus "Vlc|libreoffice.*$|Steam"
@@ -185,7 +185,7 @@ exec --no-startup-id "compton -b"
 	bindsym Mod4+e       exec "terminal -e 'ranger'"
 	bindsym Mod4+m       exec "vlc"
 	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
-	bindsym Mod4+s       exec "shellscripts/steamrun.sh"
+	bindsym Mod4+s       exec "shellscripts/steamrun.sh && xset led named 'Scroll Lock'"; mode "minimal"
 	bindsym Mod4+w       exec "firefox"
 	# Audio controls
 	bindsym Mod1+m       exec "pavucontrol"
@@ -220,7 +220,6 @@ exec --no-startup-id "xset r rate 200 25"
 # Variables
 set $pic /home/christoffer/Pictures/backgrounds/lockscreen.png
 set $games payday2_release|darkest.bin.x86_64|killingfloor-bin|hl2_linux|Transistor.bin.x86_64|Slay\ the\ Spire
-set $bgames dota2
 set $play         exec --no-startup-id "playerctl play-pause"
 set $prev         exec --no-startup-id "playerctl previous"
 set $next         exec --no-startup-id "playerctl next"
