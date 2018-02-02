@@ -79,7 +79,4 @@ alias free="free -m" # Display in Mebibytes
 ## Commands
 tabs -4
 
-## PATH
-PATH="/home/christoffer/shellscripts/:$PATH"
-
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
