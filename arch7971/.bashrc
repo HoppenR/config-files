@@ -75,6 +75,7 @@ alias cp="cp -i" # Ask for confirmation before overwrite
 alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
+alias bc="bc -l" # Mathlib for decimal point calculation
 
 ## Commands
 tabs -4
