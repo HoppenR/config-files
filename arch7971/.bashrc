@@ -79,5 +79,6 @@ alias bc="bc -l" # Mathlib for decimal point calculation
 
 ## Commands
 tabs -4
+shopt -s dotglob
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
