@@ -67,9 +67,6 @@ alias grep="grep --color=auto"
 # Call 'update_ps1' and set the X Window title after every command
 PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
-## Variables
-export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
-
 ## Aliases
 alias cp="cp -i" # Ask for confirmation before overwrite
 alias mv="mv -i" # Ask for confirmation before overwrite
