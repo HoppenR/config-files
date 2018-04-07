@@ -60,22 +60,27 @@ function o {
 	overrustlechecker.sh -s"$1" && exit
 }
 
-# Alias tools to add colors
-alias ls="ls --color=auto"
-alias grep="grep --color=auto"
+## Pre-command
+# Set tabs to 4 before executing any command
+PS0="$(tabs -4)"
 
+## Post-command
 # Call 'update_ps1' and set the X Window title after every command
 PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 ## Aliases
+alias bc="bc -l" # Mathlib for decimal point calculation
 alias cp="cp -i" # Ask for confirmation before overwrite
-alias mv="mv -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
-alias bc="bc -l" # Mathlib for decimal point calculation
+alias mv="mv -i" # Ask for confirmation before overwrite
+# Color Aliases
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
 
-## Commands
-tabs -4
+## Options
+shopt -s checkwinsize
 shopt -s dotglob
+shopt -s histappend
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
