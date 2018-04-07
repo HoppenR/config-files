@@ -82,5 +82,6 @@ alias grep="grep --color=auto"
 shopt -s checkwinsize
 shopt -s dotglob
 shopt -s histappend
+shopt -s no_empty_cmd_completion
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
