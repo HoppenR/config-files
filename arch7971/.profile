@@ -10,3 +10,5 @@ export PAGER="/usr/bin/less"
 export TERMINAL="/usr/bin/terminal"
 export PATH="/home/christoffer/shellscripts/:$PATH"
 
+eval $(ssh-agent)
+
