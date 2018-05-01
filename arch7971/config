@@ -186,6 +186,7 @@ exec --no-startup-id "compton -b"
 	bindsym Mod4+m       exec "vlc"
 	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
 	bindsym Mod4+s       exec "runsteam.sh"
+	bindsym Mod4+Shift+s exec "killall steam"
 	bindsym Mod4+w       exec "firefox"
 	# Audio controls
 	bindsym Mod1+m       exec "pavucontrol"
@@ -237,6 +238,8 @@ mode "minimal" {
 	bindsym Mod1+4 workspace $ws4
 	bindsym Mod1+5 workspace $ws5
 	bindsym Mod1+$left  focus left
+	bindsym Mod1+$down  focus down
+	bindsym Mod1+$up    focus up
 	bindsym Mod1+$right focus right
 	bindsym XF86AudioPlay        $play
 	bindsym XF86AudioPrev        $prev
