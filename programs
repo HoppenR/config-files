@@ -17,6 +17,7 @@ gimp
 git
 gnome-themes-standard (opt for arc-gtk-theme)
 gtk-engine-murrine (opt for arc-gtk-theme)
+highlight
 htop
 i3-wm
 i3lock
