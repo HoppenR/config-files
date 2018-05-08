@@ -53,27 +53,34 @@ case "$extension" in
 		try als "$path" && { dump | trim; exit 0; }
 		try acat "$path" && { dump | trim; exit 3; }
 		try bsdtar -lf "$path" && { dump | trim; exit 0; }
-		exit 1;;
+		exit 1
+		;;
 	rar)
 		# avoid password prompt by providing empty password
-		try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
+		try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1
+		;;
 	# PDF documents:
 	pdf)
 		try pdftotext -l 10 -nopgbrk -q "$path" - && \
-			{ dump | trim | fmt -s -w $width; exit 0; } || exit 1;;
+			{ dump | trim | fmt -s -w $width; exit 0; } || exit 1
+				;;
 	# BitTorrent Files
 	torrent)
-		try transmission-show "$path" && { dump | trim; exit 5; } || exit 1;;
+		try transmission-show "$path" && { dump | trim; exit 5; } || exit 1
+		;;
 	# ODT Files
 	odt|ods|odp|sxw)
-		try odt2txt "$path" && { dump | trim; exit 5; } || exit 1;;
-	# HTML Pages:
-	htm|html|xhtml)
-		try w3m    -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-		try lynx   -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-		try elinks -dump "$path" && { dump | trim | fmt -s -w $width; exit 4; }
-		;; # fall back to highlight/cat if the text browsers fail
+		try odt2txt "$path" && { dump | trim; exit 5; } || exit 1
+		;;
 esac
+
+if [ "$preview_images" = "True" ]; then
+	case "$mimetype" in
+		image/*)
+			img2txt --gamma=0.6 --width="$width" "$path" && exit 0
+			;;
+	esac
+fi
 
 case "$mimetype" in
 	# Syntax highlight for text files:
@@ -84,12 +91,14 @@ case "$mimetype" in
 			highlight_format=ansi
 		fi
 		try safepipe highlight --tab=4 --config-file="/home/christoffer/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
-		exit 2;;
+		exit 2
+		;;
 	# Display information about media files:
 	video/* | audio/*)
 		exiftool "$path" && exit 5
 		# Use sed to remove spaces so the output fits into the narrow window
-		try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1;;
+		try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1
+		;;
 esac
 
 exit 1
