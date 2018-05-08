@@ -51,6 +51,8 @@ function update_ps1 {
 	fi
 	PS1="$PS_START$git_status$symbol "
 }
+# My own stupid little Prompt String 3
+export PS3=$'>#\n'
 
 function s {
 	streamchecker.sh -s"$1" && exit
@@ -78,6 +80,7 @@ alias less="less -x4"
 # Color Aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias cat="highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256"
 
 ## Options
 shopt -s checkwinsize
