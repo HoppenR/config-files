@@ -15,7 +15,7 @@ new_float normal
 hide_edge_borders smart
 
 # Start a terminal
-bindsym Mod1+Return exec "terminal"
+bindsym Mod1+Return exec "termite"
 
 # Kill focused window
 bindsym Mod1+Shift+q kill
@@ -165,7 +165,7 @@ for_window [urgent="latest"] focus
 
 # Window attributes
 for_window [class="Nitrogen"]                                    floating enable
-for_window [class="URxvt"]                                       border pixel 0
+for_window [class="Termite"]                                     border pixel 0
 
 # Open specific applications in floating mode
 for_window [class="Galculator"]                   floating enable border pixel 1
@@ -182,7 +182,7 @@ exec --no-startup-id "compton -b"
 	bindsym Mod1+Shift+x exec --no-startup-id "i3lock -i $pic"
 	# Application hotkeys
 	bindsym Mod4+Shift+d exec "killall 'dunst'; notify-send 'restart dunst'"
-	bindsym Mod4+e       exec "terminal -e 'ranger'"
+	bindsym Mod4+e       exec "termite -e 'ranger'"
 	bindsym Mod4+m       exec "vlc"
 	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
 	bindsym Mod4+s       exec "runsteam.sh"
