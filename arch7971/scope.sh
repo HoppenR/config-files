@@ -46,23 +46,6 @@ trim() { head -n "$maxln"; }
 # wraps highlight to treat exit code 141 (killed by SIGPIPE) as success
 safepipe() { "$@"; test $? = 0 -o $? = 141; }
 
-# Image previews, if enabled in ranger.
-if [ "$preview_images" = "True" ]; then
-	case "$mimetype" in
-		# Image previews for SVG files, disabled by default.
-		###image/svg+xml)
-		###   convert "$path" "$cached" && exit 6 || exit 1;;
-		# Image previews for image files. w3mimgdisplay will be called for all
-		# image files (unless overriden as above), but might fail for
-		# unsupported types.
-		image/*)
-			exit 7;;
-		# Image preview for video, disabled by default.:
-		###video/*)
-		###    ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
-	esac
-fi
-
 case "$extension" in
 	# Archive extensions:
 	7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
@@ -102,15 +85,6 @@ case "$mimetype" in
 		fi
 		try safepipe highlight --tab=4 --config-file="/home/christoffer/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
 		exit 2;;
-	# image preview::
-	image/*)
-		cp "$path" "$cached" && exit 6 || exit 1;;
-	# Ascii-previews of images:
-	###image/*)
-	#    ###img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
-	# Image preview for videos, disabled by default:
-	# video/*)
-	#    ffmpegthumbnailer -i "$path" -o "$cached" -s 0 && exit 6 || exit 1;;
 	# Display information about media files:
 	video/* | audio/*)
 		exiftool "$path" && exit 5
