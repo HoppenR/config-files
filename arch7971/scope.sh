@@ -100,7 +100,7 @@ case "$mimetype" in
         else
             highlight_format=ansi
         fi
-        try safepipe highlight --tab=4 --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        try safepipe highlight --tab=4 --config-file="/home/christoffer/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
         exit 2;;
     # image preview::
     image/*)
