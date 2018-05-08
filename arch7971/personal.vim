@@ -28,7 +28,7 @@ highlight PreProc		ctermfg=9						cterm=none
 highlight Search		ctermfg=none	ctermbg=none	cterm=inverse,italic
 highlight Special		ctermfg=10						cterm=none
 highlight SpecialKey	ctermfg=4						cterm=none
-highlight Statement		ctermfg=15						cterm=bold
+highlight Statement		ctermfg=14						cterm=none
 highlight StatusLine	ctermfg=15		ctermbg=4		cterm=none
 highlight StatusLineNC	ctermfg=243		ctermbg=8		cterm=none
 highlight TabLine		ctermfg=15		ctermbg=8		cterm=none
