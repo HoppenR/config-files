@@ -54,12 +54,12 @@ function update_ps1 {
 # My own stupid little Prompt String 3
 export PS3=$'>#\n'
 
-function ccat {
-	if [[ ! -z $1 ]]
+function cat {
+	if [[ ! -z $@ ]] && [[ -t 1 ]]
 	then
-		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 "$1"
+		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 "$@"
 	else
-		/bin/cat <<< "$1"
+		/bin/cat "$@"
 	fi
 }
 
