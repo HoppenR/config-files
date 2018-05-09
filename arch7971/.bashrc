@@ -57,7 +57,7 @@ export PS3=$'>#\n'
 function cat {
 	if [[ ! -z $@ ]] && [[ -t 1 ]]
 	then
-		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 "$@"
+		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 --force "$@"
 	else
 		/bin/cat "$@"
 	fi
