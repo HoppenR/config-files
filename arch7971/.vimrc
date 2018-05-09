@@ -27,58 +27,58 @@ set wildmenu
 set colorcolumn=80
 set foldmarker={{{,}}}
 set foldmethod=marker
-"always show status line
+" always show status line
 set laststatus=2
 set listchars=tab:\|\ ,trail:~
-"enable mouse for normal mode
+" enable mouse for normal mode
 set mouse=n
 set shiftwidth=4
 set statusline=%F\ %-7h%-4m%-5r%y%=%-21(L:%3l\ C:%3v\ pos:%3p%%%)
-"set tab width to 4
+" set tab width to 4
 set tabstop=4
-"remove "Thanks for flying vim!" title when exiting
+" remove "Thanks for flying vim!" title when exiting
 set titleold=
 set titlestring=%f\ %-7h%-4m%-5r-\ VIM
-"remove the banner from the directory browser
+" remove the banner from the directory browser
 let g:netrw_banner = 0
-"hide files whose names begin with a dot
+" hide files whose names begin with a dot
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-"set directory browser to tree style listing
+" set directory browser to tree style listing
 let g:netrw_liststyle = 3
-"update the current working directory in netrw
+" update the current working directory in netrw
 let g:netrw_keepdir= 0
-"insert mode cursor color
-let &t_SI = "\<Esc>]12;2\007"
-"replace mode cursor color
-let &t_SR = "\<Esc>]12;1\007"
-"reset cursor when exiting insert/replace
-let &t_EI = "\<Esc>]12;SteelBlue1\x7"
+""insert mode cursor color
+"let &t_SI = "\<Esc>]12;2\007"
+""replace mode cursor color
+"let &t_SR = "\<Esc>]12;1\007"
+""reset cursor when exiting insert/replace
+"let &t_EI = "\<Esc>]12;SteelBlue1\x7"
 
 " MAPPINGS
-"curly bracket completion
+" curly bracket completion
 inoremap {<CR> {<CR>}<Esc>O
-"stop highlighting search
+" stop highlighting search
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
-"open and close folds
+" open and close folds
 nnoremap <Space> za
-"vimfx keybinds for moving / changing tabs
+" vimfx keybinds for moving / changing tabs
 nnoremap gJ :tabmove -1<CR>
 nnoremap gK :tabmove +1<CR>
 nnoremap J gT
 nnoremap K gt
-"navigate windows
+" navigate windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-"open new tab: empty file/current directory
+" open new tab: empty file/current directory
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-t> :Texplore<CR>
-"copy current visual selection to system clipboard
+" copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
-"grep files in the current directory
+" grep files in the current directory
 nnoremap <C-f> :vimgrep //./**<left><left><left><left><left>
-"open quickfix window
+" open quickfix window
 nnoremap <silent> <C-b> :copen<CR>
 
 " AUTOCOMMANDS
