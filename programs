@@ -26,6 +26,7 @@ imagemagick
 imlib2 (opt for w3m)
 intel-ucode
 jq
+libcaca (opt for ranger)
 libdvdcss (opt for vlc)
 libreoffice-fresh
 lightdm
