@@ -84,7 +84,6 @@ alias cp="cp -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
 alias free="free -m" # Display in Mebibytes
 alias mv="mv -i" # Ask for confirmation before overwrite
-alias less="less -x4"
 # Color Aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
