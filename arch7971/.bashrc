@@ -54,6 +54,15 @@ function update_ps1 {
 # My own stupid little Prompt String 3
 export PS3=$'>#\n'
 
+function ccat {
+	if [[ ! -z $1 ]]
+	then
+		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 "$1"
+	else
+		/bin/cat <<< "$1"
+	fi
+}
+
 function s {
 	streamchecker.sh -s"$1" && exit
 }
@@ -80,7 +89,6 @@ alias less="less -x4"
 # Color Aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias cat="highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256"
 
 ## Options
 shopt -s checkwinsize
