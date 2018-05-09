@@ -49,10 +49,12 @@ function update_ps1 {
 			local git_status="\[\033[1;38;5;09m\](git)\[\033[0m\]"
 		fi
 	fi
-	PS1="$PS_START$git_status$symbol "
+	export PS1="$PS_START$git_status$symbol "
 }
-# My own stupid little Prompt String 3
-export PS3=$'>#\n'
+
+# My own Prompt Strings
+export PS2=$' ${LINENO: -1}>\t'
+export PS3=$' >#\n'
 
 function cat {
 	if [[ ! -z $@ ]] && [[ -t 1 ]]
@@ -71,9 +73,6 @@ function o {
 	overrustlechecker.sh -s"$1" && exit
 }
 
-## Pre-command
-# Set tabs to 4 before executing any command
-PS0="$(tabs -4)"
 
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
@@ -95,5 +94,6 @@ shopt -s checkwinsize
 shopt -s dotglob
 shopt -s histappend
 shopt -s no_empty_cmd_completion
+tabs -4
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
