@@ -66,14 +66,11 @@ nnoremap gJ :tabmove -1<CR>
 nnoremap gK :tabmove +1<CR>
 nnoremap J gT
 nnoremap K gt
-" navigate windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 " open new tab: empty file/current directory
 nnoremap <C-n> :tabnew<CR>
-nnoremap <C-t> :Texplore<CR>
+nnoremap <C-N> :Texplore<CR>
+" open a new terminal emulator split inside vim
+nnoremap <silent> <C-t> :vertical terminal<CR>
 " copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
