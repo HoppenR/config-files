@@ -12,7 +12,7 @@ Xcursor.size:                     0
 XTerm*background:                 #000000
 XTerm*foreground:                 #E7E7E7
 XTerm*cursorColor:                #5675B9
-XTerm*cursorBlink:                on
+XTerm*cursorBlink:                true
 XTerm*faceName:                   Fixed
 XTerm*faceSize:                   11
 XTerm*pointerColor:               #5675B9
