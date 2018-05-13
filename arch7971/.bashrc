@@ -87,6 +87,7 @@ alias mv="mv -i" # Ask for confirmation before overwrite
 # Color Aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+alias :q="exit"
 
 ## Options
 shopt -s checkwinsize
