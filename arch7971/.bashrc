@@ -98,7 +98,7 @@ tabs -4
 # Enable cursor blink if run inside vim
 if [[ $(ps --no-headers --format ucmd $PPID) == vim ]]
 then
-	echo -e "[?12h"
+	echo -ne '[?12h'
 fi
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
