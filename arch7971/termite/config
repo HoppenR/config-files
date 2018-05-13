@@ -6,7 +6,7 @@ font = LiberationMono 13px
 geometry = 640x480
 scrollback_lines = 10000
 hyperlinks = true
-cursor_blink = true
+cursor_blink = on
 cursor_shape = block
 
 [colors]
