@@ -208,9 +208,7 @@ exec --no-startup-id "compton -b"
 # }
 
 # Screen dimming / locking (19min)
-exec --no-startup-id "xautolock -time 19 -locker 'i3lock -i $pic; systemctl suspend'"
-exec --no-startup-id "xset s 1200 1200"
-exec --no-startup-id "xset dpms 1200 1200 1200"
+exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
 
 # Mouse / Keyboard
 floating_modifier Mod1
