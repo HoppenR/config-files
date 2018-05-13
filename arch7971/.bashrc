@@ -57,7 +57,7 @@ export PS2=$' ${LINENO: -1}>\t'
 export PS3=$' >#\n'
 
 function cat {
-	if [[ ! -z $@ ]] && [[ -t 1 ]]
+	if [[ ! -z $* ]] && [[ -t 1 ]]
 	then
 		highlight --tab=4 --config-file='/home/christoffer/.highlight.theme' --out-format=xterm256 --force "$@"
 	else
@@ -94,5 +94,11 @@ shopt -s dotglob
 shopt -s histappend
 shopt -s no_empty_cmd_completion
 tabs -4
+
+# Enable cursor blink if run inside vim
+if [[ $(ps --no-headers --format ucmd $PPID) == vim ]]
+then
+	echo -e "[?12h"
+fi
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
