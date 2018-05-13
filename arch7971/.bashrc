@@ -96,9 +96,9 @@ shopt -s no_empty_cmd_completion
 tabs -4
 
 # Enable cursor blink if run inside vim
-if [[ $(ps --no-headers --format ucmd $PPID) == vim ]]
+if [[ $(ps --no-headers --format ucmd $PPID) == vim ]] && [[ $TERM != xterm ]]
 then
-	echo -ne '[?12h'
+	echo -ne "\x1b[ q"
 fi
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
