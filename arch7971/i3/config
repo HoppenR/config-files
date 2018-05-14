@@ -105,11 +105,10 @@ mode "resize" {
 
 # Set shut down, restart, and locking features
 bindsym Mod1+0 mode "$mode_system"
-set $mode_system (s)uspend, (r)eboot, (Shift+s)hutdown
+set $mode_system (s)hutdown, (r)eboot
 mode "$mode_system" {
-	bindsym s exec --no-startup-id "i3lock -i $pic; systemctl suspend"; mode "default"
 	bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
-	bindsym Shift+s exec --no-startup-id "systemctl poweroff"; mode "default"
+	bindsym s exec --no-startup-id "systemctl poweroff"; mode "default"
 	# exit system mode
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -179,7 +178,7 @@ exec --no-startup-id "compton -b"
 
 # Keybinds {
 	# Lock screen
-	bindsym Mod1+Shift+x exec --no-startup-id "i3lock -i $pic"
+	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
 	# Application hotkeys
 	bindsym Mod4+Shift+d exec "killall 'dunst'; notify-send 'restart dunst'"
 	bindsym Mod4+e       exec "termite -e 'ranger'"
@@ -208,7 +207,7 @@ exec --no-startup-id "compton -b"
 # }
 
 # Screen dimming / locking (19min)
-exec --no-startup-id "xautolock -time 20 -detectsleep -locker 'i3lock -i $pic; systemctl suspend'"
+exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
 
 # Mouse / Keyboard
 floating_modifier Mod1
@@ -217,7 +216,7 @@ exec --no-startup-id "xset m 0"
 exec --no-startup-id "xset r rate 200 25"
 
 # Variables
-set $pic /home/christoffer/Pictures/backgrounds/lockscreen.png
+set $pic /home/$USER/Pictures/backgrounds/lockscreen.png
 set $games payday2_release|darkest.bin.x86_64|killingfloor-bin|hl2_linux|Transistor.bin.x86_64|Slay\ the\ Spire|visplayer
 set $play         exec --no-startup-id "playerctl play-pause"
 set $prev         exec --no-startup-id "playerctl previous"

@@ -70,7 +70,8 @@ nnoremap K gt
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-N> :Texplore<CR>
 " open a new terminal emulator split inside vim
-nnoremap <silent> <C-t> :vertical terminal<CR>
+nnoremap <silent> <C-t> :call term_start(['bash'], {'vertical':1,
+			\'term_finish':'close', 'cwd':'/home/' . $USER})<CR>
 " copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
