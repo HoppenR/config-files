@@ -90,7 +90,7 @@ augroup END
 " FUNCTIONS
 function! DirectoryBrowserMappings()
 	"go to home directory
-	noremap <buffer> <silent> gh :Ntree /home/christoffer<CR>
+	noremap <buffer> <silent> gh :execute('Ntree' . ' /home/' . $USER)<CR>
 	"show hidden files in g:netrw_list_hide
 	noremap <buffer> <silent> zh :call eval(printf("<SNR>%d_NetrwHidden(1)",
 				\GetScriptNumber("netrw.vim")))<CR>
