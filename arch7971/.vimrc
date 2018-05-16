@@ -62,15 +62,15 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " open and close folds
 nnoremap <Space> za
 " vimfx keybinds for moving / changing tabs
-nnoremap gJ :tabmove -1<CR>
-nnoremap gK :tabmove +1<CR>
+nnoremap <silent> gJ :tabmove -1<CR>
+nnoremap <silent> gK :tabmove +1<CR>
 nnoremap J gT
 nnoremap K gt
 " open new tab: empty file/current directory
 nnoremap <C-n> :tabnew<CR>
 nnoremap <C-N> :Texplore<CR>
 " open a new terminal emulator split inside vim
-nnoremap <silent> <C-t> :call term_start(['bash'], {'vertical':1,
+nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
 			\'term_finish':'close', 'cwd':'/home/' . $USER})<CR>
 " copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
