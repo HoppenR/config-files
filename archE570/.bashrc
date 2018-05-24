@@ -79,7 +79,7 @@ PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME
 
 ## Aliases
 alias :q="exit"
-cleanpaccache="paccache -vruk0 && paccache -rv"
+alias cleanpaccache="paccache -vruk0 && paccache -rv"
 # Tool options
 alias bc="bc -l"     # Mathlib for decimal point calculation
 alias cp="cp -i"     # Ask for confirmation before overwrite
