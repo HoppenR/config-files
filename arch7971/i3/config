@@ -169,7 +169,6 @@ for_window [class="Termite"]                                     border pixel 0
 # Open specific applications in floating mode
 for_window [class="Galculator"]                   floating enable border pixel 1
 for_window [class="Pavucontrol"]                  floating enable
-for_window [class="qt5ct"]                        floating enable sticky enable border normal
 
 # Autostart applications
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -206,8 +205,10 @@ exec --no-startup-id "compton -b"
 	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
-# Screen dimming / locking (19min)
+# Screen dimming / locking (20min)
 exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
+exec --no-startup-id "xset s 1199 1199"
+exec --no-startup-id "xset dpms 1199 1199 1199"
 
 # Mouse / Keyboard
 floating_modifier Mod1
