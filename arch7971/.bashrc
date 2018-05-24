@@ -102,4 +102,7 @@ then
 	echo -ne "\x1b[ q"
 fi
 
+## Variables specific to bash
+HISTFILESIZE=20000
+
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
