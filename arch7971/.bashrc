@@ -73,21 +73,22 @@ function o {
 	overrustlechecker.sh -s"$1" && exit
 }
 
-
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
 PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 ## Aliases
-alias bc="bc -l" # Mathlib for decimal point calculation
-alias cp="cp -i" # Ask for confirmation before overwrite
-alias df="df -h" # Human readable output
+alias :q="exit"
+cleanpaccache="paccache -vruk0 && paccache -rv"
+# Tool options
+alias bc="bc -l"     # Mathlib for decimal point calculation
+alias cp="cp -i"     # Ask for confirmation before overwrite
+alias df="df -h"     # Human readable output
 alias free="free -h" # Human readable output
-alias mv="mv -i" # Ask for confirmation before overwrite
-# Color Aliases
+alias mv="mv -i"     # Ask for confirmation before overwrite
+# Color aliases
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias :q="exit"
 
 ## Options
 shopt -s checkwinsize
