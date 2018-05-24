@@ -193,7 +193,7 @@ exec --no-startup-id "xfce4-power-manager"
 	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
-# Screen dimming / locking (19min)
+# Screen locking (20min)
 exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
 
 # Mouse / Keyboard
