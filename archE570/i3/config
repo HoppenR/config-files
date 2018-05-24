@@ -119,8 +119,6 @@ bar {
 	status_command i3status
 	separator_symbol " | "
 	position bottom
-	bindsym button4 nop
-	bindsym button5 nop
 	font pango:monospace 11
 	strip_workspace_numbers yes
 	colors {
