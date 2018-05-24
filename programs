@@ -3,8 +3,6 @@
 #
 [base]
 [base-devel]
-arc-gtk-theme
-arc-icon-theme (opt for arc-gtk-theme)
 bash-completion (opt for bash)
 compton
 dmenu
@@ -15,8 +13,8 @@ firefox
 galculator
 gimp
 git
-gnome-themes-standard (opt for arc-gtk-theme)
-gtk-engine-murrine (opt for arc-gtk-theme)
+gnome-themes-extra (opt for arc-gtk-theme, or opt for vertex-themes)
+gtk-engine-murrine (opt for arc-gtk-theme, or req for vertex-themes)
 highlight
 htop
 i3-wm
@@ -62,6 +60,8 @@ xterm
 #
 # arch7971
 #
+arc-gtk-theme
+arc-icon-theme (opt for arc-gtk-theme)
 steam
 xf86-video-amdgpu
 #
@@ -69,4 +69,7 @@ xf86-video-amdgpu
 #
 gnome-keyring (opt for libsecret (which is req for network-manager-applet)
 network-manager-applet
+pa-applet-git (AUR): https://aur.archlinux.org/pa-applet-git.git
+vertex-themes (AUR): https://aur.archlinux.org/vertex-themes.git
 xf86-video-intel
+xfce4-power-manager
