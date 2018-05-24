@@ -44,7 +44,6 @@ pulseaudio-alsa (opt for pulseaudio)
 ranger
 rsync
 screenfetch
-steam
 termite
 unzip
 viewnior
@@ -63,9 +62,11 @@ xterm
 #
 # arch7971
 #
+steam
 xf86-video-amdgpu
 #
 # archE570
 #
+gnome-keyring (opt for libsecret (which is req for network-manager-applet)
 network-manager-applet
 xf86-video-intel
