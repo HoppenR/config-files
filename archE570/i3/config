@@ -5,7 +5,7 @@ set $up    k
 set $right l
 
 # Font for window titles
-font xft:URWGothic-Book 11
+font xft:URWGothic-Book 10
 
 # New window shape and size
 new_window pixel 2
@@ -21,7 +21,7 @@ bindsym Mod1+Return exec "termite"
 bindsym Mod1+Shift+q kill
 
 # Start program launcher
-set $dmenuconfig -i -fn 'Liberation Mono:size=11' -nb '#393A39' -nf '#F9FAF9' -sf '#F9FAF9' -sb '#16A085' -p '»'
+set $dmenuconfig -i -fn 'Liberation Mono:size=10' -nb '#393A39' -nf '#F9FAF9' -sf '#F9FAF9' -sb '#16A085' -p '»'
 bindsym Mod1+q exec --no-startup-id "dmenu_run $dmenuconfig"
 
 # Change focus
@@ -119,7 +119,7 @@ bar {
 	status_command i3status
 	separator_symbol " | "
 	position bottom
-	font pango:monospace 11
+	font pango:monospace 10
 	strip_workspace_numbers yes
 	colors {
 		background #393A39
@@ -150,10 +150,10 @@ assign [class="libreoffice.*|Soffice"] $ws3
 assign [class="Epdfview"]              $ws3
 assign [class="Gimp"]                  $ws4
 assign [class="Viewnior"]              $ws4
-assign [class="Vlc"]                   $ws5
+assign [class="vlc"]                   $ws5
 
 # Automatically focus some applications
-set $autofocus "Vlc|libreoffice.*$"
+set $autofocus "vlc|libreoffice.*$"
 for_window [class=$autofocus] focus
 for_window [urgent="latest"] focus
 

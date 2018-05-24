@@ -139,7 +139,7 @@
     startup_notification = false
 
     # dmenu path.
-    dmenu = "/usr/bin/dmenu -i -fn 'Liberation Mono:size=11' -nb \#393A39 -nf \#F9FAF9 -sf \#F9FAF9 -sb \#16A085 -p dunst:"
+    dmenu = "/usr/bin/dmenu -i -fn 'Liberation Mono:size=10' -nb \#393A39 -nf \#F9FAF9 -sf \#F9FAF9 -sb \#16A085 -p dunst:"
 
     # Browser for opening urls in context menu.
     browser = firefox
