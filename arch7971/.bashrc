@@ -100,7 +100,7 @@ tabs -4
 # Enable cursor blink if run inside vim
 if [[ $(ps --no-headers --format ucmd $PPID) == vim ]] && [[ $TERM != xterm ]]
 then
-	echo -ne "\x1b[ q"
+	echo -ne "\\x1b[ q"
 fi
 
 ## Variables specific to bash
