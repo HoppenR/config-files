@@ -16,7 +16,7 @@ cursor_foreground = #393A39
 foreground = #E8E8E8
 foreground_bold = #E8E8E8
 
-# rgb(57, 58, 57,) = #393A39
+# rgb(57, 58, 57) = #393A39
 background = rgba(57, 58, 57, 0.8)
 
 color0 =  #232423

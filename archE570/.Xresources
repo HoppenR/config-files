@@ -3,10 +3,10 @@ Xft.antialias:                    true
 Xft.hinting:                      true
 Xft.rgba:                         rgb
 Xft.autohint:                     false
-Xft.hintstyle:                    hintslight
+Xft.hintstyle:                    hintfull
 Xft.lcdfilter:                    lcddefault
 
-Xcursor.theme:                    Breeze
+Xcursor.theme:                    Adwaita
 Xcursor.size:                     0
 
 XTerm*background:                 #000000

@@ -82,7 +82,7 @@ PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME
 alias bc="bc -l" # Mathlib for decimal point calculation
 alias cp="cp -i" # Ask for confirmation before overwrite
 alias df="df -h" # Human readable output
-alias free="free -m" # Display in Mebibytes
+alias free="free -h" # Human readable output
 alias mv="mv -i" # Ask for confirmation before overwrite
 # Color Aliases
 alias ls="ls --color=auto"
@@ -101,5 +101,8 @@ if [[ $(ps --no-headers --format ucmd $PPID) == vim ]] && [[ $TERM != xterm ]]
 then
 	echo -ne "\x1b[ q"
 fi
+
+## Variables specific to bash
+HISTFILESIZE=20000
 
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
