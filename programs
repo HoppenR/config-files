@@ -67,9 +67,10 @@ xf86-video-amdgpu
 #
 # archE570
 #
+cower-git (AUR)
 gnome-keyring (opt for libsecret (which is req for network-manager-applet)
 network-manager-applet
-pa-applet-git (AUR): https://aur.archlinux.org/pa-applet-git.git
-vertex-themes (AUR): https://aur.archlinux.org/vertex-themes.git
+pa-applet-git (AUR)
+vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
