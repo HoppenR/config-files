@@ -1,0 +1,39 @@
+[options]
+allow_bold = true
+clickable_url = true
+dynamic_title = true
+font = LiberationMono 17px
+geometry = 640x480
+scrollback_lines = 10000
+hyperlinks = true
+cursor_blink = on
+cursor_shape = block
+
+[colors]
+cursor = #16A085
+cursor_foreground = #393A39
+
+foreground = #E8E8E8
+foreground_bold = #E8E8E8
+
+# rgb(57, 58, 57,) = #393A39
+background = rgba(57, 58, 57, 0.8)
+
+color0 =  #232423
+color1 =  #BA2922
+color2 =  #5FAF5F
+color3 =  #AFFF00
+color4 =  #16A085
+color5 =  #C755AF
+color6 =  #0099AA
+color7 =  #16A085
+color8 =  #393A39
+color9 =  #CC372C
+color10 = #00FF5F
+color11 = #D7D7AF
+color12 = #13BF9D
+color13 = #D700FF
+color14 = #00D1D1
+color15 = #E8E8E8
+
+# vim: ft=dosini cms=#%s

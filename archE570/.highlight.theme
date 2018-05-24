@@ -1,0 +1,27 @@
+Description="personal"
+
+Constant       = { Colour="#16A085" }
+Number         = Constant
+String         = Constant
+StringPreProc  = Constant
+
+Comment        = { Colour="#00D75F" }
+BlockComment   = Comment
+LineComment    = Comment
+
+Default        = { Colour="#E8E8E8" }
+Canvas         = { Colour="#393A39" }
+LineNum        = { Colour="#D7D7AF" }
+
+Escape         = { Colour="#0099AA" }
+Operator       = { Colour="#0099AA" }
+Interpolation  = { Colour="#BA2922" }
+
+PreProcessor   = { Colour="#000000" }
+
+Keywords = {
+                 { Colour="#00D1D1" },
+                 { Colour="#00D1D1" },
+                 { Colour="#16A085" },
+                 { Colour="#E8E8E8" },
+}
