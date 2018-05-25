@@ -5,6 +5,7 @@
 [base-devel]
 bash-completion (opt for bash)
 compton
+cower-git (AUR)
 dmenu
 dunst
 epdfview
@@ -67,7 +68,6 @@ xf86-video-amdgpu
 #
 # archE570
 #
-cower-git (AUR)
 gnome-keyring (opt for libsecret (which is req for network-manager-applet)
 network-manager-applet
 pa-applet-git (AUR)
