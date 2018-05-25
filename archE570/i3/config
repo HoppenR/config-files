@@ -191,8 +191,9 @@ exec --no-startup-id "xfce4-power-manager"
 	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
-# Screen locking (20min)
+# Screen locking
 exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
+# (Screen dimming handled by xfce4-power-manager)
 
 # Mouse / Keyboard
 floating_modifier Mod1
