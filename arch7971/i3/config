@@ -208,7 +208,7 @@ exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl susp
 # Screen Saver              blank/cycle
 exec --no-startup-id "xset s 600 0"
 # Display Power Management  sleep/suspend/off
-exec --no-startup-id "xset dpms 1200 0 0
+exec --no-startup-id "xset dpms 1200 0 0"
 
 # Mouse / Keyboard
 floating_modifier Mod1
