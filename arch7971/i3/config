@@ -203,10 +203,8 @@ exec --no-startup-id "compton -b"
 	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
-# Screen dimming / locking (19 / 20 respectively)
+# Screen locking  (20min)
 exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
-exec --no-startup-id "xset s 1140 1140"
-exec --no-startup-id "xset dpms 1140 1140 1140"
 
 # Mouse / Keyboard
 floating_modifier Mod1
