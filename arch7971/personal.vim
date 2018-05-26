@@ -50,3 +50,5 @@ highlight netrwSymLink		ctermfg=14		ctermbg=none	cterm=bold
 highlight netrwTags			ctermfg=12		ctermbg=1		cterm=none
 highlight netrwTilde		ctermfg=12		ctermbg=none	cterm=none
 highlight netrwTmp			ctermfg=4		ctermbg=none	cterm=none
+" special colors
+highlight gitcommitOverflow	ctermfg=1		ctermbg=none	cterm=none
