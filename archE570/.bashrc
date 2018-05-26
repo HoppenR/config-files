@@ -59,7 +59,7 @@ export PS3=$' >#\n'
 function cat {
 	if [[ ! -z $* ]] && [[ -t 1 ]]
 	then
-		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force "$@"
+		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
 		/bin/cat "$@"
 	fi
@@ -73,9 +73,13 @@ function o {
 	overrustlechecker.sh -s"$1" && exit
 }
 
+
+## Pre-command
+# Set X title to the running command
+PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)")'
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
-PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+PROMPT_COMMAND='history -a; update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 ## Aliases
 alias :q="exit"
