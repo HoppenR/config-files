@@ -66,9 +66,6 @@ nnoremap <silent> gJ :tabmove -1<CR>
 nnoremap <silent> gK :tabmove +1<CR>
 nnoremap J gT
 nnoremap K gt
-" open new tab: empty file/current directory
-nnoremap <C-n> :tabnew<CR>
-nnoremap <C-N> :Texplore<CR>
 " open a new terminal emulator split inside vim
 nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
 			\'term_finish':'close', 'cwd':'/home/' . $USER})<CR>
