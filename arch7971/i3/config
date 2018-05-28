@@ -206,9 +206,9 @@ exec --no-startup-id "compton -b"
 # Screen locking
 exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
 # Screen Saver              blank/cycle
-exec --no-startup-id "xset s 600 0"
+exec --no-startup-id "xset s off"
 # Display Power Management
-exec --no-startup-id "xset -dpms"
+exec --no-startup-id "xset dpms"
 
 # Mouse / Keyboard
 floating_modifier Mod1
