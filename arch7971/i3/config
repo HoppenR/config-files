@@ -71,7 +71,7 @@ set $ws5 "5:♪"
 # Switch to workspace
 bindsym Mod1+1 workspace $ws1
 bindsym Mod1+2 workspace $ws2
-bindsym Mod1+3 workspace $ws3; mode "minimal"
+bindsym Mod1+3 workspace $ws3
 bindsym Mod1+4 workspace $ws4
 bindsym Mod1+5 workspace $ws5
 
@@ -229,10 +229,10 @@ set $Svolumeup    exec --no-startup-id "pactl set-sink-volume 1 +2%"
 set $Svolumedown  exec --no-startup-id "pactl set-sink-volume 1 -2%"
 
 mode "minimal" {
-	bindsym Mod1+1 workspace $ws1; mode "default"
-	bindsym Mod1+2 workspace $ws2; mode "default"
-	bindsym Mod1+4 workspace $ws4; mode "default"
-	bindsym Mod1+5 workspace $ws5; mode "default"
+	bindsym Mod1+1 workspace $ws1
+	bindsym Mod1+2 workspace $ws2
+	bindsym Mod1+4 workspace $ws4
+	bindsym Mod1+5 workspace $ws5
 	bindsym Mod1+$left  focus left
 	bindsym Mod1+$down  focus down
 	bindsym Mod1+$up    focus up
