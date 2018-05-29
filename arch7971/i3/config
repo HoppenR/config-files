@@ -232,6 +232,7 @@ set $Svolumedown  exec --no-startup-id "pactl set-sink-volume 1 -2%"
 mode "minimal" {
 	bindsym Mod1+1 workspace $ws1
 	bindsym Mod1+2 workspace $ws2
+	bindsym Mod1+3 workspace $ws3
 	bindsym Mod1+4 workspace $ws4
 	bindsym Mod1+5 workspace $ws5
 	bindsym Mod1+$left  focus left
