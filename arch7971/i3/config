@@ -71,7 +71,7 @@ set $ws5 "5:♪"
 # Switch to workspace
 bindsym Mod1+1 workspace $ws1
 bindsym Mod1+2 workspace $ws2
-bindsym Mod1+3 workspace $ws3
+bindsym Mod1+3 workspace $ws3; mode "minimal"
 bindsym Mod1+4 workspace $ws4
 bindsym Mod1+5 workspace $ws5
 
@@ -227,14 +227,12 @@ set $volumeup     exec --no-startup-id "pactl set-sink-volume 1 +5%"
 set $volumedown   exec --no-startup-id "pactl set-sink-volume 1 -5%"
 set $Svolumeup    exec --no-startup-id "pactl set-sink-volume 1 +2%"
 set $Svolumedown  exec --no-startup-id "pactl set-sink-volume 1 -2%"
-# Enter a minimalistic mode to release most keybindings, mode indicated by Scroll Lock LED
-bindsym Super_R exec --no-startup-id "xset led named 'Scroll Lock'"; mode "minimal"
+
 mode "minimal" {
-	bindsym Mod1+1 workspace $ws1
-	bindsym Mod1+2 workspace $ws2
-	bindsym Mod1+3 workspace $ws3
-	bindsym Mod1+4 workspace $ws4
-	bindsym Mod1+5 workspace $ws5
+	bindsym Mod1+1 workspace $ws1; mode "default"
+	bindsym Mod1+2 workspace $ws2; mode "default"
+	bindsym Mod1+4 workspace $ws4; mode "default"
+	bindsym Mod1+5 workspace $ws5; mode "default"
 	bindsym Mod1+$left  focus left
 	bindsym Mod1+$down  focus down
 	bindsym Mod1+$up    focus up
@@ -245,6 +243,4 @@ mode "minimal" {
 	bindsym XF86AudioMute        $mute
 	bindsym XF86AudioRaiseVolume $Svolumeup
 	bindsym XF86AudioLowerVolume $Svolumedown
-	# Exit "minimal" mode
-	bindsym Super_R exec --no-startup-id "xset -led named 'Scroll Lock'"; mode "default"
 }
