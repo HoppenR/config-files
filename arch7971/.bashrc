@@ -98,7 +98,6 @@ alias grep="grep --color=auto"
 ## Options
 shopt -s checkwinsize
 shopt -s dotglob
-shopt -s histappend
 shopt -s no_empty_cmd_completion
 tabs -4
 
