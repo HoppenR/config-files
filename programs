@@ -18,6 +18,7 @@ gnome-themes-extra (opt for arc-gtk-theme, or opt for vertex-themes)
 gtk-engine-murrine (opt for arc-gtk-theme, or req for vertex-themes)
 highlight
 htop
+i3ipc-python (AUR)
 i3lock
 i3status
 i3-wm
