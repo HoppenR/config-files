@@ -76,10 +76,10 @@ function o {
 
 ## Pre-command
 # Set X title to the running command
-PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)"; history -a)'
+PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)")'
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
-PROMPT_COMMAND='update_ps1; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
+PROMPT_COMMAND='update_ps1; history -a; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
 
 ## Aliases
 alias :q="exit"
