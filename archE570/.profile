@@ -10,6 +10,3 @@ export LESS="-FRX -x4"
 export PAGER="/usr/bin/less"
 export PATH="/home/$USER/scripts/python:/home/$USER/shellscripts/:$PATH"
 export TERMINAL="/usr/bin/termite"
-
-eval $(ssh-agent)
-
