@@ -11,7 +11,7 @@ let g:colors_name = "personal"
 highlight ColorColumn		ctermfg=none	ctermbg=8		cterm=none
 highlight Comment			ctermfg=41		ctermbg=none	cterm=none
 highlight Constant			ctermfg=4		ctermbg=none	cterm=none
-highlight CursorlineNr		ctermfg=none	ctermbg=none	cterm=inverse
+highlight CursorlineNr		ctermfg=11		ctermbg=none	cterm=inverse
 highlight DiffAdd			ctermfg=15		ctermbg=12		cterm=none
 highlight DiffChange		ctermfg=15		ctermbg=127		cterm=none
 highlight DiffDelete		ctermfg=15		ctermbg=1		cterm=none
