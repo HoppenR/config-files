@@ -57,7 +57,7 @@ export PS2=$' ${LINENO: -1}>\t'
 export PS3=$' >#\n'
 
 function cat {
-	if [[ ! -z $* ]] && [[ -t 1 ]]
+	if [[ ! -z $* ]] && [[ -t 1 ]] && [[ -f ~/.highlight.theme ]]
 	then
 		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
