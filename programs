@@ -47,7 +47,6 @@ rsync
 screenfetch
 termite
 ttf-droid (provides ttf-font (which is req for firefox))
-ttf-liberation (provides ttf-font (which is req for firefox))
 unzip
 viewnior
 vim
@@ -69,6 +68,7 @@ arc-gtk-theme
 arc-icon-theme (opt for arc-gtk-theme)
 i3ipc-python (AUR)
 steam
+ttf-liberation (provides ttf-font (which is req for firefox))
 xf86-video-amdgpu
 #
 # archE570
