@@ -31,6 +31,7 @@ lightdm
 lightdm-gtk-greeter (opt for lightdm)
 nitrogen
 nodejs
+noto-fonts (provides ttf-font (which is req for firefox))
 npm (opt for nodejs)
 obs-studio
 odt2txt
@@ -45,8 +46,8 @@ ranger
 rsync
 screenfetch
 termite
-ttf-droid
-ttf-liberation
+ttf-droid (provides ttf-font (which is req for firefox))
+ttf-liberation (provides ttf-font (which is req for firefox))
 unzip
 viewnior
 vim
@@ -72,7 +73,7 @@ xf86-video-amdgpu
 #
 # archE570
 #
-gnome-keyring (opt for libsecret (which is req for network-manager-applet)
+gnome-keyring (opt for libsecret (which is req for network-manager-applet))
 network-manager-applet
 pa-applet-git (AUR)
 vertex-themes (AUR)
