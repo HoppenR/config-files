@@ -83,6 +83,12 @@ augroup Directory_browser
 	autocmd FileType netrw call DirectoryBrowserMappings()
 augroup END
 
+augroup AutoMake
+	autocmd!
+	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
+	autocmd BufWritePost *.c   call MakeIfMakefileExists()
+augroup END
+
 " FUNCTIONS
 function! DirectoryBrowserMappings()
 	"go to home directory
@@ -102,4 +108,10 @@ function! GetScriptNumber(script_name)
 		endif
 	endfor
 	return -1
+endfunction
+
+function! MakeIfMakefileExists()
+	if filereadable("./makefile")
+		make
+	endif
 endfunction
