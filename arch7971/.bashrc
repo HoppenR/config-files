@@ -83,7 +83,6 @@ PROMPT_COMMAND='update_ps1; history -a; printf "\033]0;[%s@%s %s]\007" "${USER}"
 
 ## Aliases
 alias :q="exit"
-alias cleanpaccache="paccache -vruk0 && paccache -rv"
 # Tool options
 alias bc="bc -l"     # Mathlib for decimal point calculation
 alias cp="cp -i"     # Ask for confirmation before overwrite
