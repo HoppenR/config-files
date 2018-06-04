@@ -112,6 +112,6 @@ endfunction
 
 function! MakeIfMakefileExists()
 	if filereadable("./makefile")
-		make
+		make!
 	endif
 endfunction
