@@ -17,7 +17,7 @@ Escape         = { Colour="#0099AA" }
 Operator       = { Colour="#0099AA" }
 Interpolation  = { Colour="#BA2922" }
 
-PreProcessor   = { Colour="#CC372C" }
+PreProcessor   = { Colour="#BA2922" }
 
 Keywords = {
                  { Colour="#00D1D1" },
