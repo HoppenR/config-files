@@ -67,7 +67,7 @@ nnoremap K gt
 nnoremap <C-n> :vnew<CR>
 " open a new terminal emulator split inside vim
 nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
-			\'term_finish':'close', 'cwd':'/home/' . $USER})<CR>
+			\'term_finish':'close'})<CR>
 " copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
