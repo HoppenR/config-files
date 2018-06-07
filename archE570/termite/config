@@ -2,7 +2,7 @@
 allow_bold = true
 clickable_url = true
 dynamic_title = true
-font = NimbusMono 17px
+font = NimbusMono 18px
 geometry = 640x480
 scrollback_lines = 10000
 hyperlinks = true
