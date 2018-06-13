@@ -67,7 +67,7 @@ nnoremap K gt
 nnoremap <C-n> :vnew<CR>
 " open a new terminal emulator split inside vim
 nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
-			\'term_finish':'close', 'cwd':'/home/' . $USER})<CR>
+			\'term_finish':'close'})<CR>
 " copy current visual selection to system clipboard
 vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
@@ -83,10 +83,18 @@ augroup Directory_browser
 	autocmd FileType netrw call DirectoryBrowserMappings()
 augroup END
 
+augroup AutoQuickFixWin
+	autocmd!
+	autocmd BufRead      *.c   copen
+	autocmd BufRead      *.cpp copen
+	autocmd BufUnload    *.c   cclose
+	autocmd BufUnload    *.cpp cclose
+augroup END
+
 augroup AutoMake
 	autocmd!
-	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
 	autocmd BufWritePost *.c   call MakeIfMakefileExists()
+	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
 augroup END
 
 " FUNCTIONS

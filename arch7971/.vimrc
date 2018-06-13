@@ -83,10 +83,18 @@ augroup Directory_browser
 	autocmd FileType netrw call DirectoryBrowserMappings()
 augroup END
 
+augroup AutoQuickFixWin
+	autocmd!
+	autocmd BufRead      *.c   copen
+	autocmd BufRead      *.cpp copen
+	autocmd BufUnload    *.c   cclose
+	autocmd BufUnload    *.cpp cclose
+augroup END
+
 augroup AutoMake
 	autocmd!
-	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
 	autocmd BufWritePost *.c   call MakeIfMakefileExists()
+	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
 augroup END
 
 " FUNCTIONS

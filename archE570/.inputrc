@@ -12,6 +12,7 @@ set completion-ignore-case on
 set colored-stats on
 TAB:menu-complete
 "\e[Z":menu-complete-backward
+"\e.":yank-last-arg
 "\C-a":beginning-of-line
 "\C-e":end-of-line
 "\C-l":clear-screen
