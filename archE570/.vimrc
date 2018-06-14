@@ -29,7 +29,7 @@ set foldmarker={{{,}}}
 set foldmethod=marker
 " always show status line
 set laststatus=2
-set listchars=tab:\|\ ,trail:~,eol:¬
+set listchars=tab:▏\ ,trail:~,eol:¬
 " enable mouse for normal mode
 set mouse=n
 set shiftwidth=4
