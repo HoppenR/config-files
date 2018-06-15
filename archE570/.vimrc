@@ -23,6 +23,12 @@ set title
 set wildignorecase
 set wildmenu
 
+" Persistent undo
+set undofile
+set undodir=$HOME/.vim/undo
+set undolevels=1000
+set undoreload=10000
+
 " VARIABLES
 set colorcolumn=80
 set foldmarker={{{,}}}
