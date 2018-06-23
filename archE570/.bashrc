@@ -65,14 +65,11 @@ function cat {
 	fi
 }
 
-function s {
-	streamchecker.sh -s"$1" && exit
-}
-
-function o {
-	overrustlechecker.sh -s"$1" && exit
-}
-
+function d { differ.sh; }
+function o { overrustlechecker.sh -s"$1" && exit; }
+function p { pull.sh; }
+function P { pull.sh -p; }
+function s { streamchecker.sh -s"$1" && exit; }
 
 ## Pre-command
 # Set X title to the running command
