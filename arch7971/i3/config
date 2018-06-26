@@ -8,8 +8,9 @@ set $right l
 font xft:liberation mono 9
 
 # New window shape and size
-new_window pixel 2
-new_float normal
+default_border pixel 2
+default_floating_border normal
+floating_minimum_size 640 x 480
 
 # Hide edge borders
 hide_edge_borders smart
