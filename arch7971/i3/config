@@ -153,7 +153,6 @@ assign [class="Epdfview"]              $ws3
 assign [class="Gimp"]                  $ws4
 assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
-for_window [class="$games"] move container to workspace $ws3; workspace $ws3
 for_window [class="dota2"]  move container to workspace $ws3; workspace $ws3; move position 0 0
 
 # Automatically focus some applications
@@ -220,7 +219,6 @@ exec --no-startup-id "xset r rate 200 25"
 
 # Variables
 set $pic /home/$USER/Pictures/backgrounds/lockscreen.png
-set $games payday2_release|darkest.bin.x86_64|killingfloor-bin|hl2_linux|Transistor.bin.x86_64|Slay\ the\ Spire|visplayer
 set $play         exec --no-startup-id "playerctl play-pause"
 set $prev         exec --no-startup-id "playerctl previous"
 set $next         exec --no-startup-id "playerctl next"
