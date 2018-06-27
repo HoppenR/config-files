@@ -204,12 +204,12 @@ exec_always --no-startup-id "/home/$USER/scripts/python/workspacelisten.py"
 	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
-# Screen locking
-exec --no-startup-id "xautolock -time 20 -locker 'i3lock -i $pic; systemctl suspend'"
-# Screen Saver              blank/cycle
-exec --no-startup-id "xset s off"
-# Display Power Management
-exec --no-startup-id "xset -dpms"
+# Screen Saver               10min
+exec --no-startup-id "xset s 600 0"
+# Display Power Management   20min
+exec --no-startup-id "xset dpms 1200 0 0"
+# Screen locking             30min
+exec --no-startup-id "xautolock -time 30 -locker 'i3lock -i $pic; systemctl suspend'"
 
 # Mouse / Keyboard
 floating_modifier Mod1
