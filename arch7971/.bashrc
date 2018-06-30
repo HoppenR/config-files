@@ -6,6 +6,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if [[ -f .motd ]] && [[ ! "$(tty)" =~ /dev/tty ]] && [[ $TERM != linux ]]
+then
+	cat .motd
+fi
+
 # Enable colors for 'ls'
 if type -P dircolors > /dev/null
 then
