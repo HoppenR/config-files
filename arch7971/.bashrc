@@ -6,7 +6,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -f .motd ]] && [[ ! "$(tty)" =~ /dev/tty ]] && [[ $TERM != linux ]]
+if [[ -f .motd ]] && [[ "$(tput colors)" == 256 ]]
 then
 	cat .motd
 fi
