@@ -6,9 +6,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -f .motd1 ]] && [[ -f .motd2 ]] && [[ "$(tput colors)" == 256 ]]
+if [[ -f ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
 then
-	cat ".motd""$(( RANDOM % 2 + 1))"
+	source .motd.sh
 fi
 
 # Enable colors for 'ls'
