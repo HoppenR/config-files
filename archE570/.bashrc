@@ -19,7 +19,7 @@ then
 fi
 
 # Set PS variables for use by 'update_ps1'
-if [[ ${EUID} == 0 ]]
+if [[ $EUID == 0 ]]
 then
 	PS_START="\[\033[01;31m\][\h \[\033[01;36m\]\W\[\033[01;31m\]]\[\033[0m\]"
 	PS_SYMBOL="#"
@@ -49,15 +49,15 @@ function update_ps1 {
 			local git_status="\[\033[1;38;5;09m\](git)\[\033[0m\]"
 		fi
 	fi
-	export PS1="$PS_START$git_status$symbol "
+	export PS1="${PS_START:-}${git_status:-}$symbol "
 }
 
 # My own Prompt Strings
 export PS2=$' ${LINENO: -1}>\t'
 export PS3=$' >#\n'
 
-function cat {
-	if [[ ! -z $* ]] && [[ -t 1 ]] && [[ -f ~/.highlight.theme ]]
+function cah {
+	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -f ~/.highlight.theme ]]
 	then
 		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
@@ -66,10 +66,10 @@ function cat {
 }
 
 function d { differ.sh; }
-function o { overrustlechecker.sh -s"$1" && exit; }
+function o { overrustlechecker.sh -s"${1:-}" && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker.sh -s"$1" && exit; }
+function s { streamchecker.sh -s"${1:-}" && exit; }
 
 ## Pre-command
 # Set X title to the running command
@@ -98,7 +98,7 @@ shopt -s no_empty_cmd_completion
 tabs -4
 
 # Enable cursor blink if run inside vim
-if [[ $(ps --no-headers --format ucmd $PPID) == vim ]] && [[ $TERM != xterm ]]
+if [[ "$(ps --no-headers --format ucmd $PPID)" == vim ]] && [[ "$TERM" != xterm ]]
 then
 	echo -ne "\\x1b[ q"
 fi
@@ -106,4 +106,7 @@ fi
 ## Variables specific to bash
 HISTFILESIZE=20000
 
-[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+if [[ -r /usr/share/bash-completion/bash_completion ]]
+then
+	source /usr/share/bash-completion/bash_completion
+fi
