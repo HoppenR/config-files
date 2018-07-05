@@ -201,7 +201,7 @@ floating_modifier Mod1
 focus_follows_mouse no
 exec --no-startup-id "xset m 0"
 exec --no-startup-id "xset r rate 200 25"
-exec --no-startup-id "xset b 50 440 50"
+exec --no-startup-id "xset b 50 440 25"
 
 # Variables
 set $pic /home/$USER/Pictures/backgrounds/lockscreen.png
