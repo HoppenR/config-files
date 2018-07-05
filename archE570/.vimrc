@@ -89,24 +89,28 @@ augroup Directory_browser
 	autocmd FileType netrw call DirectoryBrowserMappings()
 augroup END
 
-augroup AutoQuickFixWin
+augroup AutoMake
 	autocmd!
 	autocmd BufRead      *.{c,cpp} copen
 	autocmd BufUnload    *.{c,cpp} cclose
-	autocmd BufRead      * if &ft ==# 'sh' | copen  | endif
-	autocmd BufUnload    * if &ft ==# 'sh' | cclose | endif
-augroup END
-
-augroup AutoMake
-	autocmd!
-	autocmd BufWritePost *.c   call MakeIfMakefileExists()
-	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
+	autocmd BufWritePost *.{c,cpp} if filereadable("./makefile")
+									\| make!
+								\| endif
 augroup END
 
 augroup AutoShellcheck
 	autocmd!
-	autocmd BufRead      *.sh set makeprg=shellcheck\ -f\ gcc\ %
-	autocmd BufWritePost *.sh make!
+	autocmd BufRead      * if &ft ==# 'sh'
+								\| copen
+								\| set makeprg=shellcheck\ -f\ gcc\ %
+							\| endif
+	autocmd BufUnload    * if &ft ==# 'sh'
+								\| cclose
+								\| set makeprg=make
+							\| endif
+	autocmd BufWritePost * if &ft ==# 'sh'
+								\| make
+							\| endif
 augroup END
 
 " FUNCTIONS
@@ -128,10 +132,4 @@ function! GetScriptNumber(script_name)
 		endif
 	endfor
 	return -1
-endfunction
-
-function! MakeIfMakefileExists()
-	if filereadable("./makefile")
-		make!
-	endif
 endfunction
