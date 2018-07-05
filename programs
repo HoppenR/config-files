@@ -70,6 +70,7 @@ arc-gtk-theme
 arc-icon-theme (opt for arc-gtk-theme)
 i3ipc-python (AUR)
 python-setuptools (opt for i3ipc)
+shellcheck
 ttf-liberation (provides ttf-font (which is req for firefox))
 xf86-video-amdgpu
 #

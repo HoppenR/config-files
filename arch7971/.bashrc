@@ -3,12 +3,13 @@
 # /root/.bashrc
 #
 
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [[ -f ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
+if [[ -x ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
 then
-	source .motd.sh
+	~/.motd.sh
 fi
 
 # Enable colors for 'ls'
@@ -26,21 +27,23 @@ fi
 # Set PS variables for use by 'update_ps1'
 if [[ $EUID == 0 ]]
 then
-	PS_START="\[\033[01;31m\][\h \[\033[01;36m\]\W\[\033[01;31m\]]\[\033[0m\]"
+	PS_START="\\[\\033[01;31m\\][\\h \\[\\033[01;36m\\]\\W\\[\\033[01;31m\\]]\\[\\033[0m\\]"
 	PS_SYMBOL="#"
 else
-	PS_START="[\u@\h \[\033[38;5;81m\]\W\[\033[0m\]]"
+	PS_START="[\\u@\\h \\[\\033[38;5;81m\\]\\W\\[\\033[0m\\]]"
 	PS_SYMBOL="$"
 fi
 
 function update_ps1 {
 	# get the last command's exit status, then color symbol
 	# blue if exit code was 0, red if not
+	# (disable "Check exit code directly" because we are checking the last user executed exit code)
+	# shellcheck disable=SC2181
 	if [[ $? -eq 0 ]]
 	then
-		local symbol="\[\033[1;38;5;81m\]${PS_SYMBOL:-%}\[\033[0m\]"
+		local symbol="\\[\\033[1;38;5;81m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
 	else
-		local symbol="\[\033[1;38;5;09m\]${PS_SYMBOL:-%}\[\033[0m\]"
+		local symbol="\\[\\033[1;38;5;09m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
 	fi
 	# check if we are inside a git repository
 	if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == true ]]
@@ -49,9 +52,9 @@ function update_ps1 {
 		# green if up to date, red if ahead
 		if [[ -z $(git log origin/master..HEAD 2>/dev/null) ]]
 		then
-			local git_status="\[\033[1;38;5;10m\](git)\[\033[0m\]"
+			local git_status="\\[\\033[1;38;5;10m\\](git)\\[\\033[0m\\]"
 		else
-			local git_status="\[\033[1;38;5;09m\](git)\[\033[0m\]"
+			local git_status="\\[\\033[1;38;5;09m\\](git)\\[\\033[0m\\]"
 		fi
 	fi
 	export PS1="${PS_START:-}${git_status:-}$symbol "
@@ -78,7 +81,9 @@ function s { streamchecker.sh -s"${1:-}" && exit; }
 
 ## Pre-command
 # Set X title to the running command
-PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)")'
+# (disable "Expressions don't expand in single quotes" because we don't want it to expand at source time)
+# shellcheck disable=SC2016
+export PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)")'
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
 PROMPT_COMMAND='update_ps1; history -a; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
