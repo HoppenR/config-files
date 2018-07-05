@@ -91,16 +91,22 @@ augroup END
 
 augroup AutoQuickFixWin
 	autocmd!
-	autocmd BufRead      *.c   copen
-	autocmd BufRead      *.cpp copen
-	autocmd BufUnload    *.c   cclose
-	autocmd BufUnload    *.cpp cclose
+	autocmd BufRead      *.{c,cpp} copen
+	autocmd BufUnload    *.{c,cpp} cclose
+	autocmd BufRead      * if &ft ==# 'sh' | copen  | endif
+	autocmd BufUnload    * if &ft ==# 'sh' | cclose | endif
 augroup END
 
 augroup AutoMake
 	autocmd!
 	autocmd BufWritePost *.c   call MakeIfMakefileExists()
 	autocmd BufWritePost *.cpp call MakeIfMakefileExists()
+augroup END
+
+augroup AutoShellcheck
+	autocmd!
+	autocmd BufRead      *.sh set makeprg=shellcheck\ -f\ gcc\ %
+	autocmd BufWritePost *.sh make!
 augroup END
 
 " FUNCTIONS
