@@ -30,6 +30,7 @@ set undolevels=1000
 set undoreload=10000
 
 " VARIABLES
+set clipboard=unnamedplus
 set colorcolumn=80
 set foldmarker={{{,}}}
 set foldmethod=marker
@@ -74,8 +75,6 @@ nnoremap <C-n> :vnew<CR>
 " open a new terminal emulator split inside vim
 nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
 			\'term_finish':'close'})<CR>
-" copy current visual selection to system clipboard
-vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
 nnoremap <C-f> :vimgrep //./**<left><left><left><left><left>
 " open quickfix window
