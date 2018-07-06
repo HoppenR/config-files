@@ -52,7 +52,7 @@ ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
 unzip
 viewnior
-vim
+gvim
 vlc
 xautolock
 xdg-user-dirs
