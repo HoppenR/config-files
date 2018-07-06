@@ -30,6 +30,7 @@ set undolevels=1000
 set undoreload=10000
 
 " VARIABLES
+set clipboard=unnamedplus
 set colorcolumn=80
 set foldmarker={{{,}}}
 set foldmethod=marker
@@ -53,12 +54,12 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_liststyle = 3
 " update the current working directory in netrw
 let g:netrw_keepdir= 0
-""insert mode cursor color
-"let &t_SI = "\<Esc>]12;2\007"
-""replace mode cursor color
-"let &t_SR = "\<Esc>]12;1\007"
-""reset cursor when exiting insert/replace
-"let &t_EI = "\<Esc>]12;SteelBlue1\x7"
+"insert mode cursor
+let &t_SI = "\e[5 q\<Esc>]12;#00FF5F\x7"
+"replace mode cursor
+let &t_SR = "\e[3 q\<Esc>]12;#CC372C\x7"
+"reset cursor when exiting insert/replace
+let &t_EI = "\e[0 q\<Esc>]12;#16A085\x7"
 
 " MAPPINGS
 " curly bracket completion
@@ -74,8 +75,6 @@ nnoremap <C-n> :vnew<CR>
 " open a new terminal emulator split inside vim
 nnoremap <silent> <C-t> :call term_start(['/bin/bash'], {'vertical':1,
 			\'term_finish':'close'})<CR>
-" copy current visual selection to system clipboard
-vnoremap <C-c> :w !xsel -ib<CR><CR>
 " grep files in the current directory
 nnoremap <C-f> :vimgrep //./**<left><left><left><left><left>
 " open quickfix window
