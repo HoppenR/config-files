@@ -54,12 +54,12 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_liststyle = 3
 " update the current working directory in netrw
 let g:netrw_keepdir= 0
-""insert mode cursor color
-"let &t_SI = "\<Esc>]12;2\007"
-""replace mode cursor color
-"let &t_SR = "\<Esc>]12;1\007"
-""reset cursor when exiting insert/replace
-"let &t_EI = "\<Esc>]12;SteelBlue1\x7"
+"insert mode cursor
+let &t_SI = "\e[5 q\<Esc>]12;#00FF5F\x7"
+"replace mode cursor
+let &t_SR = "\e[3 q\<Esc>]12;#FF4444\x7"
+"reset cursor when exiting insert/replace
+let &t_EI = "\e[0 q\<Esc>]12;#5FAFFF\x7"
 
 " MAPPINGS
 " curly bracket completion
