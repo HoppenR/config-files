@@ -47,6 +47,7 @@ rsync
 screenfetch
 shellcheck
 steam
+steam-native-runtime
 termite
 ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
