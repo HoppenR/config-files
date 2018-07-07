@@ -1,4 +1,8 @@
+"
+" ~/.vimrc
+"
 " vim: set tabstop=4 :
+
 """"""""""""""""""""""""""""""""""" COMMANDS """""""""""""""""""""""""""""""""""
 colorscheme personal
 filetype plugin indent on

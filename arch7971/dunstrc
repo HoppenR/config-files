@@ -1,4 +1,8 @@
+#
+# ~/.config/dunst/dunstrc
+#
 # vim: set tabstop=4 :
+
 [global]
 	font = Cantarell 10
 

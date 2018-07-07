@@ -1,6 +1,7 @@
-VimModeline		= "\
-	# vim: set tabstop=4 ft=cfg :\
-"
+--
+-- ~/.highlight.theme
+--
+-- vim: set tabstop=4 filetype=lua :
 
 Description		= "Personal"
 

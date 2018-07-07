@@ -1,4 +1,8 @@
+#
+# ~/.config/termite/config
+#
 # vim: set filetype=dosini :
+
 [options]
 allow_bold = true
 clickable_url = true

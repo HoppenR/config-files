@@ -1,6 +1,7 @@
 #
 # ~/.config/cower/config
 #
+
 # All options here can be overriden with flags on the command line. All options
 # are case sensitive. This file will be read per user, and should be located at
 # $XDG_CONFIG_HOME/cower/config or $HOME/.config/cower/config.
