@@ -35,5 +35,3 @@ TargetDir = "/home/$USER/packages"
 # Max number of threads cower will use. This is synonymous with the max number
 # of concurrent connections that will be opened to the AUR.
 #MaxThreads =
-
-# vim: ft=conf

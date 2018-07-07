@@ -74,8 +74,8 @@ nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup Directory_browser
 	autocmd!
-	autocmd FileType	 netrw	  setlocal bufhidden=delete
-	autocmd FileType	 netrw	  call DirectoryBrowserMappings()
+	autocmd FileType	netrw			setlocal bufhidden=delete
+	autocmd FileType	netrw			call DirectoryBrowserMappings()
 augroup END
 
 augroup AutoMake
