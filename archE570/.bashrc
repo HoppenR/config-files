@@ -1,16 +1,13 @@
 #!/bin/bash
+#
 # ~/.bashrc
 # /root/.bashrc
 #
+# vim: set tabstop=4 :
 
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
-if [[ -x ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
-then
-	~/.motd.sh
-fi
 
 # Enable colors for 'ls'
 if type -P dircolors > /dev/null
@@ -107,10 +104,17 @@ shopt -s dotglob
 shopt -s no_empty_cmd_completion
 tabs -4
 
-# Enable cursor blink if run inside vim
-if [[ "$(ps --no-headers --format ucmd $PPID)" == vim ]] && [[ "$TERM" != xterm ]]
+# Set terminal settings / banner depending on context
+if [[ -n $VIMRUNTIME ]]
 then
-	echo -ne "\\x1b[ q"
+	# Enable blinking cursor inside vim terminal (workaround)
+	echo -ne "\\x1b[ q\\e]12;#5FAFFF\\x7"
+	echo "Welcome to vim!"
+else
+	if [[ -x ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
+	then
+		~/.motd.sh
+	fi
 fi
 
 ## Variables specific to bash
@@ -118,5 +122,7 @@ HISTFILESIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then
+	# shellcheck disable=SC1091
+	# (disable not following other people's code)
 	source /usr/share/bash-completion/bash_completion
 fi

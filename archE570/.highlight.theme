@@ -1,27 +1,32 @@
-Description="personal"
+--
+-- ~/.highlight.theme
+--
+-- vim: set tabstop=4 filetype=lua :
 
-Constant       = { Colour="#16A085" }
-Number         = Constant
-String         = Constant
-StringPreProc  = Constant
+Description		= "Personal"
 
-Comment        = { Colour="#00D75F" }
-BlockComment   = Comment
-LineComment    = Comment
+Constant		= { Colour="#16A085" }
+Number			= Constant
+String			= Constant
+StringPreProc	= Constant
 
-Default        = { Colour="#E8E8E8" }
-Canvas         = { Colour="#393A39" }
-LineNum        = { Colour="#D7D7AF" }
+Comment			= { Colour="#00D75F" }
+BlockComment	= Comment
+LineComment		= Comment
 
-Escape         = { Colour="#0099AA" }
-Operator       = { Colour="#0099AA" }
-Interpolation  = { Colour="#BA2922" }
+Default			= { Colour="#E8E8E8" }
+Canvas			= { Colour="#393A39" }
+LineNum			= { Colour="#D7D7AF" }
 
-PreProcessor   = { Colour="#BA2922" }
+Escape			= { Colour="#0099AA" }
+Operator		= { Colour="#0099AA" }
+Interpolation	= { Colour="#BA2922" }
+
+PreProcessor	= { Colour="#BA2922" }
 
 Keywords = {
-                 { Colour="#00D1D1" },
-                 { Colour="#00D1D1" },
-                 { Colour="#16A085" },
-                 { Colour="#E8E8E8" },
+				{ Colour="#00D1D1" },
+				{ Colour="#00D1D1" },
+				{ Colour="#16A085" },
+				{ Colour="#E8E8E8" },
 }

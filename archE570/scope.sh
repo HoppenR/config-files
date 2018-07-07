@@ -1,4 +1,9 @@
-#!/usr/bin/env sh
+#!/bin/bash
+#
+# ~/.config/ranger/scope.sh
+#
+# vim: set tabstop=4 :
+
 # ranger supports enhanced previews.  If the option "use_preview_script"
 # is set to True and this file exists, this script will be called and its
 # output is displayed in ranger.  ANSI color codes are supported.

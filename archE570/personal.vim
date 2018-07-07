@@ -1,5 +1,7 @@
-" local syntax file - set colors on a per-machine basis:
-" Vim color file
+"
+" ~/.vim/colors/personal.vim
+"
+" vim: set tabstop=4 :
 
 hi clear
 set background=dark

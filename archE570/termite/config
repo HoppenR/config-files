@@ -1,3 +1,8 @@
+#
+# ~/.config/termite/config
+#
+# vim: set filetype=dosini :
+
 [options]
 allow_bold = true
 clickable_url = true
@@ -35,5 +40,3 @@ color12 = #13BF9D
 color13 = #D700FF
 color14 = #00D1D1
 color15 = #E8E8E8
-
-# vim: ft=dosini cms=#%s

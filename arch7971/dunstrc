@@ -11,7 +11,7 @@
 	#   <i>italic</i>
 	#   <s>strikethrough</s>
 	#   <u>underline</u>
-	# 
+	#
 	# For a complete reference see
 	# <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
 	# If markup is not allowed, those tags will be stripped out of the
@@ -94,11 +94,11 @@
 	#   mouse: follow mouse pointer
 	#   keyboard: follow window with keyboard focus
 	#   none: don't follow anything
-	# 
+	#
 	# "keyboard" needs a windowmanager that exports the
 	# _NET_ACTIVE_WINDOW property.
 	# This should be the case for almost all modern windowmanagers.
-	# 
+	#
 	# If this option is set to mouse or keyboard, the monitor option
 	# will be ignored.
 	follow = mouse
