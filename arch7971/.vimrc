@@ -78,8 +78,8 @@ nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup Directory_browser
 	autocmd!
-	autocmd FileType	netrw			setlocal bufhidden=delete
-	autocmd FileType	netrw			call DirectoryBrowserMappings()
+	autocmd FileType		netrw		setlocal bufhidden=delete
+	autocmd FileType		netrw		call DirectoryBrowserMappings()
 augroup END
 
 augroup AutoMake
@@ -108,7 +108,7 @@ augroup END
 
 augroup QuickFixClose "quit if the last window is nr 1 and a quickfix window"
 	autocmd!
-	autocmd WinEnter			*			if (winnr("$") ==# 1) &&
+	autocmd WinEnter		*				if (winnr("$") ==# 1) &&
 		\(getbufvar(winbufnr(winnr()), "&buftype") == "quickfix")
 		\|										quit
 	\|										endif
