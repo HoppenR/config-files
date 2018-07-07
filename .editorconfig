@@ -1,5 +1,4 @@
 # Change how github displays files
-tab_size = 4
 root = true
 
 [*]
