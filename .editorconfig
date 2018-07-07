@@ -1,6 +1,11 @@
+# Change how github displays files
+tab_size = 4
 root = true
 
 [*]
 indent_style = tab
 indent_size = 4
-tab_size = 4
+
+[.*]
+indent_style = tab
+indent_size = 4
