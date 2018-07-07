@@ -1,3 +1,4 @@
+# vim: set tabstop=4 :
 # Set directional keys
 set $left  h
 set $down  j

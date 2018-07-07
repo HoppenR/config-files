@@ -2,6 +2,7 @@
 # ~/.dir_colors
 # /etc/DIR_COLORS
 #
+# vim: set tabstop=4 :
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.
 #
@@ -39,7 +40,7 @@ SETGID 30;43				# file that is setgid (g+s)
 CAPABILITY 30;41			# file with capability
 STICKY_OTHER_WRITABLE 30;42	# dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 33;42		# dir that is other-writable (o+w) and not sticky
-STICKY 44				# dir with the sticky bit set (+t) and not other-writable
+STICKY 44					# dir with the sticky bit set (+t) and not other-writable
 EXEC 01;32					# files with execute permission:
 
 # archives or compressed

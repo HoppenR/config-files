@@ -1,0 +1,3 @@
+# change tab width on github
+indent_style = tab
+indent_size = 4

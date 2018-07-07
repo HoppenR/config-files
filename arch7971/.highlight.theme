@@ -1,27 +1,31 @@
-Description="personal"
+VimModeline		= "\
+	# vim: set tabstop=4 ft=cfg :\
+"
 
-Constant       = { Colour="#5FAFD7" }
-Number         = Constant
-String         = Constant
-StringPreProc  = Constant
+Description		= "Personal"
 
-Comment        = { Colour="#00AFFF" }
-BlockComment   = Comment
-LineComment    = Comment
+Constant		= { Colour="#5FAFD7" }
+Number			= Constant
+String			= Constant
+StringPreProc	= Constant
 
-Default        = { Colour="#F5F7FA" }
-Canvas         = { Colour="#272B35" }
-LineNum        = { Colour="#D7D7AF" }
+Comment			= { Colour="#00AFFF" }
+BlockComment	= Comment
+LineComment		= Comment
 
-Escape         = { Colour="#00FF5F" }
-Operator       = { Colour="#00FF5F" }
-Interpolation  = { Colour="#FF4444" }
+Default			= { Colour="#F5F7FA" }
+Canvas			= { Colour="#272B35" }
+LineNum			= { Colour="#D7D7AF" }
 
-PreProcessor   = { Colour="#FF4444" }
+Escape			= { Colour="#00FF5F" }
+Operator		= { Colour="#00FF5F" }
+Interpolation	= { Colour="#FF4444" }
+
+PreProcessor	= { Colour="#FF4444" }
 
 Keywords = {
-                 { Colour="#00FFFF" },
-                 { Colour="#00FFFF" },
-                 { Colour="#5FAFD7" },
-                 { Colour="#F5F7FA" },
+				{ Colour="#00FFFF" },
+				{ Colour="#00FFFF" },
+				{ Colour="#5FAFD7" },
+				{ Colour="#F5F7FA" },
 }

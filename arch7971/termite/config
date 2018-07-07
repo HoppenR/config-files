@@ -1,3 +1,4 @@
+# vim: set filetype=dosini :
 [options]
 allow_bold = true
 clickable_url = true
@@ -35,5 +36,3 @@ color12 = #5FAFD7
 color13 = #D700FF
 color14 = #00FFFF
 color15 = #F5F7FA
-
-# vim: ft=dosini cms=#%s

@@ -1,7 +1,6 @@
 #!/bin/bash
 # ~/.profile
 #
-#
 
 export BROWSER="/usr/bin/firefox"
 export EDITOR="/usr/bin/vim"
