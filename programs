@@ -33,6 +33,7 @@ nitrogen
 nodejs
 noto-fonts (provides ttf-font (which is req for firefox))
 npm (opt for nodejs)
+ntfs-3g
 obs-studio
 odt2txt
 openssh
