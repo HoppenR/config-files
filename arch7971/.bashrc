@@ -31,6 +31,7 @@ else
 	PS_SYMBOL="$"
 fi
 
+source /usr/share/git/git-prompt.sh
 function update_ps1 {
 	# get the last command's exit status, then color symbol
 	# blue if exit code was 0, red if not
@@ -42,19 +43,7 @@ function update_ps1 {
 	else
 		local symbol="\\[\\033[1;38;5;09m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
 	fi
-	# check if we are inside a git repository
-	if [[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" == true ]]
-	then
-		# check if we are ahead of remote repository, then color git indicator
-		# green if up to date, red if ahead
-		if [[ -z $(git log origin/master..HEAD 2>/dev/null) ]]
-		then
-			local git_status="\\[\\033[1;38;5;10m\\](git)\\[\\033[0m\\]"
-		else
-			local git_status="\\[\\033[1;38;5;09m\\](git)\\[\\033[0m\\]"
-		fi
-	fi
-	export PS1="${PS_START:-}${git_status:-}$symbol "
+	__git_ps1 "${PS_START:-}" "$symbol " "(%s)"
 }
 
 # My own Prompt Strings
