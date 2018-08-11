@@ -22,7 +22,7 @@ then
 fi
 
 # Set PS variables for use by 'update_ps1'
-if [[ $EUID == 0 ]]
+if [[ $EUID -eq 0 ]]
 then
 	PS_START="\\[\\033[01;31m\\][\\h \\[\\033[01;36m\\]\\W\\[\\033[01;31m\\]]\\[\\033[0m\\]"
 	PS_SYMBOL="#"
@@ -111,7 +111,7 @@ HISTFILESIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then
-	# shellcheck disable=SC1091
 	# (disable not following other people's code)
+	# shellcheck disable=SC1091
 	source /usr/share/bash-completion/bash_completion
 fi
