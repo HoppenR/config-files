@@ -69,7 +69,7 @@ function s { streamchecker.sh -s"${1:-}" && exit; }
 # Set X title to the running command
 # (disable "Expressions don't expand in single quotes" because we don't want it to expand at source time)
 # shellcheck disable=SC2016
-export PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8-)")'
+export PS0='$(printf "\033]0;RUNNING: [%s]\007" "$(history 1 | cut -c 8- | sed "s/[\x01-\x1F\x7F]/^[/g")")'
 ## Post-command
 # Call 'update_ps1' and set the X Window title after every command
 PROMPT_COMMAND='update_ps1; history -a; printf "\033]0;[%s@%s %s]\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"'
