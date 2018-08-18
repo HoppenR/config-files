@@ -31,6 +31,8 @@ else
 	PS_SYMBOL="$"
 fi
 
+# (disable not following other people's code)
+# shellcheck disable=SC1091
 source /usr/share/git/git-prompt.sh
 function update_ps1 {
 	# get the last command's exit status, then color symbol
