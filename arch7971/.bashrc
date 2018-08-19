@@ -93,6 +93,7 @@ alias grep="grep --color=auto"
 shopt -s checkwinsize
 shopt -s dotglob
 shopt -s no_empty_cmd_completion
+stty -ixon
 tabs -4
 
 # Set terminal settings / banner depending on context
