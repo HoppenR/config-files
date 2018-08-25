@@ -50,6 +50,7 @@ shellcheck
 steam
 steam-native-runtime
 termite
+transmission-cli
 ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
 unzip
@@ -84,3 +85,4 @@ pa-applet-git (AUR)
 vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
+exfat-utils
