@@ -1,7 +1,7 @@
 "
 " ~/.vimrc
 "
-" vim: set tabstop=4 :
+" Vim: set tabstop=4 :
 
 """"""""""""""""""""""""""""""""""" COMMANDS """""""""""""""""""""""""""""""""""
 colorscheme personal

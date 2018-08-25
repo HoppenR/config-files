@@ -1,7 +1,7 @@
 #
 # ~/.config/i3/config
 #
-# vim: set tabstop=4 :
+# Vim: set tabstop=4 :
 
 # Set directional keys
 set $left  h

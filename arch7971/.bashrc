@@ -3,7 +3,7 @@
 # ~/.bashrc
 # /root/.bashrc
 #
-# vim: set tabstop=4 :
+# Vim: set tabstop=4 :
 
 
 # If not running interactively, don't do anything

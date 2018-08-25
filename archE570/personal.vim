@@ -1,7 +1,7 @@
 "
 " ~/.vim/colors/personal.vim
 "
-" vim: set tabstop=4 :
+" Vim: set tabstop=4 :
 
 hi clear
 set background=dark

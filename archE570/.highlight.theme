@@ -1,7 +1,7 @@
 --
 -- ~/.highlight.theme
 --
--- vim: set tabstop=4 filetype=lua :
+-- Vim: set tabstop=4 filetype=lua :
 
 Description		= "Personal"
 

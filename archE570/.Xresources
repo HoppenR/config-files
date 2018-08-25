@@ -1,7 +1,7 @@
 !
 ! ~/.Xresources
 !
-! vim: set tabstop=4 :
+! Vim: set tabstop=4 :
 
 Xft.dpi:						96
 Xft.antialias:					true
