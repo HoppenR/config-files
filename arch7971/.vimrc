@@ -54,7 +54,7 @@ set undoreload=10000      "number of lines to save for undo"
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
-let g:netrw_list_hide="\(^\|\s\s\)\zs\.\S\+"
+let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 let g:netrw_liststyle=3   "set directory browser to tree style listing"
 let g:netrw_keepdir=0     "update the current working directory in netrw"
 
