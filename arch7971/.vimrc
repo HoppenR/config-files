@@ -116,7 +116,7 @@ augroup END
 
 augroup ClipboardSave
 	autocmd!
-	autocmd VimLeave		*			call system("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))("xsel -ib", getreg('+'))
+	autocmd VimLeave		*			call system("xsel -ib", getreg('+'))
 augroup END
 
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
