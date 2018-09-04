@@ -12,10 +12,10 @@
 # Enable colors for 'ls'
 if type -P dircolors > /dev/null
 then
-	if [[ -f ~/.dir_colors ]]
+	if [[ -r ~/.dir_colors ]]
 	then
 		eval "$(dircolors -b ~/.dir_colors)"
-	elif [[ -f /etc/DIR_COLORS ]]
+	elif [[ -r /etc/DIR_COLORS ]]
 	then
 		eval "$(dircolors -b /etc/DIR_COLORS)"
 	fi
@@ -31,9 +31,12 @@ else
 	PS_SYMBOL="$"
 fi
 
-# (disable not following other people's code)
-# shellcheck disable=SC1091
-source /usr/share/git/git-prompt.sh
+if [[ -r /usr/share/git/git-prompt.sh ]]
+then
+	# (disable not following other people's code)
+	# shellcheck disable=SC1091
+	source /usr/share/git/git-prompt.sh
+fi
 function update_ps1 {
 	# get the last command's exit status, then color symbol
 	# blue if exit code was 0, red if not
@@ -53,7 +56,7 @@ export PS2=$' ${LINENO: -1}>\t'
 export PS3=$' >#\n'
 
 function cah {
-	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -f ~/.highlight.theme ]]
+	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
 	then
 		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
