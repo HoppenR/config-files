@@ -158,7 +158,6 @@ assign [class="Epdfview"]              $ws3
 assign [class="Gimp"]                  $ws4
 assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
-for_window [class="dota2"]  move container to workspace $ws3; workspace $ws3; move position 0 0
 
 # Automatically focus some applications
 set $autofocus "vlc|libreoffice.*$|Steam"
