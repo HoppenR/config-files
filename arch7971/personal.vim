@@ -25,6 +25,7 @@ highlight Incsearch			ctermfg=none	ctermbg=none	cterm=inverse,italic
 highlight LineNr			ctermfg=11		ctermbg=none	cterm=none
 highlight MatchParen		ctermfg=15		ctermbg=5		cterm=none
 highlight Normal			ctermfg=15		ctermbg=none	cterm=none
+highlight NonText			ctermfg=243		ctermbg=none	cterm=none
 highlight PreProc			ctermfg=9		ctermbg=none	cterm=none
 highlight Search			ctermfg=none	ctermbg=none	cterm=inverse,italic
 highlight Special			ctermfg=10		ctermbg=none	cterm=none
