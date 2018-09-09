@@ -82,7 +82,8 @@ esac
 if [ "$preview_images" = "True" ]; then
 	case "$mimetype" in
 		image/*)
-			img2txt --gamma=0.6 --width="$width" "$path" && exit 0
+			#img2txt --gamma=0.6 --width="$width" "$path" && exit 0
+			exit 7
 			;;
 	esac
 fi
@@ -98,6 +99,8 @@ case "$mimetype" in
 		try safepipe highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
 		exit 2
 		;;
+	image/*)
+		cp "$path" "$cached" && exit 6 || exit 1;;
 	# Display information about media files:
 	video/* | audio/*)
 		exiftool "$path" && exit 5
