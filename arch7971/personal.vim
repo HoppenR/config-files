@@ -29,7 +29,7 @@ highlight NonText			ctermfg=243		ctermbg=none	cterm=none
 highlight PreProc			ctermfg=9		ctermbg=none	cterm=none
 highlight Search			ctermfg=none	ctermbg=none	cterm=inverse,italic
 highlight Special			ctermfg=10		ctermbg=none	cterm=none
-highlight SpecialKey		ctermfg=4		ctermbg=none	cterm=none
+highlight SpecialKey		ctermfg=243		ctermbg=none	cterm=none
 highlight Statement			ctermfg=14		ctermbg=none	cterm=none
 highlight StatusLine		ctermfg=15		ctermbg=4		cterm=none
 highlight StatusLineNC		ctermfg=243		ctermbg=8		cterm=none
