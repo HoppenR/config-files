@@ -11,6 +11,9 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 set colored-stats on
 TAB:menu-complete
+set keymap vi-command
+":":"i\e.\eBhx\eOFa"
+set keymap vi-insert
 "\e[Z":menu-complete-backward
 "\e.":yank-last-arg
 "\C-a":beginning-of-line
