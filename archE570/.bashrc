@@ -105,11 +105,6 @@ then
 	# Enable blinking cursor inside vim terminal (workaround)
 	echo -ne "\\x1b[ q\\e]12;#5FAFFF\\x7"
 	echo "Welcome to vim!"
-else
-	if [[ -x ~/.motd.sh ]] && [[ "$(tput colors)" == 256 ]]
-	then
-		~/.motd.sh
-	fi
 fi
 
 ## Variables specific to bash
