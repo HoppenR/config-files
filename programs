@@ -5,7 +5,7 @@
 [base-devel]
 bash-completion (opt for bash)
 compton
-cower-git (AUR)
+cower (AUR)
 dmenu
 dunst
 epdfview
