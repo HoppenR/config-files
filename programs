@@ -61,7 +61,6 @@ xautolock
 xdg-user-dirs
 xorg-server
 xorg-xev
-xorg-xkill
 xorg-xprop
 xorg-xrandr
 xorg-xrdb
@@ -77,6 +76,7 @@ i3ipc-python (AUR)
 python-setuptools (opt for i3ipc)
 ttf-liberation (provides ttf-font (which is req for firefox))
 xf86-video-amdgpu
+xorg-xkill
 #
 # archE570
 #
@@ -87,5 +87,6 @@ vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
 exfat-utils
+xinput
 
 plasma-desktop
