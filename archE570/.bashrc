@@ -103,7 +103,7 @@ tabs -4
 if [[ -n $VIMRUNTIME ]]
 then
 	# Enable blinking cursor inside vim terminal (workaround)
-	echo -ne "\\x1b[ q\\e]12;#5FAFFF\\x7"
+	echo -ne "\\x1b[ q\\e]12;#16A085\\x7"
 	echo "Welcome to vim!"
 fi
 
