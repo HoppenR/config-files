@@ -83,6 +83,7 @@ xorg-xkill
 gnome-keyring (opt for libsecret (which is req for network-manager-applet))
 network-manager-applet
 pa-applet-git (AUR)
+tpacpi-bat
 vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
