@@ -53,6 +53,7 @@ transmission-cli
 ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
 unzip
+valgrind
 viewnior
 gvim
 vlc
