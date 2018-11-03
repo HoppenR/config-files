@@ -114,10 +114,10 @@ augroup QuickFixClose "quit if the last window is nr 1 and a quickfix window"
 	\|										endif
 augroup END
 
-augroup ClipboardSave
-	autocmd!
-	autocmd VimLeave		*			call system("xsel -ib", getreg('+'))
-augroup END
+"augroup ClipboardSave
+"	autocmd!
+"	autocmd VimLeave		*			call system("xsel -ib", getreg('+'))
+"augroup END
 
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
 function! DirectoryBrowserMappings()

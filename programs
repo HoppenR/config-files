@@ -4,6 +4,7 @@
 [base]
 [base-devel]
 bash-completion (opt for bash)
+clipmenu
 compton
 cower (AUR)
 dmenu
