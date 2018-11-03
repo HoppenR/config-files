@@ -189,7 +189,7 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 	bindsym Mod4+s       exec "runsteam.sh"
 	bindsym Mod4+Shift+s exec "killall steam"
 	bindsym Mod4+w       exec "firefox"
-	bindsym Mod4+c       exec "clipmenu"
+	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
 	# Audio controls
 	bindsym Mod1+m       exec "pavucontrol"
 	bindsym Mod4+b       exec --no-startup-id "playerctl previous"
