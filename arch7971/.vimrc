@@ -30,6 +30,7 @@ set   wildignorecase "ignore case in wildmenu / tab completion"
 set   wildmenu       "show all options in command line completion in a menu"
 
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
+set encoding=utf-8
 set clipboard=unnamedplus "use system clipboard"
 set colorcolumn=80        "print a line marking the 80th column"
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
