@@ -8,7 +8,6 @@ allow_bold = true
 clickable_url = true
 dynamic_title = true
 font = LiberationMono 13px
-geometry = 640x480
 scrollback_lines = 10000
 hyperlinks = true
 cursor_blink = on
