@@ -31,7 +31,7 @@ set   wildmenu       "show all options in command line completion in a menu"
 
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
 set encoding=utf-8
-set clipboard=unnamedplus "use system clipboard"
+set clipboard=unnamed     "use system primary"
 set colorcolumn=80        "print a line marking the 80th column"
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
 set foldmethod=marker     "fold between foldmarkers"
@@ -75,8 +75,11 @@ nnoremap <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 	\{"vertical":1, "term_finish":"close"})<CR>
-"copy to primary instead of clipboard for the x action
-nnoremap x "*x
+"copy/paste to/from clipboard instead of primary for the yank action"
+nnoremap y "+y
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
 
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup Directory_browser
