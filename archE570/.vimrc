@@ -72,15 +72,9 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap <Space> za
 "open new buffer vertically"
 nnoremap <C-n> :vnew<CR>
-"open
-a new terminal emulator split inside vim"
+"open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 	\{"vertical":1, "term_finish":"close"})<CR>
-"copy/paste to/from clipboard instead of primary"
-nnoremap y "+y
-vnoremap y "+y
-nnoremap p "+p
-vnoremap p "+p
 
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup Directory_browser
