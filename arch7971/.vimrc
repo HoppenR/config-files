@@ -75,7 +75,7 @@ nnoremap <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 	\{"vertical":1, "term_finish":"close"})<CR>
-"copy/paste to/from clipboard instead of primary for the yank action"
+"copy/paste to/from clipboard instead of primary"
 nnoremap y "+y
 vnoremap y "+y
 nnoremap p "+p
