@@ -37,7 +37,7 @@ set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
 set foldmethod=marker     "fold between foldmarkers"
 set laststatus=2          "always show status line"
 "replace unprintable characters with the printable characters following them"
-set listchars=tab:▏\ ,trail:~,eol:¬
+set listchars=tab:│\ ,trail:~,eol:¬
 set makeprg=""            "unset make program (set for each filetype by autocmd)"
 set mouse=n               "enable mouse support in normal mode and terminal modes"
 set shiftwidth=4          "number of spaces for autoindenting"
