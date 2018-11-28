@@ -170,6 +170,7 @@ for_window [class="Termite"]                      border pixel 0
 for_window [class="Nitrogen"]                     floating enable
 for_window [class="Galculator"]                   floating enable border pixel 1
 for_window [class="Pavucontrol"]                  floating enable
+for_window [class="Nm-connection-editor"]         floating enable
 
 # Autostart applications
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
