@@ -89,14 +89,15 @@ xorg-xkill
 #
 # archE570
 #
+exfat-utils
 gnome-keyring (opt for libsecret (which is req for network-manager-applet))
+linux-lts
 network-manager-applet
 pa-applet-git (AUR)
 tpacpi-bat
 vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
-exfat-utils
 xinput
 
 plasma-desktop
