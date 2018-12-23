@@ -20,3 +20,4 @@ set keymap vi-insert
 "\C-e":end-of-line
 "\C-l":clear-screen
 "§":shell-expand-line
+"#":insert-comment
