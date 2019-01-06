@@ -160,7 +160,7 @@ assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
 
 # Automatically focus some applications
-set $autofocus "vlc|libreoffice.*$|Steam"
+set $autofocus "vlc|libreoffice.*$|Steam|Wine"
 for_window [class=$autofocus] focus
 for_window [urgent="latest"] focus
 
@@ -171,6 +171,7 @@ for_window [class="Termite"]                      border pixel 0
 for_window [class="Nitrogen"]                     floating enable
 for_window [class="Galculator"]                   floating enable border pixel 1
 for_window [class="Pavucontrol"]                  floating enable
+for_window [class="Wine" instance="explorer.exe"] floating enable
 
 # Autostart applications
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
