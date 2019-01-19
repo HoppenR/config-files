@@ -92,6 +92,7 @@ xorg-xkill
 exfat-utils
 gnome-keyring (opt for libsecret (which is req for network-manager-applet))
 linux-lts
+acpi_call-lts
 network-manager-applet
 pa-applet-git (AUR)
 tpacpi-bat
