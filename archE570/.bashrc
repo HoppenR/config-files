@@ -108,6 +108,7 @@ fi
 
 ## Variables specific to bash
 HISTFILESIZE=20000
+HISTSIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then
