@@ -46,6 +46,7 @@ polkit-gnome
 pulseaudio
 pulseaudio-alsa (opt for pulseaudio)
 ranger
+rofi
 rsync
 screenfetch
 shellcheck

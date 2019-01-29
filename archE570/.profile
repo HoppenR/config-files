@@ -18,3 +18,4 @@ export GIT_PS1_SHOWUPSTREAM="true"
 
 # clipmenu settings
 export CM_HISTLENGTH=40
+export CM_LAUNCHER=rofi
