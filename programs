@@ -5,6 +5,7 @@
 [base-devel]
 bash-completion (opt for bash)
 clipmenu
+clipnotify
 compton
 cower (AUR)
 dmenu
