@@ -29,6 +29,7 @@ jq
 libcaca (opt for ranger)
 libdvdcss (opt for vlc)
 libreoffice-fresh
+libreoffice-fresh-sv
 lightdm
 lightdm-gtk-greeter (opt for lightdm)
 nitrogen
@@ -60,7 +61,6 @@ ttf-dejavu (provides ttf-font (which is req for firefox))
 unzip
 valgrind
 viewnior
-vulkan-radeon
 gvim
 vlc
 w3m (opt for ranger)
@@ -82,6 +82,7 @@ arc-icon-theme (opt for arc-gtk-theme)
 i3ipc-python (AUR)
 python-setuptools (opt for i3ipc)
 ttf-liberation (provides ttf-font (which is req for firefox))
+vulkan-radeon
 wine
 wine-mono (opt for wine)
 wine_gecko (opt for wine)
@@ -94,6 +95,7 @@ xorg-xkill
 exfat-utils
 gnome-keyring (opt for libsecret (which is req for network-manager-applet))
 linux-lts
+linux-lts-headers
 acpi_call-lts
 network-manager-applet
 pa-applet-git (AUR)
@@ -101,6 +103,4 @@ tpacpi-bat
 vertex-themes (AUR)
 xf86-video-intel
 xfce4-power-manager
-xinput
-
-plasma-desktop
+xorg-xinput
