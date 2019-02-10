@@ -185,10 +185,8 @@ exec --no-startup-id "xfce4-power-manager"
 	# Lock screen
 	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
 	# Application hotkeys
-	bindsym Mod4+Shift+d exec "killall 'dunst'; notify-send 'restart dunst'"
 	bindsym Mod4+e       exec "termite -e 'ranger'"
-	bindsym Mod4+m       exec "vlc"
-	bindsym Mod4+Shift+m exec "killall vlc; exec notify-send 'kill vlc'"
+	bindsym Mod4+m       exec --no-startup-id "vlc"
 	bindsym Mod4+w       exec "firefox"
 	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
 	# Audio controls
