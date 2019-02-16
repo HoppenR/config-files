@@ -155,7 +155,6 @@
 	icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
 	frame_width = 1
-	frame_color = "#16A085"
 
 [shortcuts]
 
@@ -176,14 +175,17 @@
 	# Otherwise the "#" and following would be interpreted as a comment.
 	background = "#393A39"
 	foreground = "#A7A8A7"
+	frame_color = "#16A085"
 	timeout = 10
 
 [urgency_normal]
 	background = "#393A39"
 	foreground = "#F9FAF9"
+	frame_color = "#16A085"
 	timeout = 10
 
 [urgency_critical]
 	background = "#D62929"
 	foreground = "#F9FAF9"
+	frame_color = "#000000"
 	timeout = 0
