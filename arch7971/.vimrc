@@ -72,6 +72,8 @@ nnoremap <Space> za
 "open new buffer vertically"
 nnoremap <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprevious<CR>
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 	\{"vertical":1, "term_finish":"close"})<CR>
 
