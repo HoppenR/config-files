@@ -61,6 +61,7 @@ ttf-dejavu (provides ttf-font (which is req for firefox))
 unzip
 valgrind
 viewnior
+gameconqueror
 gvim
 vlc
 w3m (opt for ranger)
