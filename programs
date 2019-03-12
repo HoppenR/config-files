@@ -11,6 +11,7 @@ cower (AUR)
 dmenu
 dunst
 epdfview
+exfat-utils
 exo
 fd
 firefox
@@ -95,7 +96,6 @@ xorg-xkill
 #
 # archE570
 #
-exfat-utils
 gnome-keyring (opt for libsecret (which is req for network-manager-applet))
 linux-lts
 linux-lts-headers
