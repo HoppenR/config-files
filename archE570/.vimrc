@@ -22,11 +22,12 @@ set   relativenumber "show line numbers relative to the cursor position"
                      "also enables highlighting the line number which the"
                      "cursor is in"
 set   showcmd        "show partial commands on the bottom right of the screen"
+set   smartcase      "override ignorecase when pattern includes capital letters
 set   splitbelow     "windows that would open above should open below"
 set   splitright     "windows that would open left should open right"
 set   title          "enable setting window title"
 set   undofile       "store undo/redo buffers in non-volatile memory"
-set   wildignorecase "ignore case in wildmenu / tab completion"
+set   fileignorecase "ignore case for files
 set   wildmenu       "show all options in command line completion in a menu"
 
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
