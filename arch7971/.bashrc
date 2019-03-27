@@ -68,6 +68,7 @@ function d { differ.sh; }
 function o { overrustlechecker.sh -s"${1:-}" && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
+function s { streamchecker.sh -s"${1:-}" && exit; }
 function timer {
 	sleep "$(bc -l <<< "${1:-60} * 60")"
 	notify-send --urgency=critical "TIMER" "${2:-'Timer done'}" --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
