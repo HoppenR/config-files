@@ -65,7 +65,7 @@ function cah {
 }
 
 function d { differ.sh; }
-function o { overrustlechecker.sh -s"${1:-}" --focus && exit; }
+function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
 function s { streamchecker.sh -s"${1:-}" --focus && exit; }
