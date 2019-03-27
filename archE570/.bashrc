@@ -65,10 +65,10 @@ function cah {
 }
 
 function d { differ.sh; }
-function o { overrustlechecker.sh -s"${1:-}" && exit; }
+function o { overrustlechecker.sh -s"${1:-}" --focus && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker.sh -s"${1:-}" && exit; }
+function s { streamchecker.sh -s"${1:-}" --focus && exit; }
 function presentationmode {
 	#TODO: trap signals and disable presentation mode
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
