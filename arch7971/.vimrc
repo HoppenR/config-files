@@ -85,6 +85,11 @@ augroup Directory_browser
 	autocmd FileType		netrw		call DirectoryBrowserMappings()
 augroup END
 
+augroup AutoChdir
+	" temporary... I think
+	autocmd BufLeave 		$VIMRUNTIME/doc/*.txt	silent! cd $HOME
+augroup END
+
 augroup AutoMake
 	autocmd!
 	autocmd BufEnter		*.{c,cpp}	set makeprg=make
