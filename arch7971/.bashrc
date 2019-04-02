@@ -65,7 +65,7 @@ function cah {
 }
 
 # Temporary I swear
-function focusfix { i3-msg "floating toggle" && i3-msg "focus mode_toggle" && i3-msg "focus mode_toggle"; }
+function focusfix { i3-msg "floating enable" && i3-msg "focus mode_toggle" && i3-msg "focus mode_toggle"; }
 function d { differ.sh; }
 function o { focusfix && strimschecker.bin && exit; }
 function p { pull.sh; }
