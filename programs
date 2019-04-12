@@ -7,7 +7,6 @@ bash-completion (opt for bash)
 clipmenu
 clipnotify
 compton
-cower (AUR)
 dmenu
 dosfstools
 dunst
@@ -34,6 +33,7 @@ libreoffice-fresh
 libreoffice-fresh-sv
 lightdm
 lightdm-gtk-greeter (opt for lightdm)
+monodevelop-stable
 nitrogen
 nodejs
 noto-fonts (provides ttf-font (which is req for firefox))
@@ -69,6 +69,7 @@ gparted
 gvim
 vlc
 w3m (opt for ranger)
+yay
 xautolock
 xdg-user-dirs
 xorg-server
