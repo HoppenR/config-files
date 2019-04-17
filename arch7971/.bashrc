@@ -76,16 +76,7 @@ function timer {
 	notify-send --urgency=critical "TIMER" "${2:-'Timer done'}" --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 }
 function remoji {
-	if ret="$(grep -i "${1:-}" emoji-db.txt)"
-	then
-		if [[ $(wc -l <<< "$ret") -eq 1 ]]
-		then
-			echo "$ret" | tee /dev/fd/2 | cut -d" " -f1  | xsel -ib
-		else
-			echo "$ret" > /dev/fd/2
-			return 1
-		fi
-	fi
+	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  | xsel -ib
 }
 
 

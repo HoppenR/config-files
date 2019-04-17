@@ -78,16 +78,7 @@ function presentationmode {
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
 }
 function remoji {
-	if ret="$(grep -i "${1:-}" emoji-db.txt)"
-	then
-		if [[ $(wc -l <<< "$ret") -eq 1 ]]
-		then
-			echo "$ret" | tee /dev/fd/2 | cut -d" " -f1  | xsel -ib
-		else
-			echo "$ret" > /dev/fd/2
-			return 1
-		fi
-	fi
+	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  | xsel -ib
 }
 
 
