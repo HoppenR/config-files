@@ -77,6 +77,18 @@ function presentationmode {
 	sleep "$(bc -l <<< "${1:-60} * 60")"
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
 }
+function remoji {
+	if ret="$(grep -i "${1:-}" emoji-db.txt)"
+	then
+		if [[ $(wc -l <<< "$ret") -eq 1 ]]
+		then
+			echo "$ret" | cut -d" " -f1 | xsel -ib
+		else
+			echo "$ret"
+		fi
+	fi
+}
+
 
 ## Pre-command
 # Set X title to the running command

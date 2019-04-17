@@ -75,6 +75,18 @@ function timer {
 	sleep "$(bc -l <<< "${1:-60} * 60")"
 	notify-send --urgency=critical "TIMER" "${2:-'Timer done'}" --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 }
+function remoji {
+	if ret="$(grep -i "${1:-}" emoji-db.txt)"
+	then
+		if [[ $(wc -l <<< "$ret") -eq 1 ]]
+		then
+			echo "$ret" | cut -d" " -f1 | xsel -ib
+		else
+			echo "$ret"
+		fi
+	fi
+}
+
 
 ## Pre-command
 # Set X title to the running command
