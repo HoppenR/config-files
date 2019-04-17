@@ -82,9 +82,10 @@ function remoji {
 	then
 		if [[ $(wc -l <<< "$ret") -eq 1 ]]
 		then
-			echo "$ret" | cut -d" " -f1 | xsel -ib
+			echo "$ret" | tee /dev/fd/2 | cut -d" " -f1  | xsel -ib
 		else
-			echo "$ret"
+			echo "$ret" > /dev/fd/2
+			return 1
 		fi
 	fi
 }
