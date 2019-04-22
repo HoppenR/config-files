@@ -104,6 +104,8 @@ linux-lts-headers
 acpi_call-lts
 network-manager-applet
 pa-applet-git (AUR)
+plasma
+plasma-desktop
 tpacpi-bat
 vertex-themes (AUR)
 xf86-video-intel
