@@ -80,6 +80,9 @@ function presentationmode {
 function remoji {
 	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  | xsel -ib
 }
+function timezonetime {
+	TZ="$(tzselect)" date
+}
 
 
 ## Pre-command
