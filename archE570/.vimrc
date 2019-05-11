@@ -43,7 +43,7 @@ set makeprg=""            "unset make program (set for each filetype by autocmd)
 set mouse=n               "enable mouse support in normal mode and terminal modes"
 set shiftwidth=4          "number of spaces for autoindenting"
 "set statusline to show relevant information using printf style % item syntax"
-set statusline=%F\ %-7h%-4m%-5r%y%=%-21(L:%3l\ C:%3v\ pos:%3p%%%)
+set statusline=%F\ %-7h%-4m%-5r%y%=%-18(L:%3l\ C:%3v\ pos:%{LineNoIndicator()}%)
 set tabstop=4             "width of each tab"
 set titleold=""           "disable title when exiting vim"
 "set window title to show relevant information using printf style % item syntax"
@@ -148,3 +148,27 @@ function! GetScriptNumber(script_name)
 	endfor
 	return -1
 endfunction
+
+" vim-line-no-indicator {{{1
+" Author: Sheldon Johnson
+" Version: 0.3
+if !exists('g:line_no_indicator_chars')
+  let g:line_no_indicator_chars = [ '█' ,'▇' ,'▆' ,'▅' ,'▄' ,'▃' ,'▂' ,'▁' ,' ' ]
+end
+function! LineNoIndicator() abort
+  " Zero index line number so 1/3 = 0, 2/3 = 0.5, and 3/3 = 1
+  let l:current_line = line('.') - 1
+  let l:total_lines = line('$') - 1
+
+  if l:current_line == 0
+    let l:index = 0
+  elseif l:current_line == l:total_lines
+    let l:index = -1
+  else
+    let l:line_no_fraction = floor(l:current_line) / floor(l:total_lines)
+    let l:index = float2nr(l:line_no_fraction * len(g:line_no_indicator_chars))
+  endif
+
+  return g:line_no_indicator_chars[l:index]
+endfunction
+" }}}1
