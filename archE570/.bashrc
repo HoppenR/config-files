@@ -102,6 +102,7 @@ alias cp="cp -i"     # Ask for confirmation before overwrite
 alias df="df -h"     # Human readable output
 alias free="free -h" # Human readable output
 alias mv="mv -i"     # Ask for confirmation before overwrite
+alias rm="rm -i"     # Ask for confirmation before deletion
 alias cower="cower -v"
 # Color aliases
 alias ls="ls --color=auto"
