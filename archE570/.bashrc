@@ -65,12 +65,11 @@ function cah {
 }
 
 # Temporary I swear
-function focusfix { i3-msg "floating enable" && i3-msg "focus mode_toggle" && i3-msg "focus mode_toggle"; }
 function d { differ.sh; }
-function o { focusfix && strimschecker.bin && exit; }
+function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { focusfix && streamchecker.sh -s"${1:-}" && exit; }
+function s { streamchecker.sh -s"${1:-}" && exit; }
 function presentationmode {
 	#TODO: trap signals and disable presentation mode
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
