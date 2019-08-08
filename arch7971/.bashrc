@@ -69,7 +69,7 @@ function d { differ.sh; }
 function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker.sh -s"${1:-}" && exit; }
+function s { streamchecker.bin -t && exit; }
 function timer {
 	sleep "$(bc -l <<< "${1:-60} * 60")"
 	notify-send --urgency=critical "TIMER" "${2:-'Timer done'}" --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png

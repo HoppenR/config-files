@@ -69,7 +69,7 @@ function d { differ.sh; }
 function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker.sh -s"${1:-}" && exit; }
+function s { streamchecker.bin -t && exit; }
 function presentationmode {
 	#TODO: trap signals and disable presentation mode
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
