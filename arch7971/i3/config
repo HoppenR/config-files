@@ -156,6 +156,8 @@ assign [class="Firefox"]               $ws1
 assign [class="Steam"]                 $ws3
 assign [class="libreoffice.*|Soffice"] $ws3
 assign [class="Epdfview"]              $ws3
+assign [instance="wow.exe"]            $ws3
+assign [instance="battle.net.exe"]     $ws3
 assign [class="Gimp"]                  $ws4
 assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
@@ -209,7 +211,8 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 # }
 
 # Screen Saver               10min
-exec --no-startup-id "xset s 600 0"
+#exec --no-startup-id "xset s 600 0"
+exec --no-startup-id "xset s off"
 # Display Power Management   20min
 exec --no-startup-id "xset dpms 1200 0 0"
 # Screen locking             30min
