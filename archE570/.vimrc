@@ -53,6 +53,10 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000       "maximum changes that can be undone"
 set undoreload=10000      "number of lines to save for undo"
 
+if has("gui_running")
+	colorscheme evening
+endif
+
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
