@@ -55,6 +55,7 @@ let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 let g:netrw_keepdir=0     "update the current working directory in netrw"
+let g:netrw_liststyle = 3 "show netrw files in tree mode
 
 let &t_SI="\e[5 q\<Esc>]12;#00FF5F\x7" "insert mode cursor"
 let &t_SR="\e[3 q\<Esc>]12;#FF4444\x7" "replace mode cursor"
@@ -127,7 +128,7 @@ augroup END
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
 function! DirectoryBrowserMappings()
 	"go to home directory"
-	"noremap <buffer> <silent> gh :execute("Ntree" . " /home/" . $USER)<CR>
+	noremap <buffer> <silent> gh :execute("Ntree" . " /home/" . $USER)<CR>
 	"show hidden files in g:netrw_list_hide"
 	noremap <buffer> <silent> zh :call eval(printf("<SNR>%d_NetrwHidden(1)",
 		\GetScriptNumber("netrw.vim")))<CR>
