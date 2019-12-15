@@ -58,24 +58,20 @@ let g:netrw_banner=0      "remove the banner from the directory browser"
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 let g:netrw_keepdir=0     "update the current working directory in netrw"
 let g:netrw_liststyle = 3 "show netrw files in tree mode
-let g:clang_format#code_style = "llvm"
 let g:clang_format#style_options = {
 			\ "AccessModifierOffset" : -4,
 			\ "AlignAfterOpenBracket" : "Align",
 			\ "AllowShortFunctionsOnASingleLine" : "Empty",
 			\ "AllowShortIfStatementsOnASingleLine" : "false",
 			\ "AllowShortLoopsOnASingleLine" : "false",
+			\ "BasedOnStyle" : "llvm",
 			\ "BreakBeforeBraces" : "Attach",
-			\ "BreakBeforeTernaryOperators" : "true",
 			\ "ColumnLimit" : 120,
-			\ "ConstructorInitializerAllOnOneLineOrOnePerLine" : "true",
-			\ "ContinuationIndentWidth" : 4,
 			\ "Cpp11BracedListStyle" : "false",
 			\ "IndentCaseLabels" : "false",
 			\ "IndentWidth" : 4,
-			\ "Language" : "Cpp",
-			\ "Standard" : "Auto",
 			\ "SpaceBeforeParens" : "Always",
+			\ "Standard" : "Auto",
 			\ "TabWidth" : 4,
 			\ "UseTab": "Always"}
 
