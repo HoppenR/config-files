@@ -29,8 +29,9 @@ set   wildmenu       "show all options in command line completion in a menu"
 
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
 set encoding=utf-8
+set cinoptions=:0,g0,(0
 set clipboard=unnamed     "use system primary"
-set colorcolumn=80        "print a line marking the 80th column"
+set colorcolumn=120        "print a line marking the 120th column"
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
 set foldmethod=marker     "fold between foldmarkers"
 set laststatus=2          "always show status line"
@@ -43,6 +44,7 @@ set shiftwidth=4          "number of spaces for autoindenting"
 set statusline=%F\ %-7h%-4m%-5r%y%=%-18(L:%3l\ C:%3v\ pos:%{LineNoIndicator()}%)
 set tabstop=4             "width of each tab"
 set titleold=""           "disable title when exiting vim"
+set textwidth=120
 "set window title to show relevant information using printf style % item syntax"
 set titlestring=%f\ %-7h%-4m%-5r-\ VIM
 "set directory containing non-volatile undo history files"
@@ -50,15 +52,28 @@ set undodir=$HOME/.vim/undo
 set undolevels=1000       "maximum changes that can be undone"
 set undoreload=10000      "number of lines to save for undo"
 
-if has("gui_running")
-	colorscheme evening
-endif
-
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
 let g:netrw_keepdir=0     "update the current working directory in netrw"
+let g:netrw_liststyle = 3 "show netrw files in tree mode
+let g:clang_format#style_options = {
+			\ "AccessModifierOffset" : -4,
+			\ "AlignAfterOpenBracket" : "Align",
+			\ "AllowShortFunctionsOnASingleLine" : "Empty",
+			\ "AllowShortIfStatementsOnASingleLine" : "false",
+			\ "AllowShortLoopsOnASingleLine" : "false",
+			\ "BasedOnStyle" : "llvm",
+			\ "BreakBeforeBraces" : "Attach",
+			\ "ColumnLimit" : 120,
+			\ "Cpp11BracedListStyle" : "false",
+			\ "IndentCaseLabels" : "false",
+			\ "IndentWidth" : 4,
+			\ "SpaceBeforeParens" : "Always",
+			\ "Standard" : "Auto",
+			\ "TabWidth" : 4,
+			\ "UseTab": "Always"}
 
 let &t_SI="\e[5 q\<Esc>]12;#00FF5F\x7" "insert mode cursor"
 let &t_SR="\e[3 q\<Esc>]12;#CC372C\x7" "replace mode cursor"
@@ -131,7 +146,7 @@ augroup END
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
 function! DirectoryBrowserMappings()
 	"go to home directory"
-	"noremap <buffer> <silent> gh :execute("Ntree" . " /home/" . $USER)<CR>
+	noremap <buffer> <silent> gh :execute("Ntree" . " /home/" . $USER)<CR>
 	"show hidden files in g:netrw_list_hide"
 	noremap <buffer> <silent> zh :call eval(printf("<SNR>%d_NetrwHidden(1)",
 		\GetScriptNumber("netrw.vim")))<CR>
