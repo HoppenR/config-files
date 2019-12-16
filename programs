@@ -61,6 +61,7 @@ termite
 transmission-cli
 ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
+ttf-liberation (provides ttf-font (which is req for firefox))
 unzip
 valgrind
 viewnior
@@ -87,7 +88,6 @@ arc-gtk-theme
 arc-icon-theme (opt for arc-gtk-theme)
 i3ipc-python (AUR)
 python-setuptools (opt for i3ipc)
-ttf-liberation (provides ttf-font (which is req for firefox))
 vulkan-radeon
 wine
 wine-mono (opt for wine)
