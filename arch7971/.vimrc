@@ -64,6 +64,7 @@ let g:clang_format#style_options = {
 			\ "AllowShortFunctionsOnASingleLine" : "Empty",
 			\ "AllowShortIfStatementsOnASingleLine" : "false",
 			\ "AllowShortLoopsOnASingleLine" : "false",
+			\ "AlwaysBreakTemplateDeclarations" : "Yes",
 			\ "BasedOnStyle" : "llvm",
 			\ "BreakBeforeBraces" : "Attach",
 			\ "ColumnLimit" : 120,
