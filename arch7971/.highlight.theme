@@ -19,14 +19,14 @@ Canvas			= { Colour="#272B35" }
 LineNum			= { Colour="#D7D7AF" }
 
 Escape			= { Colour="#00FF5F" }
-Operator		= { Colour="#00FF5F" }
+Operator		= { Colour="#F5F7FA" }
 Interpolation	= { Colour="#FF4444" }
 
 PreProcessor	= { Colour="#FF4444" }
 
 Keywords = {
 				{ Colour="#00FFFF" },
-				{ Colour="#00FFFF" },
+				{ Colour="#5FAF5F" },
 				{ Colour="#5FAFD7" },
-				{ Colour="#F5F7FA" },
+				{ Colour="#00FFFF" },
 }
