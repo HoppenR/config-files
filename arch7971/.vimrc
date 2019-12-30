@@ -32,6 +32,7 @@ set encoding=utf-8
 set cinoptions=:0,g0,(0
 set clipboard=unnamed     "use system primary"
 set colorcolumn=120        "print a line marking the 120th column"
+set completeopt=
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
 set foldmethod=marker     "fold between foldmarkers"
 set laststatus=2          "always show status line"
@@ -40,6 +41,7 @@ set listchars=tab:│\ ,trail:~,eol:¬
 set makeprg=""            "unset make program (set for each filetype by autocmd)"
 set mouse=n               "enable mouse support in normal mode and terminal modes"
 set shiftwidth=4          "number of spaces for autoindenting"
+set signcolumn=yes
 "set statusline to show relevant information using printf style % item syntax"
 set statusline=%F\ %-7h%-4m%-5r%y%=%-18(L:%3l\ C:%3v\ pos:%{LineNoIndicator()}%)
 set tabstop=4             "width of each tab"
@@ -53,6 +55,9 @@ set undolevels=1000       "maximum changes that can be undone"
 set undoreload=10000      "number of lines to save for undo"
 
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_key_list_select_completion = []
+let g:ycm_log_level = "critical"
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
