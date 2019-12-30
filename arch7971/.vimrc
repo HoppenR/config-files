@@ -88,14 +88,12 @@ let &t_EI="\e[0 q\<Esc>]12;#5FAFFF\x7" "reset cursor when exiting insert/replace
 "curly bracket completion"
 inoremap {<CR> {<CR>}<Esc>O
 "stop highlighting search"
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
+nnoremap <silent> <Tab> :nohlsearch<CR>
 "open and close folds"
 nnoremap <Space> za
 "open new buffer vertically"
 nnoremap <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
-nnoremap ]q :cnext<CR>
-nnoremap [q :cprevious<CR>
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"],
 	\{"vertical":1, "term_finish":"close"})<CR>
 
@@ -113,8 +111,8 @@ augroup END
 
 augroup AutoMake
 	autocmd!
-	autocmd BufEnter		*.{c,cpp}	set makeprg=make
-	autocmd BufLeave		*.{c,cpp}	set makeprg=
+	autocmd BufEnter		*.{c,cpp}	setlocal makeprg=make
+	autocmd BufLeave		*.{c,cpp}	setlocal makeprg=
 	autocmd BufWritePost	*.{c,cpp}	if filereadable("./makefile")
 		\|									make!
 		\|									cwindow
@@ -124,10 +122,10 @@ augroup END
 augroup AutoShellcheck
 	autocmd!
 	autocmd BufEnter		*			if (&filetype ==# "sh") && (! &diff)
-		\|									set makeprg=shellcheck\ -f\ gcc\ %
+		\|									setlocal makeprg=shellcheck\ -f\ gcc\ %
 	\|									endif
 	autocmd BufLeave		*			if (&filetype ==# "sh") && (! &diff)
-		\|									set makeprg=
+		\|									setlocal makeprg=
 	\|									endif
 	autocmd BufWritePost	*			if (&filetype ==# "sh") && (! &diff)
 		\|									make!
