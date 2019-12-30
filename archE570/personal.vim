@@ -62,6 +62,6 @@ highlight netrwTmp			ctermfg=4		ctermbg=none	cterm=none
 " special colors
 highlight YcmErrorSection	ctermfg=none	ctermbg=none	cterm=none
 highlight YcmErrorSign		ctermfg=1		ctermbg=none	cterm=bold
-highlight YcmWarningSection	ctermfg=none	ctermbg=none	cterm=bold
+highlight YcmWarningSection	ctermfg=none	ctermbg=none	cterm=none
 highlight YcmWarningSign	ctermfg=11		ctermbg=none	cterm=bold
 highlight gitcommitOverflow	ctermfg=1		ctermbg=none	cterm=none
