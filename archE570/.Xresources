@@ -29,8 +29,8 @@ XTerm*selectToClipboard:		true
 *color0:						#232423
 *color8:						#393A39
 ! red
-*color1:						#BA2922
-*color9:						#CC372C
+*color1:						#EA1E10
+*color9:						#FC2112
 ! green
 *color2:						#5FAF5F
 *color10:						#00FF5F
@@ -48,4 +48,4 @@ XTerm*selectToClipboard:		true
 *color14:						#00D1D1
 ! white
 *color7:						#16A085
-*color15:						#E8E8E8
+*color15:						#F3F3F3

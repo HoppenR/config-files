@@ -13,6 +13,7 @@ let g:colors_name = "personal"
 highlight ColorColumn		ctermfg=none	ctermbg=8		cterm=none
 highlight Comment			ctermfg=41		ctermbg=none	cterm=none
 highlight Constant			ctermfg=4		ctermbg=none	cterm=none
+highlight Cursorline		ctermfg=none	ctermbg=none	cterm=none
 highlight CursorlineNr		ctermfg=11		ctermbg=none	cterm=inverse
 highlight DiffAdd			ctermfg=15		ctermbg=12		cterm=none
 highlight DiffChange		ctermfg=15		ctermbg=127		cterm=none
@@ -24,10 +25,15 @@ highlight Identifier		ctermfg=14		ctermbg=none	cterm=none
 highlight Incsearch			ctermfg=none	ctermbg=none	cterm=inverse,underline
 highlight LineNr			ctermfg=11		ctermbg=none	cterm=none
 highlight MatchParen		ctermfg=15		ctermbg=6		cterm=none
-highlight Normal			ctermfg=15		ctermbg=none	cterm=none
 highlight NonText			ctermfg=243		ctermbg=none	cterm=none
-highlight PreProc			ctermfg=1		ctermbg=none	cterm=none
+highlight Normal			ctermfg=15		ctermbg=none	cterm=none
+highlight Pmenu				ctermfg=243		ctermbg=8		cterm=none
+highlight PmenuSbar			ctermfg=none	ctermbg=8		cterm=none
+highlight PmenuSel			ctermfg=0		ctermbg=10		cterm=none
+highlight PmenuThumb		ctermfg=none	ctermbg=11		cterm=none
+highlight PreProc			ctermfg=9		ctermbg=none	cterm=none
 highlight Search			ctermfg=none	ctermbg=none	cterm=underline
+highlight SignColumn		ctermfg=none	ctermbg=none	cterm=none
 highlight Special			ctermfg=6		ctermbg=none	cterm=none
 highlight SpecialKey		ctermfg=243		ctermbg=none	cterm=none
 highlight Statement			ctermfg=15		ctermbg=none	cterm=none
@@ -54,4 +60,8 @@ highlight netrwTags			ctermfg=12		ctermbg=1		cterm=none
 highlight netrwTilde		ctermfg=12		ctermbg=none	cterm=none
 highlight netrwTmp			ctermfg=4		ctermbg=none	cterm=none
 " special colors
+highlight YcmErrorSection	ctermfg=none	ctermbg=none	cterm=none
+highlight YcmErrorSign		ctermfg=1		ctermbg=none	cterm=bold
+highlight YcmWarningSection	ctermfg=none	ctermbg=none	cterm=bold
+highlight YcmWarningSign	ctermfg=11		ctermbg=none	cterm=bold
 highlight gitcommitOverflow	ctermfg=1		ctermbg=none	cterm=none

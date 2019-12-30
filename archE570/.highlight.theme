@@ -14,19 +14,19 @@ Comment			= { Colour="#00D75F" }
 BlockComment	= Comment
 LineComment		= Comment
 
-Default			= { Colour="#E8E8E8" }
+Default			= { Colour="#F3F3F3" }
 Canvas			= { Colour="#393A39" }
 LineNum			= { Colour="#D7D7AF" }
 
-Escape			= { Colour="#0099AA" }
-Operator		= { Colour="#0099AA" }
+Escape			= { Colour="#F3F3F3" }
+Operator		= { Colour="#F3F3F3" }
 Interpolation	= { Colour="#BA2922" }
 
 PreProcessor	= { Colour="#BA2922" }
 
 Keywords = {
-				{ Colour="#00D1D1" },
-				{ Colour="#00D1D1" },
+				{ Colour="#F3F3F3" },
 				{ Colour="#16A085" },
-				{ Colour="#E8E8E8" },
+				{ Colour="#16A085" },
+				{ Colour="#00D1D1" },
 }

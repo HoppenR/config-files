@@ -1,5 +1,6 @@
 "
-" ~/.vim/colors/personal.vim "
+" ~/.vim/colors/personal.vim
+"
 " Vim: set tabstop=4 :
 
 hi clear

@@ -17,14 +17,14 @@ cursor_shape = block
 cursor = #16A085
 cursor_foreground = #393A39
 
-foreground = #E8E8E8
-foreground_bold = #E8E8E8
+foreground = #F3F3F3
+foreground_bold = #F3F3F3
 
 # rgb(57, 58, 57) = #393A39
-background = rgba(57, 58, 57, 0.8)
+background = rgba(57, 58, 57, 0.9)
 
 color0 =  #232423
-color1 =  #BA2922
+color1 =  #EA1E10
 color2 =  #5FAF5F
 color3 =  #AFFF00
 color4 =  #16A085
@@ -32,10 +32,10 @@ color5 =  #C755AF
 color6 =  #0099AA
 color7 =  #16A085
 color8 =  #393A39
-color9 =  #CC372C
+color9 =  #FC2112
 color10 = #00FF5F
 color11 = #D7D7AF
 color12 = #13BF9D
 color13 = #D700FF
 color14 = #00D1D1
-color15 = #E8E8E8
+color15 = #F3F3F3
