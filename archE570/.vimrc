@@ -57,6 +57,7 @@ set undoreload=10000      "number of lines to save for undo"
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_list_select_completion = []
 let g:ycm_log_level = "critical"
+let g:ycm_global_ycm_extra_conf = "/home/$USER/.config/ycm_global_conf.py"
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
 let g:netrw_list_hide="\\(^\\|\\s\\s\\)\\zs\\.\\S\\+"
