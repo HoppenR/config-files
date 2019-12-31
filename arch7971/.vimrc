@@ -56,6 +56,7 @@ set undoreload=10000      "number of lines to save for undo"
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_key_list_select_completion = []
+let g:ycm_confirm_extra_conf = 0
 let g:ycm_log_level = "critical"
 let g:netrw_banner=0      "remove the banner from the directory browser"
 "hide files whose name matches this pattern"
