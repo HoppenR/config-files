@@ -92,10 +92,10 @@ nnoremap <Space> za
 nnoremap <silent> <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
-"stop highlighting search"
-nnoremap <silent> <Tab> :nohlsearch<CR>
 "toggle NERDTree
 nnoremap <silent> § :NERDTreeToggle<CR>
+"stop highlighting search"
+nnoremap <silent> ½ :nohlsearch<CR>
 
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup AutoMake
