@@ -1,7 +1,7 @@
 "
-" ~/.vimrc
+" ~/.vimrc"
 "
-" Vim: set tabstop=4 :
+" Vim: set tabstop=4 :"
 
 """"""""""""""""""""""""""""""""""" COMMANDS """""""""""""""""""""""""""""""""""
 colorscheme personal
@@ -54,13 +54,15 @@ set undolevels=1000       "maximum changes that can be undone"
 set undoreload=10000      "number of lines to save for undo"
 
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
-"Don't confirm extra YCM configuration
+"Don't confirm extra YCM configuration"
 let g:ycm_confirm_extra_conf = 0
-"Dont map TAB to next completion
+"Dont map TAB to next completion"
 let g:ycm_key_list_select_completion = []
-"Close NERDTree after opening a file
+"Close NERDTree after opening a file"
 let g:NERDTreeQuitOnOpen = 1
-"hide files whose name matches this pattern"
+"NERDTree open keybind"
+let g:NERDTreeMapActivateNode = "l"
+"clang-format formatting"
 let g:clang_format#style_options = {
 			\ "AccessModifierOffset" : -4,
 			\ "AlignAfterOpenBracket" : "Align",
@@ -92,7 +94,7 @@ nnoremap <Space> za
 nnoremap <silent> <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
-"toggle NERDTree
+"toggle NERDTree"
 nnoremap <silent> § :NERDTreeToggle<CR>
 "stop highlighting search"
 nnoremap <silent> ½ :nohlsearch<CR>
@@ -124,9 +126,9 @@ augroup NERDTreeColors
 augroup END
 
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
-" vim-line-no-indicator {{{1
-" Author: Sheldon Johnson
-" Version: 0.3
+" vim-line-no-indicator {{{1"
+" Author: Sheldon Johnson"
+" Version: 0.3"
 if !exists('g:line_no_indicator_chars')
   let g:line_no_indicator_chars = [ '█' ,'▇' ,'▆' ,'▅' ,'▄' ,'▃' ,'▂' ,'▁' ,' ' ]
 end
@@ -146,4 +148,4 @@ function! LineNoIndicator() abort
 
   return g:line_no_indicator_chars[l:index]
 endfunction
-" }}}1
+" }}}1"
