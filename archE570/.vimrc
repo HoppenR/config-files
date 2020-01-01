@@ -58,6 +58,8 @@ set undoreload=10000      "number of lines to save for undo"
 let g:ycm_confirm_extra_conf = 0
 "Dont map TAB to next completion
 let g:ycm_key_list_select_completion = []
+"Close NERDTree after opening a file
+let g:NERDTreeQuitOnOpen = 1
 "hide files whose name matches this pattern"
 let g:clang_format#style_options = {
 			\ "AccessModifierOffset" : -4,
