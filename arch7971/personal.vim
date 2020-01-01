@@ -49,16 +49,9 @@ highlight Type				ctermfg=2		ctermbg=none	cterm=none
 highlight VertSplit			ctermfg=4		ctermbg=8		cterm=none
 highlight WarningMsg		ctermfg=15		ctermbg=1		cterm=none
 highlight WildMenu			ctermfg=8		ctermbg=4		cterm=none
-" netrw colors
+" netrw / NERDTree colors
 highlight Directory			ctermfg=12		ctermbg=none	cterm=bold
-highlight netrwCompress		ctermfg=9		ctermbg=none	cterm=bold
-highlight netrwDoc			ctermfg=11		ctermbg=none	cterm=bold
-highlight netrwHdr			ctermfg=11		ctermbg=none	cterm=bold
-highlight netrwLib			ctermfg=11		ctermbg=none	cterm=bold
-highlight netrwSymLink		ctermfg=14		ctermbg=none	cterm=bold
-highlight netrwTags			ctermfg=12		ctermbg=1		cterm=none
-highlight netrwTilde		ctermfg=12		ctermbg=none	cterm=none
-highlight netrwTmp			ctermfg=4		ctermbg=none	cterm=none
+highlight NERDTreeCFile		ctermfg=2
 " special colors
 highlight YcmErrorSection	ctermfg=none	ctermbg=none	cterm=none
 highlight YcmErrorSign		ctermfg=1		ctermbg=none	cterm=bold

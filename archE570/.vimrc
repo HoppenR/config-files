@@ -56,6 +56,8 @@ set undoreload=10000      "number of lines to save for undo"
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 "Don't confirm extra YCM configuration
 let g:ycm_confirm_extra_conf = 0
+"Dont map TAB to next completion
+let g:ycm_key_list_select_completion = []
 "hide files whose name matches this pattern"
 let g:clang_format#style_options = {
 			\ "AccessModifierOffset" : -4,
@@ -112,6 +114,11 @@ augroup AutoShellcheck
 		\|									make!
 		\|									cwindow
 	\|									endif
+augroup END
+
+augroup NERDTreeColors
+	autocmd!
+	autocmd filetype nerdtree syntax match NERDTreeCFile '^\s\+.*\.[ch]\(pp\)\?$'
 augroup END
 
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
