@@ -70,12 +70,16 @@ let &t_EI="\e[0 q\<Esc>]12;#5FAFFF\x7" "reset cursor when exiting insert/replace
 """"""""""""""""""""""""""""""""""" MAPPINGS """""""""""""""""""""""""""""""""""
 "curly bracket completion"
 inoremap {<CR> {<CR>}<Esc>O
-"open and close folds"
-nnoremap <Space> za
 "open new buffer vertically"
 nnoremap <silent> <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
+"rename symbol under cursor
+nnoremap <F2> :YcmCompleter RefactorRename<Space>
+"format the entire file
+nnoremap <silent> <F3> :YcmCompleter Format<CR>
+"open and close folds"
+nnoremap <Space> za
 "toggle NERDTree"
 nnoremap <silent> § :NERDTreeToggle<CR>
 "stop highlighting search"
