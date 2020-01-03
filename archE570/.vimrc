@@ -62,24 +62,6 @@ let g:ycm_key_list_select_completion = []
 let g:NERDTreeQuitOnOpen = 1
 "NERDTree open keybind"
 let g:NERDTreeMapActivateNode = "l"
-"clang-format formatting"
-let g:clang_format#style_options = {
-			\ "AccessModifierOffset" : -4,
-			\ "AlignAfterOpenBracket" : "Align",
-			\ "AllowShortFunctionsOnASingleLine" : "Empty",
-			\ "AllowShortIfStatementsOnASingleLine" : "false",
-			\ "AllowShortLoopsOnASingleLine" : "false",
-			\ "AlwaysBreakTemplateDeclarations" : "Yes",
-			\ "BasedOnStyle" : "llvm",
-			\ "BreakBeforeBraces" : "Attach",
-			\ "ColumnLimit" : 120,
-			\ "Cpp11BracedListStyle" : "false",
-			\ "IndentCaseLabels" : "false",
-			\ "IndentWidth" : 4,
-			\ "SpaceBeforeParens" : "Always",
-			\ "Standard" : "Auto",
-			\ "TabWidth" : 4,
-			\ "UseTab": "Always"}
 
 let &t_SI="\e[5 q\<Esc>]12;#00FF5F\x7" "insert mode cursor"
 let &t_SR="\e[3 q\<Esc>]12;#CC372C\x7" "replace mode cursor"
