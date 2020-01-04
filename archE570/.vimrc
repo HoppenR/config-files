@@ -30,7 +30,7 @@ set   wildmenu       "show all options in command line completion in a menu"
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
 set cinoptions=:0,g0,(0
 set clipboard=unnamed     "use system primary"
-set colorcolumn=120        "print a line marking the 120th column"
+set colorcolumn=80         "print a line marking the 80th column"
 set completeopt=           "disable preview window"
 set encoding=utf-8
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
@@ -44,7 +44,7 @@ set signcolumn=yes        "always show signcolumn that YCM uses to display error
 "set statusline to show relevant information using printf style % item syntax"
 set statusline=%F\ %-7h%-4m%-5r%y%=%-18(L:%3l\ C:%3v\ pos:%{LineNoIndicator()}%)
 set tabstop=4             "width of each tab"
-set textwidth=120         "set max text width to 120"
+set textwidth=80          "set max text width to 80"
 set titleold=""           "disable title when exiting vim"
 "set window title to show relevant information using printf style % item syntax"
 set titlestring=%f\ %-7h%-4m%-5r-\ VIM
