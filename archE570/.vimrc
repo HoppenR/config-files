@@ -28,7 +28,7 @@ set   undofile       "store undo/redo buffers in non-volatile memory"
 set   wildmenu       "show all options in command line completion in a menu"
 
 """""""""""""""""""""""""""""""" STRING OPTIONS """"""""""""""""""""""""""""""""
-set cinoptions=:0,g0,(0
+set cinoptions=:0,g0,(0,W4,l1
 set clipboard=unnamed     "use system primary"
 set colorcolumn=80         "print a line marking the 80th column"
 set completeopt=           "disable preview window"
