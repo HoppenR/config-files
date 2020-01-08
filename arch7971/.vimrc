@@ -24,6 +24,7 @@ set   smartcase      "override ignorecase when pattern includes capital letters
 set   splitbelow     "windows that would open above should open below"
 set   splitright     "windows that would open left should open right"
 set   title          "enable setting window title"
+set   timeout        "time out key mappings"
 set   undofile       "store undo/redo buffers in non-volatile memory"
 set   wildmenu       "show all options in command line completion in a menu"
 
@@ -43,6 +44,8 @@ set shiftwidth=4          "number of spaces for autoindenting"
 set signcolumn=yes        "always show signcolumn that YCM uses to display errors"
 "set statusline to show relevant information using printf style % item syntax"
 set statusline=%F\ %-7h%-4m%-5r%y%=%-18(L:%3l\ C:%3v\ pos:%{LineNoIndicator()}%)
+set timeoutlen=500        "Time out key mappings after 0.5s"
+set ttimeoutlen=50         "set very low waiting time for escape sequences"
 set tabstop=4             "width of each tab"
 set textwidth=80          "set max text width to 80"
 set titleold=""           "disable title when exiting vim"
