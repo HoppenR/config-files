@@ -211,10 +211,9 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 # }
 
 # Screen Saver               10min
-#exec --no-startup-id "xset s 600 0"
-exec --no-startup-id "xset s off"
+exec --no-startup-id "xset s 600 0"
 # Display Power Management   20min
-exec --no-startup-id "xset -dpms"
+exec --no-startup-id "xset dpms 1200 0 0"
 # Screen locking             30min
 exec --no-startup-id "xautolock -time 30 -locker 'i3lock -i $pic; systemctl suspend'"
 
