@@ -35,7 +35,6 @@ libreoffice-fresh
 libreoffice-fresh-sv
 lightdm
 lightdm-gtk-greeter (opt for lightdm)
-monodevelop-stable
 nitrogen
 nodejs
 noto-fonts (provides ttf-font (which is req for firefox))
@@ -88,7 +87,7 @@ xterm
 #
 arc-gtk-theme
 arc-icon-theme (opt for arc-gtk-theme)
-i3ipc-python (AUR)
+python-i3ipc (AUR)
 python-setuptools (opt for i3ipc)
 vulkan-radeon
 wine
