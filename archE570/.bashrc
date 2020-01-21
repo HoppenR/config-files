@@ -65,7 +65,6 @@ function cah {
 }
 
 # Temporary I swear
-function d { differ.sh; }
 function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
