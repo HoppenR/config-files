@@ -11,6 +11,7 @@ syntax on
 """"""""""""""""""""""""""""""""""" OPTIONS """""""""""""""""""""""""""""""""""
 set   autochdir
 set   autoindent
+set noesckeys        "ignore escaped keys (i.e arrow keys) in insert mode"
 set   fileignorecase "ignore case for files
 set   hlsearch       "highlight search"
 set   ignorecase     "ignore case while searching"
