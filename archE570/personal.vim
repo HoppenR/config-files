@@ -21,6 +21,7 @@ highlight DiffDelete		ctermfg=15		ctermbg=1		cterm=none
 highlight DiffText			ctermfg=15		ctermbg=6		cterm=none
 highlight Error				ctermfg=15		ctermbg=1		cterm=none
 highlight Folded			ctermfg=243		ctermbg=8		cterm=none
+highlight Function			ctermfg=14		ctermbg=none	cterm=bold
 highlight Identifier		ctermfg=14		ctermbg=none	cterm=none
 highlight Incsearch			ctermfg=none	ctermbg=none	cterm=inverse,underline
 highlight LineNr			ctermfg=11		ctermbg=none	cterm=none
