@@ -76,7 +76,8 @@ function presentationmode {
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
 }
 function remoji {
-	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  | xsel -ib
+	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  |
+		xargs printf "%s " | xsel -ib
 }
 function timezonetime {
 	TZ="$(tzselect)" date

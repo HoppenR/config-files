@@ -74,7 +74,8 @@ function timer {
 	notify-send --urgency=critical "TIMER" "${2:-'Timer done'}" --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 }
 function remoji {
-	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  | xsel -ib
+	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  |
+		xargs printf "%s " | xsel -ib
 }
 function timezonetime {
 	TZ="$(tzselect)" date

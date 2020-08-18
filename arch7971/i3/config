@@ -211,9 +211,9 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 # }
 
 # Screen Saver               10min
-exec --no-startup-id "xset s 600 0"
+exec --no-startup-id "xset s off"
 # Display Power Management   20min
-exec --no-startup-id "xset dpms 1200 0 0"
+exec --no-startup-id "xset -dpms"
 # Screen locking             30min
 exec --no-startup-id "xautolock -time 30 -locker 'i3lock -i $pic; systemctl suspend'"
 
@@ -228,11 +228,11 @@ set $pic /home/$USER/Pictures/backgrounds/lockscreen.png
 set $play         exec --no-startup-id "playerctl play-pause"
 set $prev         exec --no-startup-id "playerctl previous"
 set $next         exec --no-startup-id "playerctl next"
-set $mute         exec --no-startup-id "pactl set-sink-mute 1 toggle"
-set $volumeup     exec --no-startup-id "pactl set-sink-volume 1 +5%"
-set $volumedown   exec --no-startup-id "pactl set-sink-volume 1 -5%"
-set $Svolumeup    exec --no-startup-id "pactl set-sink-volume 1 +2%"
-set $Svolumedown  exec --no-startup-id "pactl set-sink-volume 1 -2%"
+set $mute         exec --no-startup-id "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+set $volumeup     exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+set $volumedown   exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+set $Svolumeup    exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +2%"
+set $Svolumedown  exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -2%"
 
 mode "minimal" {
 	bindsym Mod1+1 workspace $ws1
