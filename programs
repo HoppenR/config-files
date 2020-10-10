@@ -35,6 +35,7 @@ libreoffice-fresh
 libreoffice-fresh-sv
 lightdm
 lightdm-gtk-greeter (opt for lightdm)
+mtools
 nitrogen
 nodejs
 noto-fonts (provides ttf-font (which is req for firefox))
