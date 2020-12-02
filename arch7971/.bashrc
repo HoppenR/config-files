@@ -68,7 +68,7 @@ function cah {
 function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker.bin -t && exit; }
+function s { streamchecker && exit; }
 function timer {
 	 {
 		 sleep "$(bc -l <<< "${1:-60} * 60")";

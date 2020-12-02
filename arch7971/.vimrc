@@ -33,7 +33,6 @@ set   wildmenu       "show all options in command line completion in a menu"
 set cinoptions=:0,g0,(0,W4,l1
 set clipboard=unnamed     "use system primary"
 set colorcolumn=80         "print a line marking the 80th column"
-set completeopt=           "disable preview window"
 set encoding=utf-8
 set foldmarker={{{,}}}    "use mark folds between {{{ and  }}}"
 set foldmethod=marker     "fold between foldmarkers"
