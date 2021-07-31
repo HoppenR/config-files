@@ -64,7 +64,6 @@ function cah {
 	fi
 }
 
-# Temporary I swear
 function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
@@ -73,18 +72,19 @@ function timer {
 	 {
 		 sleep "$(bc -l <<< "${1:-60} * 60")";
 		 shift
-		 notify-send --urgency=critical "TIMER" "${@:-'Timer done'}" \
+		 notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
 		 --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 	} &
 }
-function remoji {
-	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  |
-		xargs printf "%s " | xsel -ib
+function findtimer {
+	cmd=$(grep sleep <<< "$(ps -Ao start,cmd)")
+	time="$(echo "$cmd" | cut -d" " -f3)s"
+	printf "%s " "$(cut -d" " -f1 <<< "$cmd")"
+	units -q "${time}" "hour;min;sec"
 }
 function timezonetime {
 	TZ="$(tzselect)" date
 }
-
 
 ## Pre-command
 # Set X title to the running command
@@ -112,6 +112,7 @@ alias grep="grep --color=auto"
 shopt -s checkwinsize
 shopt -s dotglob
 shopt -s no_empty_cmd_completion
+shopt -s histappend
 stty -ixon
 tabs -4
 
@@ -124,8 +125,8 @@ then
 fi
 
 ## Variables specific to bash
-HISTFILESIZE=20000
 HISTSIZE=20000
+HISTFILESIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then
