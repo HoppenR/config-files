@@ -3,6 +3,7 @@
 #
 [base]
 [base-devel]
+alacritty
 bash-completion (opt for bash)
 clang
 clipmenu
@@ -59,7 +60,6 @@ screenfetch
 shellcheck
 steam
 steam-native-runtime
-termite
 transmission-cli
 ttf-droid (provides ttf-font (which is req for firefox))
 ttf-dejavu (provides ttf-font (which is req for firefox))
