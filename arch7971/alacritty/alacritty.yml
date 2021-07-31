@@ -27,16 +27,16 @@ scrolling:
 
 font:
   normal:
-    family: LiberationMono
+    family: Source Code Pro
     style: Regular
   bold:
-    family: monospace
-    style: Bold
+    family: Source Code Pro
+    style: SemiBold
   italic:
-    family: monospace
+    family: Source Code Pro
     style: Italic
   bold_italic:
-    family: monospace
+    family: Source Code Pro
     style: Bold Italic
   size: 11.0
   #offset:
@@ -121,7 +121,7 @@ selection:
 cursor:
   style:
     shape: Block
-    blinking: On
+    blinking: Always
   vi_mode_style: None
   blink_interval: 500
   unfocused_hollow: true

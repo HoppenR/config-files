@@ -116,14 +116,6 @@ shopt -s histappend
 stty -ixon
 tabs -4
 
-# Set terminal settings / banner depending on context
-if [[ -n $VIMRUNTIME ]]
-then
-	# Enable blinking cursor inside vim terminal (workaround)
-	echo -ne "\\x1b[ q\\e]12;#5FAFFF\\x7"
-	echo "Welcome to vim!"
-fi
-
 ## Variables specific to bash
 HISTSIZE=20000
 HISTFILESIZE=20000
