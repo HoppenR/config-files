@@ -58,16 +58,16 @@ export PS3=$' >#\n'
 function cah {
 	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
 	then
-		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
+		highlight --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
 		/bin/cat "$@"
 	fi
 }
 
-function o { strimschecker.bin && exit; }
+# function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker && exit; }
+# function s { streamchecker && exit; }
 function timer {
 	 {
 		 sleep "$(bc -l <<< "${1:-60} * 60")";
@@ -78,9 +78,17 @@ function timer {
 }
 function findtimer {
 	cmd=$(grep sleep <<< "$(ps -Ao start,cmd)")
-	time="$(echo "$cmd" | cut -d" " -f3)s"
-	printf "%s " "$(cut -d" " -f1 <<< "$cmd")"
-	units -q "${time}" "hour;min;sec"
+	IFS=
+	while read -r line
+	do
+		time="$(echo "$line" | cut -d" " -f3)s"
+		starttime="$(cut -d" " -f1 <<< "$line")"
+		duration="$(units -q "${time}" "hour;min;sec")"
+		printf "%s: %s (%s)\n" \
+			"$starttime" \
+			"$duration" \
+			"$(LANG=sv_SE.UTF-8 date --date="$starttime $duration")"
+	done <<< "$cmd"
 }
 function timezonetime {
 	TZ="$(tzselect)" date

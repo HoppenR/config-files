@@ -38,7 +38,7 @@ font:
   bold_italic:
     family: Source Code Pro
     style: Bold Italic
-  size: 11.0
+  size: 9.5
   #offset:
   #  x: 0
   #  y: 0
@@ -144,9 +144,9 @@ mouse:
   hide_when_typing: false
 
 hints:
-  alphabet: "jfkdlsöahgurieowpqä"
+  alphabet: "qwertyuiopåasdfghjklöä"
   enabled:
-   - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+   - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
              [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
      command: xdg-open
      post_processing: true

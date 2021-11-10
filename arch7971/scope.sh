@@ -67,7 +67,7 @@ case "$extension" in
 	# PDF documents:
 	pdf)
 		try pdftotext -l 10 -nopgbrk -q "$path" - && \
-			{ dump | trim | fmt -s -w $width; exit 0; } || exit 1
+			{ dump | trim | fmt -s -w "$width"; exit 0; } || exit 1
 				;;
 	# BitTorrent Files
 	torrent)
@@ -90,13 +90,13 @@ fi
 
 case "$mimetype" in
 	# Syntax highlight for text files:
-	text/* | */xml)
+	text/* | */xml | */json)
 		if [ "$(tput colors)" -ge 256 ]; then
 			highlight_format=xterm256
 		else
 			highlight_format=ansi
 		fi
-		try safepipe highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+		try safepipe highlight --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
 		exit 2
 		;;
 	image/*)

@@ -1,7 +1,7 @@
 #
 # ~/.config/i3/config
 #
-# Vim: set tabstop=4 filetype=i3config :
+# Vim: set tabstop=4 filetype=swayconfig :
 
 # Set directional keys
 set $left  h
@@ -21,7 +21,7 @@ floating_minimum_size 640 x 480
 hide_edge_borders smart
 
 # Start a terminal
-bindsym Mod1+Return exec "alacritty"
+bindsym Mod1+Return exec --no-startup-id "alacritty"
 
 # Kill focused window
 bindsym Mod1+Shift+q kill
@@ -175,6 +175,7 @@ for_window [class="Nitrogen"]                     floating enable
 for_window [class="Galculator"]                   floating enable border pixel 1
 for_window [class="Pavucontrol"]                  floating enable
 for_window [class="Wine" instance="explorer.exe"] floating enable border normal
+for_window [class="dota2" instance="dota2"]       move position 0 0
 
 # Autostart applications
 exec --no-startup-id "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -186,8 +187,12 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 	# Lock screen
 	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
 	# Application hotkeys
-	bindsym Mod4+e       exec "alacritty -e 'ranger'"
+	bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
 	bindsym Mod4+s       exec --no-startup-id "runsteam.sh"
+	bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
+	bindsym Mod4+d       exec --no-startup-id "dunstctl close"
+	bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
+	bindsym Mod4+shift+s exec --no-startup-id "alacritty -e 'streamshower'"
 	bindsym Mod4+m       exec --no-startup-id "remoji.sh"
 	bindsym Mod4+w       exec "firefox"
 	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
