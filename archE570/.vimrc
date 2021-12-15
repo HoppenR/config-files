@@ -11,8 +11,10 @@ syntax on
 """"""""""""""""""""""""""""""""""" OPTIONS """""""""""""""""""""""""""""""""""
 set   autochdir
 set   autoindent
+set   cursorline     "highlight the line where the cursor is"
 set noesckeys        "ignore escaped keys (i.e arrow keys) in insert mode"
-set   fileignorecase "ignore case for files
+set   fileignorecase "ignore case for files"
+set   foldenable     "use folds"
 set   hlsearch       "highlight search"
 set   ignorecase     "ignore case while searching"
 set   incsearch      "show search results while typing"
@@ -21,7 +23,7 @@ set noruler          "disable ruler (because we have our own statusline"
 set nowrap           "disable line wrapping"
 set   number         "show line numbers"
 set   showcmd        "show partial commands on the bottom right of the screen"
-set   smartcase      "override ignorecase when pattern includes capital letters
+set   smartcase      "override ignorecase when pattern includes capital letters"
 set   splitbelow     "windows that would open above should open below"
 set   splitright     "windows that would open left should open right"
 set   title          "enable setting window title"
@@ -55,6 +57,9 @@ set titlestring=%f\ %-7h%-4m%-5r-\ VIM
 set undodir=$HOME/.vim/undo
 set undolevels=1000       "maximum changes that can be undone"
 set undoreload=10000      "number of lines to save for undo"
+""""""""""""""""""""""""""""""""""" DIGRAPHS """""""""""""""""""""""""""""""""""
+digr =\| 8739
+digr !\| 8740
 
 """""""""""""""""""""""""""""""""" VARIABLES """"""""""""""""""""""""""""""""""
 "Don't confirm extra YCM configuration"
@@ -77,9 +82,9 @@ inoremap {<CR> {<CR>}<Esc>O
 nnoremap <silent> <C-n> :vnew<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
-"rename symbol under cursor
+"rename symbol under cursor"
 nnoremap <F2> :YcmCompleter RefactorRename<Space>
-"format the entire file
+"format the entire file"
 nnoremap <silent> <F3> :YcmCompleter Format<CR>
 "open and close folds"
 nnoremap <Space> za
@@ -91,22 +96,26 @@ nnoremap <silent> ½ :nohlsearch<CR>
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup AutoMake
 	autocmd!
-	autocmd BufEnter		*.{c,cpp}	setlocal makeprg=make
-	autocmd BufWritePost	*.{c,cpp}	if filereadable("./makefile")
-		\|									make!
-		\|									cwindow
-	\|									endif
+	autocmd BufEnter *.{c,cpp,go}
+				\ setlocal makeprg=make
+	autocmd BufWritePost	*.{c,cpp,go}
+				\ if filereadable("./makefile")
+					\|make!
+					\|cwindow
+				\|endif
 augroup END
 
 augroup AutoShellcheck
 	autocmd!
-	autocmd BufEnter		*			if (&filetype ==# "sh") && (! &diff)
-		\|									setlocal makeprg=shellcheck\ -f\ gcc\ %
-	\|									endif
-	autocmd BufWritePost	*			if (&filetype ==# "sh") && (! &diff)
-		\|									make!
-		\|									cwindow
-	\|									endif
+	autocmd BufEnter *
+				\ if (&filetype ==# "sh") && (! &diff) && match(expand('%:p'), '/tmp/') != 0
+					\|setlocal makeprg=shellcheck\ -f\ gcc\ %
+				\|endif
+	autocmd BufWritePost *
+				\ if (&filetype ==# "sh") && (! &diff) && match(expand('%:p'), '/tmp/') != 0
+					\|make!
+					\|cwindow
+				\|endif
 augroup END
 
 augroup NERDTreeColors

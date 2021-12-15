@@ -58,31 +58,44 @@ export PS3=$' >#\n'
 function cah {
 	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
 	then
-		highlight --tab=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
+		highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
 		/bin/cat "$@"
 	fi
 }
 
-# Temporary I swear
-function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-function s { streamchecker && exit; }
+function timer {
+	 {
+		 sleep "$(bc -l <<< "${1:-60} * 60")";
+		 shift
+		 notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
+		 --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
+	} &
 function presentationmode {
 	#TODO: trap signals and disable presentation mode
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
 	sleep "$(bc -l <<< "${1:-60} * 60")"
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
 }
-function remoji {
-	ret="$(rofi -dmenu -i < emoji-db.txt)" && echo "$ret" | cut -d" " -f1  |
-		xargs printf "%s " | xsel -ib
+function findtimer {
+	cmd=$(grep sleep <<< "$(ps -Ao start,cmd)")
+	IFS=
+	while read -r line
+	do
+		time="$(echo "$line" | cut -d" " -f3)s"
+		starttime="$(cut -d" " -f1 <<< "$line")"
+		duration="$(units -q "${time}" "hour;min;sec" | tr -d "\t")"
+		printf "%s + %s: %s\n" \
+			"$starttime" \
+			"$duration" \
+			"$(LANG=sv_SE.UTF-8 date --date="$starttime $duration" "+%T")"
+	done <<< "$cmd"
 }
 function timezonetime {
 	TZ="$(tzselect)" date
 }
-
 
 ## Pre-command
 # Set X title to the running command
@@ -110,20 +123,13 @@ alias grep="grep --color=auto"
 shopt -s checkwinsize
 shopt -s dotglob
 shopt -s no_empty_cmd_completion
+shopt -s histappend
 stty -ixon
 tabs -4
 
-# Set terminal settings / banner depending on context
-if [[ -n $VIMRUNTIME ]]
-then
-	# Enable blinking cursor inside vim terminal (workaround)
-	echo -ne "\\x1b[ q\\e]12;#16A085\\x7"
-	echo "Welcome to vim!"
-fi
-
 ## Variables specific to bash
-HISTFILESIZE=20000
 HISTSIZE=20000
+HISTFILESIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then

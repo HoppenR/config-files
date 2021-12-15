@@ -1,7 +1,7 @@
 #
 # ~/.config/i3/config
 #
-# Vim: set tabstop=4 filetype=i3config :
+# Vim: set tabstop=4 filetype=swayconfig :
 
 # Set directional keys
 set $left  h
@@ -21,7 +21,7 @@ floating_minimum_size 640 x 480
 hide_edge_borders smart
 
 # Start a terminal
-bindsym Mod1+Return exec "termite"
+bindsym Mod1+Return exec --no-startup-id "alacritty"
 
 # Kill focused window
 bindsym Mod1+Shift+q kill
@@ -153,6 +153,7 @@ client.background       #393A39
 
 # Open applications on specific workspaces
 assign [class="Firefox"]               $ws1
+assign [class="Steam"]                 $ws3
 assign [class="libreoffice.*|Soffice"] $ws3
 assign [class="Epdfview"]              $ws3
 assign [class="Gimp"]                  $ws4
@@ -160,12 +161,12 @@ assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
 
 # Automatically focus some applications
-set $autofocus "vlc|libreoffice.*$"
+set $autofocus "vlc|libreoffice.*$|Steam|Wine"
 for_window [class=$autofocus] focus
 for_window [urgent="latest"] focus
 
 # Window attributes
-for_window [class="Termite"]                      border pixel 0
+for_window [class="Alacritty"]                    border pixel 0
 
 # Open specific applications in floating mode
 for_window [class="Nitrogen"]                     floating enable
@@ -185,8 +186,12 @@ exec --no-startup-id "xfce4-power-manager"
 	# Lock screen
 	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
 	# Application hotkeys
-	bindsym Mod4+e       exec "termite -e 'ranger'"
-	bindsym Mod4+m       exec --no-startup-id "vlc"
+	bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
+	bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
+	bindsym Mod4+d       exec --no-startup-id "dunstctl close"
+	bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
+	bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
+	bindsym Mod4+m       exec --no-startup-id "remoji.sh"
 	bindsym Mod4+w       exec "firefox"
 	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
 	# Audio controls

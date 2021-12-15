@@ -58,16 +58,14 @@ export PS3=$' >#\n'
 function cah {
 	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
 	then
-		highlight --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
+		highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
 	else
 		/bin/cat "$@"
 	fi
 }
 
-# function o { strimschecker.bin && exit; }
 function p { pull.sh; }
 function P { pull.sh -p; }
-# function s { streamchecker && exit; }
 function timer {
 	 {
 		 sleep "$(bc -l <<< "${1:-60} * 60")";
@@ -83,11 +81,11 @@ function findtimer {
 	do
 		time="$(echo "$line" | cut -d" " -f3)s"
 		starttime="$(cut -d" " -f1 <<< "$line")"
-		duration="$(units -q "${time}" "hour;min;sec")"
-		printf "%s: %s (%s)\n" \
+		duration="$(units -q "${time}" "hour;min;sec" | tr -d "\t")"
+		printf "%s + %s: %s\n" \
 			"$starttime" \
 			"$duration" \
-			"$(LANG=sv_SE.UTF-8 date --date="$starttime $duration")"
+			"$(LANG=sv_SE.UTF-8 date --date="$starttime $duration" "+%T")"
 	done <<< "$cmd"
 }
 function timezonetime {

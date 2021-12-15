@@ -11,8 +11,10 @@ syntax on
 """"""""""""""""""""""""""""""""""" OPTIONS """""""""""""""""""""""""""""""""""
 set   autochdir
 set   autoindent
+set   cursorline     "highlight the line where the cursor is"
 set noesckeys        "ignore escaped keys (i.e arrow keys) in insert mode"
 set   fileignorecase "ignore case for files"
+set   foldenable     "use folds"
 set   hlsearch       "highlight search"
 set   ignorecase     "ignore case while searching"
 set   incsearch      "show search results while typing"
