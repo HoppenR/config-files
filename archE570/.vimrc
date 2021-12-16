@@ -15,6 +15,7 @@ set   cursorline     "highlight the line where the cursor is"
 set noesckeys        "ignore escaped keys (i.e arrow keys) in insert mode"
 set   fileignorecase "ignore case for files"
 set   foldenable     "use folds"
+set   hidden         "hide unloaded buffers instead of abandoning it"
 set   hlsearch       "highlight search"
 set   ignorecase     "ignore case while searching"
 set   incsearch      "show search results while typing"
@@ -78,8 +79,7 @@ let &t_EI="\e[0 q\<Esc>]12;#16A085\x7" "reset cursor when exiting insert/replace
 """"""""""""""""""""""""""""""""""" MAPPINGS """""""""""""""""""""""""""""""""""
 "curly bracket completion"
 inoremap {<CR> {<CR>}<Esc>O
-"open new buffer vertically"
-nnoremap <silent> <C-n> :vnew<CR>
+nnoremap <silent> <C-w>n :call Scratch()<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
 "rename symbol under cursor"
@@ -92,6 +92,14 @@ nnoremap <Space> za
 nnoremap <silent> § :NERDTreeToggle<CR>
 "stop highlighting search"
 nnoremap <silent> ½ :nohlsearch<CR>
+"switch to next buffer"
+nnoremap <silent> <C-p> :bnext<CR>
+tnoremap <silent> <C-p> <C-w>:bnext<CR>
+"switch to previous buffer"
+nnoremap <silent> <C-n> :bprevious<CR>
+tnoremap <silent> <C-n> <C-w>:bprevious<CR>
+"delete current buffer"
+nnoremap <silent> <C-c> :bdelete<CR>
 
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup AutoMake
@@ -124,6 +132,15 @@ augroup NERDTreeColors
 augroup END
 
 """""""""""""""""""""""""""""""""" FUNCTIONS """"""""""""""""""""""""""""""""""
+" Scratch {{{1
+function Scratch()
+    execute 'vnew'
+	setlocal bufhidden=wipe
+	setlocal nobuflisted
+    setlocal buftype=nofile
+    setlocal noswapfile
+endfunction
+" }}}1
 " vim-line-no-indicator {{{1"
 " Author: Sheldon Johnson"
 " Version: 0.3"
