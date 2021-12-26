@@ -59,3 +59,5 @@ highlight YcmErrorSign		ctermfg=1		ctermbg=none	cterm=bold
 highlight YcmWarningSection	ctermfg=none	ctermbg=none	cterm=none
 highlight YcmWarningSign	ctermfg=11		ctermbg=none	cterm=bold
 highlight gitcommitOverflow	ctermfg=1		ctermbg=none	cterm=none
+" aliases
+highlight link GoFunctionCall	Function

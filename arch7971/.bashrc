@@ -67,11 +67,11 @@ function cah {
 function p { pull.sh; }
 function P { pull.sh -p; }
 function timer {
-	 {
-		 sleep "$(bc -l <<< "${1:-60} * 60")";
-		 shift
-		 notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
-		 --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
+	{
+		sleep "$(bc -l <<< "${1:-60} * 60")";
+		shift
+		notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
+			--icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 	} &
 }
 function findtimer {

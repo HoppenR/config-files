@@ -71,6 +71,10 @@ let g:ycm_key_list_select_completion = []
 let g:NERDTreeQuitOnOpen = 1
 "NERDTree open keybind"
 let g:NERDTreeMapActivateNode = "l"
+"Settings for vim-go"
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_variable_declarations = 1
 
 let &t_SI="\e[5 q\<Esc>]12;#00FF5F\x7" "insert mode cursor"
 let &t_SR="\e[3 q\<Esc>]12;#CC372C\x7" "replace mode cursor"
@@ -80,6 +84,7 @@ let &t_EI="\e[0 q\<Esc>]12;#16A085\x7" "reset cursor when exiting insert/replace
 "curly bracket completion"
 inoremap {<CR> {<CR>}<Esc>O
 nnoremap <silent> <C-w>n :call Scratch()<CR>
+nnoremap <silent> <C-w><C-n> :call Scratch()<CR>
 "open a new terminal emulator split inside vim"
 nnoremap <silent> <C-t> :call term_start(["/bin/bash"], {"vertical":1, "term_finish":"close"})<CR>
 "rename symbol under cursor"
