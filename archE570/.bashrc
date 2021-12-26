@@ -73,6 +73,7 @@ function timer {
 		 notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
 		 --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
 	} &
+}
 function presentationmode {
 	#TODO: trap signals and disable presentation mode
 	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true

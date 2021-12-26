@@ -27,18 +27,18 @@ scrolling:
 
 font:
   normal:
-    family: Source Code Pro
+    family: NimbusMono
     style: Regular
   bold:
-    family: Source Code Pro
+    family: NimbusMono
     style: SemiBold
   italic:
-    family: Source Code Pro
+    family: NimbusMono
     style: Italic
   bold_italic:
     family: Source Code Pro
     style: Bold Italic
-  size: 9.5
+  size: 12
   #offset:
   #  x: 0
   #  y: 0
@@ -51,13 +51,13 @@ draw_bold_text_with_bright_colors: false
 
 colors:
   primary:
-    background: '#272B35'
-    foreground: '#F5F7FA'
-    #dim_foreground: '#F5F7FA'
-    #bright_foreground: '#F5F7FA'
+    background: '#232423'
+    foreground: '#F3F3F3'
+    #dim_foreground: '#F3F3F3'
+    #bright_foreground: '#F3F3F3'
   cursor:
     text: CellBackground
-    cursor: '#5FAFFF'
+    cursor: '#16A085'
   vi_mode_cursor:
     text: CellBackground
     cursor: CellForeground
@@ -86,30 +86,30 @@ colors:
     text: CellForeground
     background: "#6c6c6c"
   normal:
-    black:   '#000000'
-    red:     '#D00000'
+    black:   '#232423'
+    red:     '#EA1E10'
     green:   '#5FAF5F'
     yellow:  '#AFFF00'
-    blue:    '#5675B9'
+    blue:    '#16A085'
     magenta: '#C755AF'
-    cyan:    '#00CCFF'
-    white:   '#EEEEEE'
+    cyan:    '#0099AA'
+    white:   '#16A085'
   bright:
-    black:   '#272B35'
-    red:     '#FF4444'
+    black:   '#393A39'
+    red:     '#FC2112'
     green:   '#00FF5F'
     yellow:  '#D7D7AF'
-    blue:    '#5FAFD7'
+    blue:    '#13BF9D'
     magenta: '#D700FF'
-    cyan:    '#00FFFF'
-    white:   '#F5F7FA'
+    cyan:    '#00D1D1'
+    white:   '#F3F3F3'
   #dim:
   #indexed_colors: []
 
 bell:
   animation: EaseOutCirc
   duration: 400
-  color: '#272B35'
+  color: '#393A39'
   command: None
 
 background_opacity: 0.8
