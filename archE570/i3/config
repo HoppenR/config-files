@@ -206,6 +206,7 @@ exec --no-startup-id "xfce4-power-manager"
 # Screen locking
 exec --no-startup-id "xautolock -time 30 -detectsleep -locker 'i3lock -i $pic; systemctl suspend'"
 # (Screen dimming and locking handled by xfce4-power-manager)
+exec --no-startup-id "xrandr --output eDP1 --set \"Broadcast RGB\" \"Full\""
 
 # Mouse / Keyboard
 floating_modifier Mod1
