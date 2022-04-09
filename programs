@@ -22,6 +22,7 @@ gimp
 git
 gnome-themes-extra (opt for arc-gtk-theme, or opt for vertex-themes)
 gtk-engine-murrine (opt for arc-gtk-theme, or req for vertex-themes)
+gxkb
 highlight
 htop
 i3lock
@@ -73,6 +74,7 @@ gvim
 vlc
 w3m (opt for ranger)
 yay
+xauth
 xautolock
 xdg-user-dirs
 xorg-server
