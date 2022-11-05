@@ -12,7 +12,7 @@ syntax on
 set   autochdir
 set   autoindent
 set   cursorline     "highlight the line where the cursor is"
-set noesckeys        "ignore escaped keys (i.e arrow keys) in insert mode"
+set   esckeys        "enable escaped keys (i.e f5) in insert mode"
 set   fileignorecase "ignore case for files"
 set   foldenable     "use folds"
 set   hidden         "hide unloaded buffers instead of abandoning it"
@@ -67,6 +67,8 @@ digr !\| 8740
 let g:ycm_confirm_extra_conf = 0
 "Dont map TAB to next completion"
 let g:ycm_key_list_select_completion = []
+"Don't automatically show popup with YCM"
+let g:ycm_auto_hover = ''
 "Close NERDTree after opening a file"
 let g:NERDTreeQuitOnOpen = 1
 "NERDTree open keybind"
@@ -75,6 +77,8 @@ let g:NERDTreeMapActivateNode = "l"
 let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_variable_declarations = 1
+"Settings for vim-tex"
+let g:Tex_ViewRule_dvi='okular'
 
 let &t_SI="\e[5 q\<Esc>]12;#00FF5F\x7" "insert mode cursor"
 let &t_SR="\e[3 q\<Esc>]12;#CC372C\x7" "replace mode cursor"
@@ -106,12 +110,15 @@ tnoremap <silent> <C-n> <C-w>:bprevious<CR>
 "delete current buffer"
 nnoremap <silent> <C-c> :bdelete<CR>
 
+"hide YCM popup"
+nnoremap <silent> <TAB> <plug>(YCMHover)
+
 """"""""""""""""""""""""""""""""" AUTOCOMMANDS """""""""""""""""""""""""""""""""
 augroup AutoMake
 	autocmd!
-	autocmd BufEnter *.{c,cpp,go}
+	autocmd BufEnter *.{c,cpp,go,adb}
 				\ setlocal makeprg=make
-	autocmd BufWritePost	*.{c,cpp,go}
+	autocmd BufWritePost	*.{c,cpp,go,adb}
 				\ if filereadable("./makefile")
 					\|make!
 					\|cwindow

@@ -214,6 +214,7 @@ focus_follows_mouse no
 exec --no-startup-id "xset m 0"
 exec --no-startup-id "xset r rate 200 25"
 exec --no-startup-id "xset b off"
+exec --no-startup-id "setxkbmap -layout se,ru -option grp:caps_toggle"
 
 # Variables
 set $pic /home/$USER/Pictures/backgrounds/lockscreen.png
