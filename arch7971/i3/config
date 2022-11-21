@@ -172,6 +172,7 @@ for_window [class="Alacritty"]                    border pixel 0
 for_window [class="Nitrogen"]                     floating enable
 for_window [class="Galculator"]                   floating enable border pixel 1
 for_window [class="Pavucontrol"]                  floating enable
+for_window [class="Test" instance="Godot_Engine"] floating enable
 for_window [class="Wine" instance="explorer.exe"] floating enable border normal
 for_window [class="dota2" instance="dota2"]       move position 0 0
 
@@ -225,7 +226,8 @@ floating_modifier Mod1
 focus_follows_mouse no
 exec --no-startup-id "xset m 0"
 exec --no-startup-id "xset r rate 200 25"
-exec --no-startup-id "setxkbmap -model pc105 -layout se,ru -option grp:caps_toggle"
+#exec --no-startup-id "setxkbmap -model pc105 -layout se,ru -option grp:caps_toggle"
+exec --no-startup-id "gxkb"
 
 # Variables
 set $pic /home/$USER/Pictures/backgrounds/lockscreen.png

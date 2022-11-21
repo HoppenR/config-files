@@ -1,7 +1,3 @@
-"
-" ~/.vim/colors/personal.vim
-"
-
 hi clear
 set background=dark
 if exists("syntax_on")
@@ -49,16 +45,9 @@ highlight Type              ctermfg=2       ctermbg=none    cterm=none
 highlight VertSplit         ctermfg=4       ctermbg=8       cterm=none
 highlight WarningMsg        ctermfg=15      ctermbg=1       cterm=none
 highlight WildMenu          ctermfg=8       ctermbg=4       cterm=none
-" netrw / NERDTree colors
-highlight Directory         ctermfg=12      ctermbg=none    cterm=bold
-highlight NERDTreeCFile     ctermfg=2
-" special colors
-highlight YcmErrorSection   ctermfg=none    ctermbg=none    cterm=none
-highlight YcmErrorSign      ctermfg=1       ctermbg=none    cterm=bold
-highlight YcmWarningSection ctermfg=none    ctermbg=none    cterm=none
-highlight YcmWarningSign    ctermfg=11      ctermbg=none    cterm=bold
 highlight gitcommitOverflow ctermfg=1       ctermbg=none    cterm=none
 " aliases
 highlight link GoFunctionCall                               Function
 highlight link GoVar                                        Special
 highlight link goVarDefs                                    Special
+highlight link goConst                                      PreProc
