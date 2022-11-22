@@ -96,48 +96,48 @@ bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 # Resize window
 bindsym Mod1+r mode "resize"
 mode "resize" {
-	bindsym $left        resize shrink width  10 px or 26 ppt
-	bindsym $down        resize grow   height 10 px or 26 ppt
-	bindsym $up          resize shrink height 10 px or 26 ppt
-	bindsym $right       resize grow   width  10 px or 26 ppt
-	bindsym Shift+$left  resize shrink width  10 px or 32 ppt
-	bindsym Shift+$down  resize grow   height 10 px or 32 ppt
-	bindsym Shift+$up    resize shrink height 10 px or 32 ppt
-	bindsym Shift+$right resize grow   width  10 px or 32 ppt
-	# exit resize mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym $left        resize shrink width  10 px or 26 ppt
+    bindsym $down        resize grow   height 10 px or 26 ppt
+    bindsym $up          resize shrink height 10 px or 26 ppt
+    bindsym $right       resize grow   width  10 px or 26 ppt
+    bindsym Shift+$left  resize shrink width  10 px or 32 ppt
+    bindsym Shift+$down  resize grow   height 10 px or 32 ppt
+    bindsym Shift+$up    resize shrink height 10 px or 32 ppt
+    bindsym Shift+$right resize grow   width  10 px or 32 ppt
+    # exit resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Set shut down, restart, and locking features
 bindsym Mod1+0 mode "$mode_system"
 set $mode_system (s)hutdown, (r)eboot
 mode "$mode_system" {
-	bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
-	bindsym s exec --no-startup-id "systemctl poweroff"; mode "default"
-	# exit system mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
+    bindsym s exec --no-startup-id "systemctl poweroff"; mode "default"
+    # exit system mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Start i3bar to display a workspace bar
 bar {
-	status_command i3status
-	separator_symbol " | "
-	position bottom
-	font pango:monospace 9
-	strip_workspace_numbers yes
-	colors {
-		background #272B35
-		statusline #F5F7FA
-		separator  #5A5C63
-		#class              border  backgr. text
-		focused_workspace  #5D80CC #5675B9 #F5F7FA
-		active_workspace   #5D80CC #5675B9 #F5F7FA
-		inactive_workspace #272B35 #272B35 #A7A7A8
-		urgent_workspace   #D00000 #D00000 #F5F7FA
-		binding_mode       #272B35 #272B35 #5D80CC
-	}
+    status_command i3status
+    separator_symbol " | "
+    position bottom
+    font pango:monospace 9
+    strip_workspace_numbers yes
+    colors {
+        background #272B35
+        statusline #F5F7FA
+        separator  #5A5C63
+        #class              border  backgr. text
+        focused_workspace  #5D80CC #5675B9 #F5F7FA
+        active_workspace   #5D80CC #5675B9 #F5F7FA
+        inactive_workspace #272B35 #272B35 #A7A7A8
+        urgent_workspace   #D00000 #D00000 #F5F7FA
+        binding_mode       #272B35 #272B35 #5D80CC
+    }
 }
 
 ## Theme colors
@@ -182,35 +182,35 @@ exec --no-startup-id "picom -b"
 exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
 
 # Keybinds {
-	# Lock screen
-	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
-	# Application hotkeys
-	bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
-	bindsym Mod4+s       exec --no-startup-id "runsteam.sh"
-	bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
-	bindsym Mod4+d       exec --no-startup-id "dunstctl close"
-	bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
-	bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
-	bindsym Mod4+m       exec --no-startup-id "remoji.sh"
-	bindsym Mod4+w       exec "firefox"
-	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
-	# Audio controls
-	bindsym Mod1+m       exec "pavucontrol"
-	bindsym Mod4+b       exec --no-startup-id "playerctl previous"
-	bindsym Mod4+n       exec --no-startup-id "playerctl next"
-	bindsym Mod4+p       exec --no-startup-id "playerctl play-pause"
-	bindsym XF86AudioPlay        $play
-	bindsym XF86AudioPrev        $prev
-	bindsym XF86AudioNext        $next
-	bindsym XF86AudioMute        $mute
-	bindsym XF86AudioRaiseVolume $Svolumeup
-	bindsym XF86AudioLowerVolume $Svolumedown
-	# Audio controls extra
-	bindsym Control+F1 $mute
-	bindsym Control+F3 $volumeup
-	bindsym Control+F2 $volumedown
-	# Screenshot
-	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
+    # Lock screen
+    bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
+    # Application hotkeys
+    bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
+    bindsym Mod4+s       exec --no-startup-id "runsteam.sh"
+    bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
+    bindsym Mod4+d       exec --no-startup-id "dunstctl close"
+    bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
+    bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
+    bindsym Mod4+m       exec --no-startup-id "remoji.sh"
+    bindsym Mod4+w       exec "firefox"
+    bindsym Mod4+c       exec "clipmenu $dmenuconfig"
+    # Audio controls
+    bindsym Mod1+m       exec "pavucontrol"
+    bindsym Mod4+b       exec --no-startup-id "playerctl previous"
+    bindsym Mod4+n       exec --no-startup-id "playerctl next"
+    bindsym Mod4+p       exec --no-startup-id "playerctl play-pause"
+    bindsym XF86AudioPlay        $play
+    bindsym XF86AudioPrev        $prev
+    bindsym XF86AudioNext        $next
+    bindsym XF86AudioMute        $mute
+    bindsym XF86AudioRaiseVolume $Svolumeup
+    bindsym XF86AudioLowerVolume $Svolumedown
+    # Audio controls extra
+    bindsym Control+F1 $mute
+    bindsym Control+F3 $volumeup
+    bindsym Control+F2 $volumedown
+    # Screenshot
+    bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
 # Screen Saver               10min
@@ -240,19 +240,19 @@ set $Svolumeup    exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ +2%
 set $Svolumedown  exec --no-startup-id "pactl set-sink-volume @DEFAULT_SINK@ -2%"
 
 mode "minimal" {
-	bindsym Mod1+1 workspace $ws1
-	bindsym Mod1+2 workspace $ws2
-	bindsym Mod1+3 workspace $ws3
-	bindsym Mod1+4 workspace $ws4
-	bindsym Mod1+5 workspace $ws5
-	bindsym Mod1+$left  focus left
-	bindsym Mod1+$down  focus down
-	bindsym Mod1+$up    focus up
-	bindsym Mod1+$right focus right
-	bindsym XF86AudioPlay        $play
-	bindsym XF86AudioPrev        $prev
-	bindsym XF86AudioNext        $next
-	bindsym XF86AudioMute        $mute
-	bindsym XF86AudioRaiseVolume $Svolumeup
-	bindsym XF86AudioLowerVolume $Svolumedown
+    bindsym Mod1+1 workspace $ws1
+    bindsym Mod1+2 workspace $ws2
+    bindsym Mod1+3 workspace $ws3
+    bindsym Mod1+4 workspace $ws4
+    bindsym Mod1+5 workspace $ws5
+    bindsym Mod1+$left  focus left
+    bindsym Mod1+$down  focus down
+    bindsym Mod1+$up    focus up
+    bindsym Mod1+$right focus right
+    bindsym XF86AudioPlay        $play
+    bindsym XF86AudioPrev        $prev
+    bindsym XF86AudioNext        $next
+    bindsym XF86AudioMute        $mute
+    bindsym XF86AudioRaiseVolume $Svolumeup
+    bindsym XF86AudioLowerVolume $Svolumedown
 }

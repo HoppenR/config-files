@@ -12,43 +12,43 @@
 # Enable colors for 'ls'
 if type -P dircolors > /dev/null
 then
-	if [[ -r ~/.dir_colors ]]
-	then
-		eval "$(dircolors -b ~/.dir_colors)"
-	elif [[ -r /etc/DIR_COLORS ]]
-	then
-		eval "$(dircolors -b /etc/DIR_COLORS)"
-	fi
+    if [[ -r ~/.dir_colors ]]
+    then
+        eval "$(dircolors -b ~/.dir_colors)"
+    elif [[ -r /etc/DIR_COLORS ]]
+    then
+        eval "$(dircolors -b /etc/DIR_COLORS)"
+    fi
 fi
 
 # Set PS variables for use by 'update_ps1'
 if [[ $EUID -eq 0 ]]
 then
-	PS_START="\\[\\033[01;31m\\][\\h \\[\\033[01;36m\\]\\W\\[\\033[01;31m\\]]\\[\\033[0m\\]"
-	PS_SYMBOL="#"
+    PS_START="\\[\\033[01;31m\\][\\h \\[\\033[01;36m\\]\\W\\[\\033[01;31m\\]]\\[\\033[0m\\]"
+    PS_SYMBOL="#"
 else
-	PS_START="[\\u@\\h \\[\\033[38;5;50m\\]\\W\\[\\033[0m\\]]"
-	PS_SYMBOL="$"
+    PS_START="[\\u@\\h \\[\\033[38;5;50m\\]\\W\\[\\033[0m\\]]"
+    PS_SYMBOL="$"
 fi
 
 if [[ -r /usr/share/git/git-prompt.sh ]]
 then
-	# (disable not following other people's code)
-	# shellcheck disable=SC1091
-	source /usr/share/git/git-prompt.sh
+    # (disable not following other people's code)
+    # shellcheck disable=SC1091
+    source /usr/share/git/git-prompt.sh
 fi
 function update_ps1 {
-	# get the last command's exit status, then color symbol
-	# blue if exit code was 0, red if not
-	# (disable "Check exit code directly" because we are checking the last user executed exit code)
-	# shellcheck disable=SC2181
-	if [[ $? -eq 0 ]]
-	then
-		local symbol="\\[\\033[1;38;5;50m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
-	else
-		local symbol="\\[\\033[1;38;5;09m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
-	fi
-	__git_ps1 "${PS_START:-}" "$symbol " "(%s)"
+    # get the last command's exit status, then color symbol
+    # blue if exit code was 0, red if not
+    # (disable "Check exit code directly" because we are checking the last user executed exit code)
+    # shellcheck disable=SC2181
+    if [[ $? -eq 0 ]]
+    then
+        local symbol="\\[\\033[1;38;5;50m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
+    else
+        local symbol="\\[\\033[1;38;5;09m\\]${PS_SYMBOL:-%}\\[\\033[0m\\]"
+    fi
+    __git_ps1 "${PS_START:-}" "$symbol " "(%s)"
 }
 
 # My own Prompt Strings
@@ -56,46 +56,46 @@ export PS2=$' ${LINENO: -1}>\t'
 export PS3=$' >#\n'
 
 function cah {
-	if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
-	then
-		highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
-	else
-		/bin/cat "$@"
-	fi
+    if [[ -n "$*" ]] && [[ -t 1 ]] && [[ -r ~/.highlight.theme ]]
+    then
+        highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=xterm256 --force --stdout "$@"
+    else
+        /bin/cat "$@"
+    fi
 }
 
 function p { pull.sh; }
 function P { pull.sh -p; }
 function timer {
-	 {
-		 sleep "$(bc -l <<< "${1:-60} * 60")";
-		 shift
-		 notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
-		 --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
-	} &
+    {
+        sleep "$(bc -l <<< "${1:-60} * 60")";
+        shift
+        notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
+            --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
+    } &
 }
 function presentationmode {
-	#TODO: trap signals and disable presentation mode
-	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
-	sleep "$(bc -l <<< "${1:-60} * 60")"
-	xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
+    #TODO: trap signals and disable presentation mode
+    xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set true
+    sleep "$(bc -l <<< "${1:-60} * 60")"
+    xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/presentation-mode --set false
 }
 function findtimer {
-	cmd=$(grep sleep <<< "$(ps -Ao start,cmd)")
-	IFS=
-	while read -r line
-	do
-		time="$(echo "$line" | cut -d" " -f3)s"
-		starttime="$(cut -d" " -f1 <<< "$line")"
-		duration="$(units -q "${time}" "hour;min;sec" | tr -d "\t")"
-		printf "%s + %s: %s\n" \
-			"$starttime" \
-			"$duration" \
-			"$(LANG=sv_SE.UTF-8 date --date="$starttime $duration" "+%T")"
-	done <<< "$cmd"
+    cmd=$(grep sleep <<< "$(ps -Ao start,cmd)")
+    IFS=
+    while read -r line
+    do
+        time="$(echo "$line" | cut -d" " -f3)s"
+        starttime="$(cut -d" " -f1 <<< "$line")"
+        duration="$(units -q "${time}" "hour;min;sec" | tr -d "\t")"
+        printf "%s + %s: %s\n" \
+            "$starttime" \
+            "$duration" \
+            "$(LANG=sv_SE.UTF-8 date --date="$starttime $duration" "+%T")"
+    done <<< "$cmd"
 }
 function timezonetime {
-	TZ="$(tzselect)" date
+    TZ="$(tzselect)" date
 }
 
 ## Pre-command
@@ -136,7 +136,7 @@ HISTFILESIZE=20000
 
 if [[ -r /usr/share/bash-completion/bash_completion ]]
 then
-	# (disable not following other people's code)
-	# shellcheck disable=SC1091
-	source /usr/share/bash-completion/bash_completion
+    # (disable not following other people's code)
+    # shellcheck disable=SC1091
+    source /usr/share/bash-completion/bash_completion
 fi

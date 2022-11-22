@@ -29,7 +29,7 @@ highlight PmenuSel          ctermfg=0       ctermbg=10      cterm=none
 highlight PmenuThumb        ctermfg=none    ctermbg=11      cterm=none
 highlight PreProc           ctermfg=9       ctermbg=none    cterm=none
 highlight Search            ctermfg=none    ctermbg=none    cterm=underline
-highlight SignColumn		ctermfg=none	ctermbg=none	cterm=none
+highlight SignColumn        ctermfg=none    ctermbg=none    cterm=none
 highlight Special           ctermfg=5       ctermbg=none    cterm=none
 highlight SpecialKey        ctermfg=243     ctermbg=none    cterm=none
 highlight Statement         ctermfg=10      ctermbg=none    cterm=none

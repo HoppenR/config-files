@@ -52,61 +52,61 @@ trim() { head -n "$maxln"; }
 safepipe() { "$@"; test $? = 0 -o $? = 141; }
 
 case "$extension" in
-	# Archive extensions:
-	7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
-	rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
-		try als "$path" && { dump | trim; exit 0; }
-		try acat "$path" && { dump | trim; exit 3; }
-		try bsdtar -lf "$path" && { dump | trim; exit 0; }
-		exit 1
-		;;
-	rar)
-		# avoid password prompt by providing empty password
-		try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1
-		;;
-	# PDF documents:
-	pdf)
-		try pdftotext -l 10 -nopgbrk -q "$path" - && \
-			{ dump | trim | fmt -s -w "$width"; exit 0; } || exit 1
-				;;
-	# BitTorrent Files
-	torrent)
-		try transmission-show "$path" && { dump | trim; exit 5; } || exit 1
-		;;
-	# ODT Files
-	odt|ods|odp|sxw)
-		try odt2txt "$path" && { dump | trim; exit 5; } || exit 1
-		;;
+    # Archive extensions:
+    7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|\
+    rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)
+        try als "$path" && { dump | trim; exit 0; }
+        try acat "$path" && { dump | trim; exit 3; }
+        try bsdtar -lf "$path" && { dump | trim; exit 0; }
+        exit 1
+        ;;
+    rar)
+        # avoid password prompt by providing empty password
+        try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1
+        ;;
+    # PDF documents:
+    pdf)
+        try pdftotext -l 10 -nopgbrk -q "$path" - && \
+            { dump | trim | fmt -s -w "$width"; exit 0; } || exit 1
+                ;;
+    # BitTorrent Files
+    torrent)
+        try transmission-show "$path" && { dump | trim; exit 5; } || exit 1
+        ;;
+    # ODT Files
+    odt|ods|odp|sxw)
+        try odt2txt "$path" && { dump | trim; exit 5; } || exit 1
+        ;;
 esac
 
 if [ "$preview_images" = "True" ]; then
-	case "$mimetype" in
-		image/*)
-			#img2txt --gamma=0.6 --width="$width" "$path" && exit 0
-			exit 7
-			;;
-	esac
+    case "$mimetype" in
+        image/*)
+            #img2txt --gamma=0.6 --width="$width" "$path" && exit 0
+            exit 7
+            ;;
+    esac
 fi
 
 case "$mimetype" in
-	# Syntax highlight for text files:
-	text/* | */xml | */json)
-		if [ "$(tput colors)" -ge 256 ]; then
-			highlight_format=xterm256
-		else
-			highlight_format=ansi
-		fi
-		try safepipe highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
-		exit 2
-		;;
-	image/*)
-		cp "$path" "$cached" && exit 6 || exit 1;;
-	# Display information about media files:
-	video/* | audio/*)
-		exiftool "$path" && exit 5
-		# Use sed to remove spaces so the output fits into the narrow window
-		try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1
-		;;
+    # Syntax highlight for text files:
+    text/* | */xml | */json)
+        if [ "$(tput colors)" -ge 256 ]; then
+            highlight_format=xterm256
+        else
+            highlight_format=ansi
+        fi
+        try safepipe highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        exit 2
+        ;;
+    image/*)
+        cp "$path" "$cached" && exit 6 || exit 1;;
+    # Display information about media files:
+    video/* | audio/*)
+        exiftool "$path" && exit 5
+        # Use sed to remove spaces so the output fits into the narrow window
+        try mediainfo "$path" && { dump | trim | sed 's/  \+:/: /;';  exit 5; } || exit 1
+        ;;
 esac
 
 exit 1

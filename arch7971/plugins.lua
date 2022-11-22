@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Package manager
+    -- Plugin manager
     use 'wbthomason/packer.nvim'
 
     -- LSP config

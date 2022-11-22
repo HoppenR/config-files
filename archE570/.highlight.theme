@@ -3,30 +3,30 @@
 --
 -- Vim: set tabstop=4 filetype=lua :
 
-Description		= "Personal"
+Description   = "Personal"
 
-Constant		= { Colour="#16A085" }
-Number			= Constant
-String			= Constant
-StringPreProc	= Constant
+Constant      = { Colour="#16A085" }
+Number        = Constant
+String        = Constant
+StringPreProc = Constant
 
-Comment			= { Colour="#00D75F" }
-BlockComment	= Comment
-LineComment		= Comment
+Comment       = { Colour="#00D75F" }
+BlockComment  = Comment
+LineComment   = Comment
 
-Default			= { Colour="#F3F3F3" }
-Canvas			= { Colour="#393A39" }
-LineNum			= { Colour="#D7D7AF" }
+Default       = { Colour="#F3F3F3" }
+Canvas        = { Colour="#393A39" }
+LineNum       = { Colour="#D7D7AF" }
 
-Escape			= { Colour="#F3F3F3" }
-Operator		= { Colour="#F3F3F3" }
-Interpolation	= { Colour="#BA2922" }
+Escape        = { Colour="#F3F3F3" }
+Operator      = { Colour="#F3F3F3" }
+Interpolation = { Colour="#BA2922" }
 
-PreProcessor	= { Colour="#BA2922" }
+PreProcessor  = { Colour="#BA2922" }
 
 Keywords = {
-				{ Colour="#00FF5F" },
-				{ Colour="#16A085" },
-				{ Colour="#16A085" },
-				{ Colour="#00D1D1" },
+              { Colour="#00FF5F" },
+              { Colour="#16A085" },
+              { Colour="#16A085" },
+              { Colour="#00D1D1" },
 }

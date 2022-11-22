@@ -96,48 +96,48 @@ bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i
 # Resize window
 bindsym Mod1+r mode "resize"
 mode "resize" {
-	bindsym $left        resize shrink width  10 px or 26 ppt
-	bindsym $down        resize grow   height 10 px or 26 ppt
-	bindsym $up          resize shrink height 10 px or 26 ppt
-	bindsym $right       resize grow   width  10 px or 26 ppt
-	bindsym Shift+$left  resize shrink width  10 px or 32 ppt
-	bindsym Shift+$down  resize grow   height 10 px or 32 ppt
-	bindsym Shift+$up    resize shrink height 10 px or 32 ppt
-	bindsym Shift+$right resize grow   width  10 px or 32 ppt
-	# exit resize mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym $left        resize shrink width  10 px or 26 ppt
+    bindsym $down        resize grow   height 10 px or 26 ppt
+    bindsym $up          resize shrink height 10 px or 26 ppt
+    bindsym $right       resize grow   width  10 px or 26 ppt
+    bindsym Shift+$left  resize shrink width  10 px or 32 ppt
+    bindsym Shift+$down  resize grow   height 10 px or 32 ppt
+    bindsym Shift+$up    resize shrink height 10 px or 32 ppt
+    bindsym Shift+$right resize grow   width  10 px or 32 ppt
+    # exit resize mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Set shut down, restart, and locking features
 bindsym Mod1+0 mode "$mode_system"
 set $mode_system (s)hutdown, (r)eboot
 mode "$mode_system" {
-	bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
-	bindsym s exec --no-startup-id "systemctl poweroff"; mode "default"
-	# exit system mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    bindsym r exec --no-startup-id "systemctl reboot"; mode "default"
+    bindsym s exec --no-startup-id "systemctl poweroff"; mode "default"
+    # exit system mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Start i3bar to display a workspace bar
 bar {
-	status_command i3status
-	separator_symbol " | "
-	position bottom
-	font pango:monospace 10
-	strip_workspace_numbers yes
-	colors {
-		background #393A39
-		statusline #E8E8E8
-		separator  #707370
-		#class              border  backgr. text
-		focused_workspace  #16A085 #16A085 #E8E8E8
-		active_workspace   #4CD6BB #16A085 #E8E8E8
-		inactive_workspace #393A39 #393A39 #A7A8A7
-		urgent_workspace   #FDF6E3 #FDF6E3 #CC372C
-		binding_mode       #393A39 #393A39 #4CD6BB
-	}
+    status_command i3status
+    separator_symbol " | "
+    position bottom
+    font pango:monospace 10
+    strip_workspace_numbers yes
+    colors {
+        background #393A39
+        statusline #E8E8E8
+        separator  #707370
+        #class              border  backgr. text
+        focused_workspace  #16A085 #16A085 #E8E8E8
+        active_workspace   #4CD6BB #16A085 #E8E8E8
+        inactive_workspace #393A39 #393A39 #A7A8A7
+        urgent_workspace   #FDF6E3 #FDF6E3 #CC372C
+        binding_mode       #393A39 #393A39 #4CD6BB
+    }
 }
 
 ## Theme colors
@@ -182,24 +182,24 @@ exec --no-startup-id "nm-applet"
 exec --no-startup-id "xfce4-power-manager"
 
 # Keybinds {
-	# Lock screen
-	bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
-	# Application hotkeys
-	bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
-	bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
-	bindsym Mod4+d       exec --no-startup-id "dunstctl close"
-	bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
-	bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
-	bindsym Mod4+m       exec --no-startup-id "remoji.sh"
-	bindsym Mod4+w       exec "firefox"
-	bindsym Mod4+c       exec "clipmenu $dmenuconfig"
-	# Audio controls
-	bindsym Mod1+m       exec "pavucontrol"
-	bindsym Mod4+b       exec --no-startup-id "playerctl previous"
-	bindsym Mod4+n       exec --no-startup-id "playerctl next"
-	bindsym Mod4+p       exec --no-startup-id "playerctl play-pause"
-	# Screenshot
-	bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
+    # Lock screen
+    bindsym Mod1+Shift+x exec --no-startup-id "xautolock -locknow"
+    # Application hotkeys
+    bindsym Mod4+e       exec --no-startup-id "alacritty -e 'ranger'"
+    bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
+    bindsym Mod4+d       exec --no-startup-id "dunstctl close"
+    bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
+    bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
+    bindsym Mod4+m       exec --no-startup-id "remoji.sh"
+    bindsym Mod4+w       exec "firefox"
+    bindsym Mod4+c       exec "clipmenu $dmenuconfig"
+    # Audio controls
+    bindsym Mod1+m       exec "pavucontrol"
+    bindsym Mod4+b       exec --no-startup-id "playerctl previous"
+    bindsym Mod4+n       exec --no-startup-id "playerctl next"
+    bindsym Mod4+p       exec --no-startup-id "playerctl play-pause"
+    # Screenshot
+    bindsym Print        exec --no-startup-id "import -display :0 -window root Pictures/screenshots/ss+$(date '+%F-%H:%M:%S').png"
 # }
 
 # Screen locking
