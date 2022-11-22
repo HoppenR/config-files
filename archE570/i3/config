@@ -1,7 +1,6 @@
 #
 # ~/.config/i3/config
 #
-# Vim: set tabstop=4 filetype=swayconfig :
 
 # Set directional keys
 set $left  h
@@ -155,8 +154,8 @@ client.background       #393A39
 assign [class="Firefox"]               $ws1
 assign [class="Steam"]                 $ws3
 assign [class="libreoffice.*|Soffice"] $ws3
-assign [class="Epdfview"]              $ws3
-assign [class="Gimp"]                  $ws4
+assign [class="okular"]                $ws3
+assign [class="krita"]                 $ws4
 assign [class="Viewnior"]              $ws4
 assign [class="vlc"]                   $ws5
 

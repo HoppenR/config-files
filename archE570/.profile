@@ -4,7 +4,7 @@
 #
 
 export BROWSER="/usr/bin/firefox"
-export EDITOR="/usr/bin/vim"
+export EDITOR="/usr/bin/nvim"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export LESS="-FRX -x1,5"
 export PAGER="/usr/bin/less"
@@ -18,6 +18,7 @@ export GIT_PS1_SHOWCOLORHINTS="true"
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
 export GIT_PS1_SHOWUPSTREAM="true"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 GOPATH=$(go env GOPATH)
 export GOPATH
 
