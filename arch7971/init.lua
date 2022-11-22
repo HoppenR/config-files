@@ -2,6 +2,9 @@ vim.cmd('colorscheme personal')
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
 
+-- Variables
+vim.g.mapleader = ' '
+
 -- Load the packer-config lua file
 require('plugins')
 
@@ -40,6 +43,9 @@ cmp.setup({
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
         end,
+    },
+    completion = {
+        keyword_length = 3,
     },
     window = {
         completion = cmp.config.window.bordered(),
@@ -99,14 +105,14 @@ vim.o.encoding = 'utf-8'
 vim.o.foldmethod = 'marker'
 vim.o.grepprg = 'grep -nH $*'
 vim.o.laststatus = 2
-vim.o.shiftwidth = 4
+vim.o.shiftwidth = 0
 vim.o.signcolumn = 'yes'
 vim.o.statusline = '%F %-7h%-4m%-5r%y%=%-21(L:%3l C:%3v pos:%p%%%)'
 vim.o.tabstop = 4
 vim.o.textwidth = 80
 vim.o.timeoutlen = 500
 vim.o.titleold = ''
-vim.o.titlestring = '%f %-7h%-4m%-5r- VIM'
+vim.o.titlestring = '%f %-7h%-4m%-5r- NVIM'
 vim.o.ttimeoutlen = 50
 vim.o.undodir = '/home/christoffer/.config/nvim/undo'
 vim.o.undolevels = 1000
@@ -117,7 +123,7 @@ vim.o.wildcharm = '<C-Z>'
 vim.opt.cinoptions = {':0', 'g0', '(0', 'W4', 'l1'}
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 vim.opt.foldmarker = {'{{{', '}}}'}
-vim.opt.listchars = {tab = '│ ', trail = '~', eol = '¬'}
+vim.opt.listchars = {tab = '│ ', trail = '~'}
 
 -- Mappings
 vim.keymap.set('i', '<C-j>', '<Plug>luasnip-expand-or-jump', {remap=false})
@@ -131,10 +137,17 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {buffer=0})
 vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', {remap = false})
 vim.keymap.set('t', '<C-w>N', '<C-\\><C-N>', {remap = false})
 
--- Variables
-vim.g.mapleader = ' '
-
 -- Autocommands
+local SetGoIndent = vim.api.nvim_create_augroup('SetGoIndent', {clear = true})
+vim.api.nvim_create_autocmd('BufEnter', {
+    pattern = '*.go',
+    group = SetGoIndent,
+    callback = function()
+        vim.bo.expandtab = false
+        vim.bo.tabstop = 8
+    end
+})
+
 local AutoMake = vim.api.nvim_create_augroup('AutoMake', {clear = true})
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*.{c,cpp,go}',
