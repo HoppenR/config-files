@@ -9,9 +9,7 @@ vim.g.mapleader = ' '
 require('plugins')
 
 -- Set up LSP
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
-
 local default_lsp_binds = function()
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {buffer=0})
     vim.keymap.set('n', '<F3>', vim.lsp.buf.format, {buffer=0})
@@ -22,16 +20,24 @@ local default_lsp_binds = function()
     vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, {buffer=0})
     vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {buffer=0})
     vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {buffer=0})
+    vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', {buffer=0})
     vim.keymap.set('n', '<leader>gs', '<cmd>Telescope lsp_document_symbols<CR>', {buffer=0})
     vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, {buffer=0})
 end
 
-lspconfig.gopls.setup{
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+lspconfig['gopls'].setup{
     capabilities = capabilities,
     on_attach = default_lsp_binds,
 }
 
-lspconfig.clangd.setup{
+lspconfig['clangd'].setup{
+    capabilities = capabilities,
+    on_attach = default_lsp_binds,
+}
+
+lspconfig['pyright'].setup{
     capabilities = capabilities,
     on_attach = default_lsp_binds,
 }
@@ -134,6 +140,7 @@ vim.keymap.set('n', '<C-w>t', '<cmd>vsplit +terminal<CR>', {remap = false})
 vim.keymap.set('n', '<F4>', ':emenu <C-Z>', {remap = false})
 vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', {buffer=0})
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {buffer=0})
+vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', {buffer=0})
 vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', {remap = false})
 vim.keymap.set('t', '<C-w>N', '<C-\\><C-N>', {remap = false})
 
