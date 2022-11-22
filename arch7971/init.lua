@@ -1,8 +1,6 @@
-vim.cmd [[
-    colorscheme personal
-    filetype plugin indent on
-    syntax on
-]]
+vim.cmd('colorscheme personal')
+vim.cmd('filetype plugin indent on')
+vim.cmd('syntax on')
 
 -- Load the packer-config lua file
 require('plugins')
@@ -61,6 +59,14 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
+
+-- Set up luasnip
+local ls = require('luasnip')
+vim.keymap.set({ "i", "s" }, "<C-j>", function()
+    if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+    end
+end)
 
 -- Boolean options
 vim.o.autochdir = true
@@ -165,12 +171,12 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
 -- Functions
 function file_exists(file)
-   local ok, err, code = os.rename(file, file)
-   if not ok then
-      if code == 13 then
-         -- Permission denied, but it exists
-         return true
-      end
-   end
-   return ok, err
+    local ok, err, code = os.rename(file, file)
+    if not ok then
+        if code == 13 then
+            -- Permission denied, but it exists
+            return true
+        end
+    end
+    return ok, err
 end
