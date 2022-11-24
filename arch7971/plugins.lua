@@ -1,3 +1,7 @@
+--
+-- ~/.config/nvim/lua/plugins.lua
+--
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)

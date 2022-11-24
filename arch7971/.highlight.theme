@@ -25,8 +25,8 @@ Interpolation = { Colour="#FF4444" }
 PreProcessor  = { Colour="#FF4444" }
 
 Keywords = {
-              { Colour="#00FFFF" },
-              { Colour="#5FAF5F" },
-              { Colour="#5FAFD7" },
-              { Colour="#00FFFF" },
+                { Colour="#00FFFF" },
+                { Colour="#5FAF5F" },
+                { Colour="#5FAFD7" },
+                { Colour="#00FFFF" },
 }

@@ -18,9 +18,11 @@ export GIT_PS1_SHOWCOLORHINTS="true"
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
 export GIT_PS1_SHOWUPSTREAM="true"
+export SHELL=/bin/zsh
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 GOPATH=$(go env GOPATH)
 export GOPATH
+export ZDOTDIR="$HOME/.config/zsh"
 
 # clipmenu settings
 export CM_HISTLENGTH=40

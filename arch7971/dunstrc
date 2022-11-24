@@ -1,7 +1,6 @@
 #
 # ~/.config/dunst/dunstrc
 #
-# Vim: set tabstop=4 :
 
 [global]
     font = Cantarell 10
@@ -155,6 +154,20 @@
     icon_folders = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 
     frame_width = 1
+
+[shortcuts]
+
+    # Close notification.
+    close = mod4+d
+
+    # Close all notifications.
+    close_all = mod4+space
+
+    # Redisplay last message(s).
+    history = mod4+h
+
+    # Context menu.
+    context = ctrl+mod1+c
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

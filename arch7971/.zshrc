@@ -1,7 +1,3 @@
-#
-# ~/.config/zsh/.zshrc
-#
-
 # If not running interactively, don't do anything
 if [[ $- != *i* ]]; then
     return
@@ -23,7 +19,7 @@ tabs -4
 # Prompt and colors
 autoload -U colors
 colors
-PS1='[%n@%m %F{50}%c%f$(__git_ps1 " (%s)")]%(?.%F{50}.%F{red})$%f '
+PS1='[%n@%m %F{81}%c%f$(__git_ps1 " (%s)")]%(?.%F{81}.%F{red})$%f '
 if [[ -r ~/.dir_colors && -x /bin/dircolors ]]
 then
     eval "$(dircolors ~/.dir_colors)"
