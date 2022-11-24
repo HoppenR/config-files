@@ -1,3 +1,7 @@
+--
+-- ~/.config/nvim/init.lua
+--
+
 vim.cmd('colorscheme personal')
 vim.cmd('filetype plugin indent on')
 vim.cmd('syntax on')
@@ -115,7 +119,7 @@ vim.o.wrap = false
 
 -- String options
 vim.o.clipboard = 'unnamed'
-vim.o.colorcolumn = 80
+vim.o.colorcolumn = '80'
 vim.o.encoding = 'utf-8'
 vim.o.foldmethod = 'marker'
 vim.o.grepprg = 'grep -nH $*'

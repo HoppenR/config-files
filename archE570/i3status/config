@@ -1,14 +1,13 @@
 #
-# ~/.i3status.conf
+# ~/.config/i3status/config
 #
-# Vim: set tabstop=4 :
 
 general {
-        colors = true
-        interval = 2
-        color_good = "#16A085"
-        color_degraded = "#A7A8A7"
-        color_bad = "#CC372C"
+    colors = true
+    interval = 2
+    color_good = "#16A085"
+    color_degraded = "#A7A8A7"
+    color_bad = "#CC372C"
 }
 
 order += "wireless _first_"
@@ -19,25 +18,25 @@ order += "tztime local"
 order += "battery all"
 
 wireless _first_ {
-        format_up = ""
-        format_down = "no wlan"
+    format_up = ""
+    format_down = "no wlan"
 }
 
 cpu_temperature CPU {
-        format = "CPU %degrees°C"
-        max_threshold = 75
+    format = "CPU %degrees°C"
+    max_threshold = 75
 }
 
 cpu_usage {
-        format = "CPU %usage"
+    format = "CPU %usage"
 }
 
 volume master {
-        format = "♪ %volume"
-        format_muted = "♪ muted (%volume)"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+    format = "♪ %volume"
+    format_muted = "♪ muted (%volume)"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 battery all {

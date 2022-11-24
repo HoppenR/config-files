@@ -1,3 +1,7 @@
+"
+" ~/.config/nvim/colors/personal.vim
+"
+
 hi clear
 set background=dark
 if exists("syntax_on")
