@@ -74,9 +74,18 @@ cmp.setup({
 
 -- Set up luasnip
 local ls = require('luasnip')
-vim.keymap.set({ "i", "s" }, "<C-j>", function()
+ls.config.set_config {
+    history = true,
+}
+vim.keymap.set({ 'i', 's' }, '<C-j>', function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
+    end
+end)
+
+vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+    if ls.jumpable(-1) then
+        ls.jump(-1)
     end
 end)
 
@@ -127,7 +136,7 @@ vim.o.wildcharm = '<C-Z>'
 
 -- List options
 vim.opt.cinoptions = {':0', 'g0', '(0', 'W4', 'l1'}
-vim.opt.completeopt = {"menu", "menuone", "noselect"}
+vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.foldmarker = {'{{{', '}}}'}
 vim.opt.listchars = {tab = '│ ', trail = '~'}
 
@@ -186,6 +195,15 @@ vim.api.nvim_create_autocmd('BufWritePost', {
             vim.cmd('make!')
             vim.cmd('cwindow')
         end
+    end
+})
+
+local TerminalSettings = vim.api.nvim_create_augroup('TerminalSettings', {clear = true})
+vim.api.nvim_create_autocmd('TermOpen', {
+    pattern = '*',
+    group = TerminalSettings,
+    callback = function()
+        vim.cmd('startinsert')
     end
 })
 
