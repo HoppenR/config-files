@@ -164,7 +164,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
     group = SetGoIndent,
     callback = function()
         vim.bo.expandtab = false
-        vim.bo.tabstop = 8
+        vim.bo.tabstop = 4
     end
 })
 
