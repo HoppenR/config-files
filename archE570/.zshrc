@@ -24,9 +24,9 @@ tabs -4
 autoload -U colors
 colors
 PS1='[%n@%m %F{50}%c%f$(__git_ps1 " (%s)")]%(?.%F{50}.%F{red})$%f '
-if [[ -r ~/.dir_colors && -x /bin/dircolors ]]
+if [[ -r ~/.config/DIR_COLORS && -x /bin/dircolors ]]
 then
-    eval "$(dircolors ~/.dir_colors)"
+    eval "$(dircolors ~/.config/DIR_COLORS)"
 elif [[ -r /etc/DIR_COLORS && -x /bin/dircolors ]]
 then
     eval "$(dircolors /etc/DIR_COLORS)"

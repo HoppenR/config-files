@@ -95,7 +95,9 @@ case "$mimetype" in
         else
             highlight_format=ansi
         fi
-        try safepipe highlight --line-numbers --replace-tabs=4 --config-file="/home/$USER/.highlight.theme" --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
+        try safepipe highlight --line-numbers --replace-tabs=4 \
+            --config-file="/home/$USER/.config/highlight/highlight.theme" \
+            --out-format=${highlight_format} "$path" && { dump | trim; exit 5; }
         exit 2
         ;;
     image/*)

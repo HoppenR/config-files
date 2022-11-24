@@ -1,8 +1,7 @@
 #
-# ~/.dir_colors
+# ~/.config/DIR_COLORS
 # /etc/DIR_COLORS
 #
-# Vim: set tabstop=4 :
 
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.

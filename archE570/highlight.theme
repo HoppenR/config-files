@@ -1,5 +1,5 @@
 --
--- ~/.highlight.theme
+-- ~/.config/highlight/highlight.theme
 --
 -- Vim: set tabstop=4 filetype=lua :
 
