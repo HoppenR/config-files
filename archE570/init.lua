@@ -81,13 +81,13 @@ local ls = require('luasnip')
 ls.config.set_config {
     history = true,
 }
-vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+vim.keymap.set({ 'i', 's' }, '<C-h>', function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
     end
 end)
 
-vim.keymap.set({ 'i', 's' }, '<C-k>', function()
+vim.keymap.set({ 'i', 's' }, '<C-l>', function()
     if ls.jumpable(-1) then
         ls.jump(-1)
     end
@@ -126,7 +126,7 @@ vim.o.grepprg = 'grep -nH $*'
 vim.o.laststatus = 2
 vim.o.shiftwidth = 0
 vim.o.signcolumn = 'yes'
-vim.o.statusline = '%F %-7h%-4m%-5r%y%=%-21(L:%3l C:%3v pos:%p%%%)'
+vim.o.statusline = '%F %-7h%-4m%-5r%y%=%-19(L:%3l C:%3v pos:%p%%%)'
 vim.o.tabstop = 4
 vim.o.textwidth = 80
 vim.o.timeoutlen = 500
