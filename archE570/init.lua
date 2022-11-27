@@ -81,13 +81,13 @@ local ls = require('luasnip')
 ls.config.set_config {
     history = true,
 }
-vim.keymap.set({ 'i', 's' }, '<C-h>', function()
+vim.keymap.set({ 'i', 's' }, '<C-l>', function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
     end
 end)
 
-vim.keymap.set({ 'i', 's' }, '<C-l>', function()
+vim.keymap.set({ 'i', 's' }, '<C-h>', function()
     if ls.jumpable(-1) then
         ls.jump(-1)
     end
@@ -145,15 +145,14 @@ vim.opt.foldmarker = {'{{{', '}}}'}
 vim.opt.listchars = {tab = '│ ', trail = '~'}
 
 -- Mappings
-vim.keymap.set('i', '<C-j>', '<Plug>luasnip-expand-or-jump', {remap=false})
 vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O', {remap = false})
-vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', {remap=false})
-vim.keymap.set('n', '<C-k>', '<cmd>cprevious<CR>', {remap=false})
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', {remap = false})
+vim.keymap.set('n', '<C-k>', '<cmd>cprevious<CR>', {remap = false})
 vim.keymap.set('n', '<C-w>t', '<cmd>vsplit +terminal<CR>', {remap = false})
 vim.keymap.set('n', '<F4>', ':emenu <C-Z>', {remap = false})
-vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', {buffer=0})
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {buffer=0})
-vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', {buffer=0})
+vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', {remap = false})
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {remap = false})
+vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', {remap = false})
 vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', {remap = false})
 vim.keymap.set('t', '<C-w>N', '<C-\\><C-N>', {remap = false})
 
