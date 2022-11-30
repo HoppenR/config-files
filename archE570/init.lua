@@ -15,33 +15,33 @@ require('plugins')
 -- Set up LSP
 local lspconfig = require('lspconfig')
 local default_lsp_binds = function()
-    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, {buffer=0})
-    vim.keymap.set('n', '<F3>', vim.lsp.buf.format, {buffer=0})
-    vim.keymap.set('n', '<Tab>', vim.lsp.buf.hover, {buffer=0})
-    vim.keymap.set('n', '<leader>df', vim.lsp.buf.code_action, {buffer=0})
-    vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', {buffer=0})
-    vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, {buffer=0})
-    vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, {buffer=0})
-    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {buffer=0})
-    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, {buffer=0})
-    vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', {buffer=0})
-    vim.keymap.set('n', '<leader>gs', '<cmd>Telescope lsp_document_symbols<CR>', {buffer=0})
-    vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, {buffer=0})
+    vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = 0 })
+    vim.keymap.set('n', '<F3>', vim.lsp.buf.format, { buffer = 0 })
+    vim.keymap.set('n', '<Tab>', vim.lsp.buf.hover, { buffer = 0 })
+    vim.keymap.set('n', '<leader>df', vim.lsp.buf.code_action, { buffer = 0 })
+    vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', { buffer = 0 })
+    vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = 0 })
+    vim.keymap.set('n', '<leader>dp', vim.diagnostic.goto_prev, { buffer = 0 })
+    vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = 0 })
+    vim.keymap.set('n', '<leader>gi', vim.lsp.buf.implementation, { buffer = 0 })
+    vim.keymap.set('n', '<leader>gr', '<cmd>Telescope lsp_references<CR>', { buffer = 0 })
+    vim.keymap.set('n', '<leader>gs', '<cmd>Telescope lsp_document_symbols<CR>', { buffer = 0 })
+    vim.keymap.set('n', '<leader>gt', vim.lsp.buf.type_definition, { buffer = 0 })
 end
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig['gopls'].setup{
+lspconfig['gopls'].setup {
     capabilities = capabilities,
     on_attach = default_lsp_binds,
 }
 
-lspconfig['clangd'].setup{
+lspconfig['clangd'].setup {
     capabilities = capabilities,
     on_attach = default_lsp_binds,
 }
 
-lspconfig['pyright'].setup{
+lspconfig['pyright'].setup {
     capabilities = capabilities,
     on_attach = default_lsp_binds,
 }
@@ -81,6 +81,7 @@ local ls = require('luasnip')
 ls.config.set_config {
     history = true,
 }
+
 vim.keymap.set({ 'i', 's' }, '<C-l>', function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
@@ -133,31 +134,30 @@ vim.o.timeoutlen = 500
 vim.o.titleold = ''
 vim.o.titlestring = '%f %-7h%-4m%-5r- NVIM'
 vim.o.ttimeoutlen = 50
-vim.o.undodir = '/home/christoffer/.config/nvim/undo'
+vim.o.undodir = vim.fn.expand('~/.config/nvim/undo')
 vim.o.undolevels = 1000
 vim.o.undoreload = 10000
-vim.o.wildcharm = '<C-Z>'
 
 -- List options
-vim.opt.cinoptions = {':0', 'g0', '(0', 'W4', 'l1'}
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
-vim.opt.foldmarker = {'{{{', '}}}'}
-vim.opt.listchars = {tab = '│ ', trail = '~'}
+vim.opt.cinoptions = { ':0', 'g0', '(0', 'W4', 'l1' }
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+vim.opt.foldmarker = { '{{{', '}}}' }
+vim.opt.listchars = { tab = '│ ', trail = '~' }
 
 -- Mappings
-vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O', {remap = false})
-vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', {remap = false})
-vim.keymap.set('n', '<C-k>', '<cmd>cprevious<CR>', {remap = false})
-vim.keymap.set('n', '<C-w>t', '<cmd>vsplit +terminal<CR>', {remap = false})
-vim.keymap.set('n', '<F4>', ':emenu <C-Z>', {remap = false})
-vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', {remap = false})
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', {remap = false})
-vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', {remap = false})
-vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', {remap = false})
-vim.keymap.set('t', '<C-w>N', '<C-\\><C-N>', {remap = false})
+vim.keymap.set('i', '{<CR>', '{<CR>}<Esc>O', { remap = false })
+vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', { remap = false })
+vim.keymap.set('n', '<C-k>', '<cmd>cprevious<CR>', { remap = false })
+vim.keymap.set('n', '<C-w>t', '<cmd>vsplit +terminal<CR>', { remap = false })
+vim.keymap.set('n', '<F4>', ':emenu <C-Z>', { remap = false })
+vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', { remap = false })
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { remap = false })
+vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { remap = false })
+vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', { remap = false })
+vim.keymap.set('t', '<C-w>N', '<C-\\><C-n>', { remap = false })
 
 -- Autocommands
-local SetGoIndent = vim.api.nvim_create_augroup('SetGoIndent', {clear = true})
+local SetGoIndent = vim.api.nvim_create_augroup('SetGoIndent', { clear = true })
 vim.api.nvim_create_autocmd('BufEnter', {
     pattern = '*.go',
     group = SetGoIndent,
@@ -167,24 +167,24 @@ vim.api.nvim_create_autocmd('BufEnter', {
     end
 })
 
-local AutoMake = vim.api.nvim_create_augroup('AutoMake', {clear = true})
+local AutoMake = vim.api.nvim_create_augroup('AutoMake', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*.{c,cpp,go}',
     group = AutoMake,
     callback = function()
-        if file_exists('./makefile') then
+        if File_Exists('./makefile') then
             vim.cmd('make')
             vim.cmd('cwindow')
         end
     end
 })
 
-local AutoShellcheck = vim.api.nvim_create_augroup('AutoShellcheck', {clear = true})
+local AutoShellcheck = vim.api.nvim_create_augroup('AutoShellcheck', { clear = true })
 vim.api.nvim_create_autocmd('BufEnter', {
     pattern = '*',
     group = AutoShellcheck,
     callback = function()
-        if vim.bo.filetype == 'sh' and not vim.wo.diff and vim.api.nvim_eval('match(expand("%:p"), "/tmp")') ~= 0 then
+        if vim.bo.filetype == 'sh' and not vim.wo.diff and vim.fn.matchstr(vim.fn.expand("%:p"), "/tmp") ~= 0 then
             vim.bo.makeprg = 'shellcheck -f gcc %'
         end
     end
@@ -194,14 +194,14 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*',
     group = AutoShellcheck,
     callback = function()
-        if vim.bo.filetype == 'sh' and not vim.wo.diff and vim.api.nvim_eval('match(expand("%:p"), "/tmp")') ~= 0 then
+        if vim.bo.filetype == 'sh' and not vim.wo.diff and vim.fn.matchstr(vim.fn.expand("%:p"), "/tmp") ~= 0 then
             vim.cmd('make!')
             vim.cmd('cwindow')
         end
     end
 })
 
-local TerminalSettings = vim.api.nvim_create_augroup('TerminalSettings', {clear = true})
+local TerminalSettings = vim.api.nvim_create_augroup('TerminalSettings', { clear = true })
 vim.api.nvim_create_autocmd('TermOpen', {
     pattern = '*',
     group = TerminalSettings,
@@ -211,11 +211,10 @@ vim.api.nvim_create_autocmd('TermOpen', {
 })
 
 -- Functions
-function file_exists(file)
+function File_Exists(file)
     local ok, err, code = os.rename(file, file)
     if not ok then
         if code == 13 then
-            -- Permission denied, but it exists
             return true
         end
     end
