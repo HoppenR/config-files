@@ -46,6 +46,11 @@ lspconfig['pyright'].setup {
     on_attach = default_lsp_binds,
 }
 
+lspconfig['rust_analyzer'].setup {
+    capabilities = capabilities,
+    on_attach = default_lsp_binds,
+}
+
 -- Set up nvim-cmp.
 local cmp = require('cmp')
 cmp.setup({
