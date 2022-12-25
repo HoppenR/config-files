@@ -17,7 +17,7 @@ local lspconfig = require('lspconfig')
 local default_lsp_binds = function()
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = 0 })
     vim.keymap.set('n', '<F3>', vim.lsp.buf.format, { buffer = 0 })
-    vim.keymap.set('n', '<Tab>', vim.lsp.buf.hover, { buffer = 0 })
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = 0 })
     vim.keymap.set('n', '<leader>df', vim.lsp.buf.code_action, { buffer = 0 })
     vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', { buffer = 0 })
     vim.keymap.set('n', '<leader>dn', vim.diagnostic.goto_next, { buffer = 0 })
@@ -83,6 +83,7 @@ cmp.setup({
 
 -- Set up luasnip
 local ls = require('luasnip')
+
 vim.keymap.set({ 'i', 's' }, '<C-l>', function()
     if ls.expand_or_jumpable() then
         ls.expand_or_jump()
@@ -128,7 +129,7 @@ vim.o.grepprg = 'grep -nH $*'
 vim.o.laststatus = 2
 vim.o.shiftwidth = 0
 vim.o.signcolumn = 'yes'
-vim.o.statusline = '%F %-7h%-4m%-5r%y%=%-19(L:%3l C:%3v pos:%p%%%)'
+vim.o.statusline = '%f %-7h%-4m%-5r%y%=%-19(L:%3l C:%3v pos:%p%%%)'
 vim.o.tabstop = 4
 vim.o.textwidth = 80
 vim.o.timeoutlen = 500
@@ -170,11 +171,11 @@ vim.api.nvim_create_autocmd('BufEnter', {
 
 local AutoMake = vim.api.nvim_create_augroup('AutoMake', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-    pattern = '*.{c,cpp,go}',
+    pattern = '*.{c,cpp,go,rs}',
     group = AutoMake,
     callback = function()
         if File_Exists('./makefile') then
-            vim.cmd('make')
+            vim.cmd('make!')
             vim.cmd('cwindow')
         end
     end

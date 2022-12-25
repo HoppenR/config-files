@@ -48,6 +48,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M vicmd '.' vi-yank-arg
+bindkey -M vicmd v edit-command-line
 
 # Environment variables
 DISABLE_AUTO_TITLE='true'
@@ -81,6 +82,14 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 # Functions
+function timer {
+    {
+        sleep "$(bc -l <<< "${1:-60} * 60")"
+        shift
+        notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
+            --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
+    } &
+}
 function zle-keymap-select {
   cursor_block='\e[2 q'
   cursor_beam='\e[5 q'
@@ -106,8 +115,10 @@ vi-yank-arg() {
 zle -N vi-yank-arg
 zle -N zle-keymap-select
 zle -N zle-line-init
+zle -N edit-command-line
 
 # Plugins
+autoload edit-command-line
 if [[ -r /usr/share/git/git-prompt.sh ]]; then
     source /usr/share/git/git-prompt.sh
 fi
