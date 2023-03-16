@@ -8,6 +8,7 @@ vim.cmd('syntax on')
 
 -- Variables
 vim.g.mapleader = ' '
+vim.g.rust_recommended_style = 1
 
 -- Load the packer-config lua file
 require('plugins')
@@ -157,6 +158,7 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { remap = fals
 vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { remap = false })
 vim.keymap.set('n', '½', '<cmd>nohlsearch<CR>', { remap = false })
 vim.keymap.set('t', '<C-w>N', '<C-\\><C-n>', { remap = false })
+vim.keymap.set('v', 'E', 'c<C-r>=<C-r>"<CR><Esc>', { remap = false })
 
 -- Autocommands
 local SetGoIndent = vim.api.nvim_create_augroup('SetGoIndent', { clear = true })

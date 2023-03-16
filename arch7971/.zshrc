@@ -89,6 +89,7 @@ function timer {
         notify-send --urgency=critical "TIMER" "${*:-'Timer done'}" \
             --icon=/usr/share/icons/Adwaita/96x96/status/alarm-symbolic.symbolic.png
     } &
+    disown
 }
 function zle-keymap-select {
   cursor_block='\e[2 q'
@@ -110,12 +111,19 @@ vi-yank-arg() {
   NUMERIC=1 zle .vi-add-next
   zle .insert-last-word
 }
+set-title-command() {
+    print -n "\e]0;RUNNING: [$3]\a"
+}
 
 # Widgets
 zle -N vi-yank-arg
 zle -N zle-keymap-select
 zle -N zle-line-init
 zle -N edit-command-line
+
+# Hooks
+autoload -U add-zsh-hook
+add-zsh-hook preexec set-title-command
 
 # Plugins
 autoload edit-command-line
