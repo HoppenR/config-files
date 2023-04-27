@@ -14,7 +14,6 @@ font xft:liberation mono 9
 # New window shape and size
 default_border pixel 2
 default_floating_border normal
-floating_minimum_size 640 x 480
 
 # Hide edge borders
 hide_edge_borders smart
@@ -190,7 +189,7 @@ exec_always --no-startup-id "/home/$USER/programs/python/workspacelisten.py"
     bindsym Mod4+h       exec --no-startup-id "dunstctl history-pop"
     bindsym Mod4+d       exec --no-startup-id "dunstctl close"
     bindsym Mod4+space   exec --no-startup-id "dunstctl close-all"
-    bindsym Mod4+shift+s exec --no-startup-id "alacritty -e bash -c 'streamshower'"
+    bindsym Mod4+shift+s exec --no-startup-id "alacritty -e zsh -c 'streamshower -a 192.168.10.160:8181'"
     bindsym Mod4+m       exec --no-startup-id "remoji.sh"
     bindsym Mod4+w       exec "firefox"
     bindsym Mod4+c       exec "clipmenu $dmenuconfig"
