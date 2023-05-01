@@ -153,6 +153,7 @@ vim.keymap.set('n', '<C-j>', '<cmd>cnext<CR>', { remap = false })
 vim.keymap.set('n', '<C-k>', '<cmd>cprevious<CR>', { remap = false })
 vim.keymap.set('n', '<C-w>t', '<cmd>vsplit +terminal<CR>', { remap = false })
 vim.keymap.set('n', '<F4>', ':emenu <C-Z>', { remap = false })
+vim.keymap.set('n', '<leader>*', ':lua HighlightCursorWord()<CR>', { remap = false, silent = true })
 vim.keymap.set('n', '<leader>fd', '<cmd>Telescope find_files<CR>', { remap = false })
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', { remap = false })
 vim.keymap.set('n', '<leader>gb', '<cmd>Telescope current_buffer_fuzzy_find<CR>', { remap = false })
@@ -223,4 +224,15 @@ function File_Exists(file)
         end
     end
     return ok, err
+end
+
+function HighlightCursorWord()
+    local cword = vim.fn.expand('<cword>')
+    -- Escape the word if it is an identifier
+    if vim.fn.match(cword, [[\w]]) >= 0 then
+        cword = [[\<]] .. cword .. [[\>]]
+    end
+    vim.opt.hlsearch = true
+    vim.fn.setreg('/', cword)
+    vim.api.nvim_echo({{cword, 'None'}}, false, {})
 end
