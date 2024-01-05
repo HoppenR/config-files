@@ -23,6 +23,7 @@ if not vim.g.lazy_did_setup then
     vim.opt.runtimepath:prepend(vim.fn.stdpath('data') .. '/lazy/lazy.nvim')
     require('lazy').setup('plugins', { ui = { border = 'rounded' } })
 end
+-- vim.opt.runtimepath:prepend("/home/christoffer/.local/share/opam/default/share/ocp-indent/vim")
 
 --- COLORSCHEME
 vim.cmd.colorscheme('wal')

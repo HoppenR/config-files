@@ -1,40 +1,31 @@
 -- Bookmarks
----@type { key: string, path: string }[]
+---@type table<string, string>
 local oil_bookmarks = {
-    { key = '/', path = '/' },
-    { key = 'D', path = '~/Documents' },
-    { key = 'P', path = '~/projects/personal' },
-    { key = 'b', path = '~/.local/bin' },
-    { key = 'c', path = '~/.config' },
-    { key = 'h', path = '~' },
-    { key = 'l', path = '~/Documents/LiU' },
-    { key = 'n', path = '~/.config/nvim' },
-    { key = 'p', path = '~/.config/nvim/lua/plugins' },
-    { key = 't', path = '~/Documents/LiU/TDDI16' },
+    ['/'] = '/',
+    ['D'] = '~/Documents',
+    ['P'] = '~/projects/personal',
+    ['b'] = '~/.local/bin',
+    ['c'] = '~/.config',
+    ['h'] = '~',
+    ['l'] = '~/Documents/LiU',
+    ['n'] = '~/.config/nvim',
+    ['p'] = '~/.config/nvim/lua/plugins',
+    ['t'] = '~/Documents/LiU/TDDI16',
 }
 
--- Ranger-like 'g' keybind that offers a selection of bookmarks and movement
+-- Ranger-like 'g' keybind for selecting a bookmarked location via a single key
 local function bookmark_prompt()
     local oil = require("oil")
     local fns = require('functions')
     ---@type string[]
     local prompt_lines = { 'key' .. '\t\t' .. 'location' }
-    for _, bookmark in ipairs(oil_bookmarks) do
-        table.insert(
-            prompt_lines,
-            string.format('%2s\t\t%s', bookmark.key, bookmark.path)
-        )
+    for key, path in pairs(oil_bookmarks) do
+        table.insert(prompt_lines, key .. '\t\t' .. path)
     end
     ---@type string
-    local key = fns.ranger_prompt(prompt_lines)
+    local selected_key = fns.ranger_prompt(prompt_lines)
     ---@type string
-    local target_path
-    for _, bookmark in ipairs(oil_bookmarks) do
-        if key == bookmark.key then
-            target_path = bookmark.path
-            break
-        end
-    end
+    local target_path = oil_bookmarks[selected_key]
     if target_path then
         oil.open(target_path)
     end
